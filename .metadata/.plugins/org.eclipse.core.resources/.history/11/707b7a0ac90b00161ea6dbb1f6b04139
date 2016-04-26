@@ -1,0 +1,9 @@
+grammar hu.bme.mit.emodel.ErrorModel with org.eclipse.xtext.common.Terminals
+
+generate errorModel "http://www.bme.hu/mit/emodel/ErrorModel"
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'Hello' name=ID '!';

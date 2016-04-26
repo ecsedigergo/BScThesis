@@ -1,0 +1,9 @@
+grammar hu.bme.mit.cmodel.ComponentModel with org.eclipse.xtext.common.Terminals
+
+generate componentModel "http://www.bme.hu/mit/cmodel/ComponentModel"
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'Hello' name=ID '!';

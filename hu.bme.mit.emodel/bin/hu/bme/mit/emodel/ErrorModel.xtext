@@ -1,0 +1,59 @@
+grammar hu.bme.mit.ErrorModel with org.eclipse.xtext.common.Terminals
+
+generate errorModel "http://www.bme.hu/mit/ErrorModel"
+
+ErrorModel:
+	(AbstractElement+=Error)*;
+
+Error:
+	EModelDec | EPropagationDec
+;
+
+EPropagationDec:
+	'error propagation' name=QualifiedName 'from' sourceModel=[EModelDec] '.' sourceProp=[OutPropDec]
+	'to' targetModel=[EModelDec] '.' targetProp=[InPropDec]
+;
+
+EModelDec:
+	'error model' name=QualifiedName '{'
+	(emodelElements+=EModelElement)*
+	'}';
+
+EModelElement:
+	StateDec | EventDec |  OuterPropagation;
+
+OuterPropagation:
+	InPropDec | OutPropDec
+;
+
+InPropDec:
+	'propagation in'name=QualifiedName '->' affectedState=[EventDec]
+;
+
+OutPropDec:
+	'propagation out' name=QualifiedName '<-' fromState=[EventDec]
+;
+
+StateDec:
+	'error state' name=QualifiedName;
+
+EventDec:
+	'error event' name=QualifiedName '{'
+	(eventFeatures+=EventFeature)*
+	'}';
+
+EventFeature:
+	 EventState;
+
+OccurenceDec:
+	'occurrence' DOUBLE;
+
+EventState:
+	'states' ':'  sourceState=[StateDec] '->' targetState=[StateDec];
+
+DOUBLE:
+	INT '.' INT;
+
+QualifiedName:
+	ID ('.' ID)*;
+	
