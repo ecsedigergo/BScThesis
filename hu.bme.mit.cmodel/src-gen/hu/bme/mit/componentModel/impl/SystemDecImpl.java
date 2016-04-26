@@ -9,15 +9,12 @@ import hu.bme.mit.componentModel.SystemDec;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -30,7 +27,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link hu.bme.mit.componentModel.impl.SystemDecImpl#getName <em>Name</em>}</li>
  *   <li>{@link hu.bme.mit.componentModel.impl.SystemDecImpl#getSysFeatures <em>Sys Features</em>}</li>
  * </ul>
  *
@@ -38,26 +34,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class SystemDecImpl extends AbstractElementImpl implements SystemDec
 {
-  /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
-
   /**
    * The cached value of the '{@link #getSysFeatures() <em>Sys Features</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -87,29 +63,6 @@ public class SystemDecImpl extends AbstractElementImpl implements SystemDec
   protected EClass eStaticClass()
   {
     return ComponentModelPackage.Literals.SYSTEM_DEC;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getName()
-  {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ComponentModelPackage.SYSTEM_DEC__NAME, oldName, name));
   }
 
   /**
@@ -152,8 +105,6 @@ public class SystemDecImpl extends AbstractElementImpl implements SystemDec
   {
     switch (featureID)
     {
-      case ComponentModelPackage.SYSTEM_DEC__NAME:
-        return getName();
       case ComponentModelPackage.SYSTEM_DEC__SYS_FEATURES:
         return getSysFeatures();
     }
@@ -171,9 +122,6 @@ public class SystemDecImpl extends AbstractElementImpl implements SystemDec
   {
     switch (featureID)
     {
-      case ComponentModelPackage.SYSTEM_DEC__NAME:
-        setName((String)newValue);
-        return;
       case ComponentModelPackage.SYSTEM_DEC__SYS_FEATURES:
         getSysFeatures().clear();
         getSysFeatures().addAll((Collection<? extends AbstractFeatures>)newValue);
@@ -192,9 +140,6 @@ public class SystemDecImpl extends AbstractElementImpl implements SystemDec
   {
     switch (featureID)
     {
-      case ComponentModelPackage.SYSTEM_DEC__NAME:
-        setName(NAME_EDEFAULT);
-        return;
       case ComponentModelPackage.SYSTEM_DEC__SYS_FEATURES:
         getSysFeatures().clear();
         return;
@@ -212,29 +157,10 @@ public class SystemDecImpl extends AbstractElementImpl implements SystemDec
   {
     switch (featureID)
     {
-      case ComponentModelPackage.SYSTEM_DEC__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case ComponentModelPackage.SYSTEM_DEC__SYS_FEATURES:
         return sysFeatures != null && !sysFeatures.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(')');
-    return result.toString();
   }
 
 } //SystemDecImpl

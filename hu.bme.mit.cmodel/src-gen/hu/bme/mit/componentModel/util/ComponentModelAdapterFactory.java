@@ -86,11 +86,6 @@ public class ComponentModelAdapterFactory extends AdapterFactoryImpl
         return createAbstractElementAdapter();
       }
       @Override
-      public Adapter caseImportE(ImportE object)
-      {
-        return createImportEAdapter();
-      }
-      @Override
       public Adapter caseSystemConnDec(SystemConnDec object)
       {
         return createSystemConnDecAdapter();
@@ -126,6 +121,11 @@ public class ComponentModelAdapterFactory extends AdapterFactoryImpl
         return createCompConnDecAdapter();
       }
       @Override
+      public Adapter caseComponentImpl(ComponentImpl object)
+      {
+        return createComponentImplAdapter();
+      }
+      @Override
       public Adapter caseComponentType(ComponentType object)
       {
         return createComponentTypeAdapter();
@@ -159,11 +159,6 @@ public class ComponentModelAdapterFactory extends AdapterFactoryImpl
       public Adapter caseerrorModes(errorModes object)
       {
         return createerrorModesAdapter();
-      }
-      @Override
-      public Adapter caseComponentImpl(ComponentImpl object)
-      {
-        return createComponentImplAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -213,21 +208,6 @@ public class ComponentModelAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createAbstractElementAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.componentModel.ImportE <em>Import E</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see hu.bme.mit.componentModel.ImportE
-   * @generated
-   */
-  public Adapter createImportEAdapter()
   {
     return null;
   }
@@ -338,6 +318,21 @@ public class ComponentModelAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.componentModel.ComponentImpl <em>Component Impl</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.componentModel.ComponentImpl
+   * @generated
+   */
+  public Adapter createComponentImplAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link hu.bme.mit.componentModel.ComponentType <em>Component Type</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -438,21 +433,6 @@ public class ComponentModelAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createerrorModesAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.componentModel.ComponentImpl <em>Component Impl</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see hu.bme.mit.componentModel.ComponentImpl
-   * @generated
-   */
-  public Adapter createComponentImplAdapter()
   {
     return null;
   }

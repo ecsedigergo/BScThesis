@@ -6,7 +6,8 @@ package hu.bme.mit.componentModel.impl;
 import hu.bme.mit.componentModel.CompConnDec;
 import hu.bme.mit.componentModel.ComponentImpl;
 import hu.bme.mit.componentModel.ComponentModelPackage;
-import hu.bme.mit.componentModel.Port;
+import hu.bme.mit.componentModel.InPort;
+import hu.bme.mit.componentModel.OutPort;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -51,7 +52,7 @@ public class CompConnDecImpl extends AbstractFeaturesImpl implements CompConnDec
    * @generated
    * @ordered
    */
-  protected Port sourcePort;
+  protected OutPort sourcePort;
 
   /**
    * The cached value of the '{@link #getTargetComp() <em>Target Comp</em>}' reference.
@@ -71,7 +72,7 @@ public class CompConnDecImpl extends AbstractFeaturesImpl implements CompConnDec
    * @generated
    * @ordered
    */
-  protected Port targetPort;
+  protected InPort targetPort;
 
   /**
    * <!-- begin-user-doc -->
@@ -142,12 +143,12 @@ public class CompConnDecImpl extends AbstractFeaturesImpl implements CompConnDec
    * <!-- end-user-doc -->
    * @generated
    */
-  public Port getSourcePort()
+  public OutPort getSourcePort()
   {
     if (sourcePort != null && sourcePort.eIsProxy())
     {
       InternalEObject oldSourcePort = (InternalEObject)sourcePort;
-      sourcePort = (Port)eResolveProxy(oldSourcePort);
+      sourcePort = (OutPort)eResolveProxy(oldSourcePort);
       if (sourcePort != oldSourcePort)
       {
         if (eNotificationRequired())
@@ -162,7 +163,7 @@ public class CompConnDecImpl extends AbstractFeaturesImpl implements CompConnDec
    * <!-- end-user-doc -->
    * @generated
    */
-  public Port basicGetSourcePort()
+  public OutPort basicGetSourcePort()
   {
     return sourcePort;
   }
@@ -172,9 +173,9 @@ public class CompConnDecImpl extends AbstractFeaturesImpl implements CompConnDec
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setSourcePort(Port newSourcePort)
+  public void setSourcePort(OutPort newSourcePort)
   {
-    Port oldSourcePort = sourcePort;
+    OutPort oldSourcePort = sourcePort;
     sourcePort = newSourcePort;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, ComponentModelPackage.COMP_CONN_DEC__SOURCE_PORT, oldSourcePort, sourcePort));
@@ -228,12 +229,12 @@ public class CompConnDecImpl extends AbstractFeaturesImpl implements CompConnDec
    * <!-- end-user-doc -->
    * @generated
    */
-  public Port getTargetPort()
+  public InPort getTargetPort()
   {
     if (targetPort != null && targetPort.eIsProxy())
     {
       InternalEObject oldTargetPort = (InternalEObject)targetPort;
-      targetPort = (Port)eResolveProxy(oldTargetPort);
+      targetPort = (InPort)eResolveProxy(oldTargetPort);
       if (targetPort != oldTargetPort)
       {
         if (eNotificationRequired())
@@ -248,7 +249,7 @@ public class CompConnDecImpl extends AbstractFeaturesImpl implements CompConnDec
    * <!-- end-user-doc -->
    * @generated
    */
-  public Port basicGetTargetPort()
+  public InPort basicGetTargetPort()
   {
     return targetPort;
   }
@@ -258,9 +259,9 @@ public class CompConnDecImpl extends AbstractFeaturesImpl implements CompConnDec
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setTargetPort(Port newTargetPort)
+  public void setTargetPort(InPort newTargetPort)
   {
-    Port oldTargetPort = targetPort;
+    InPort oldTargetPort = targetPort;
     targetPort = newTargetPort;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, ComponentModelPackage.COMP_CONN_DEC__TARGET_PORT, oldTargetPort, targetPort));
@@ -306,13 +307,13 @@ public class CompConnDecImpl extends AbstractFeaturesImpl implements CompConnDec
         setSourceComp((ComponentImpl)newValue);
         return;
       case ComponentModelPackage.COMP_CONN_DEC__SOURCE_PORT:
-        setSourcePort((Port)newValue);
+        setSourcePort((OutPort)newValue);
         return;
       case ComponentModelPackage.COMP_CONN_DEC__TARGET_COMP:
         setTargetComp((ComponentImpl)newValue);
         return;
       case ComponentModelPackage.COMP_CONN_DEC__TARGET_PORT:
-        setTargetPort((Port)newValue);
+        setTargetPort((InPort)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -332,13 +333,13 @@ public class CompConnDecImpl extends AbstractFeaturesImpl implements CompConnDec
         setSourceComp((ComponentImpl)null);
         return;
       case ComponentModelPackage.COMP_CONN_DEC__SOURCE_PORT:
-        setSourcePort((Port)null);
+        setSourcePort((OutPort)null);
         return;
       case ComponentModelPackage.COMP_CONN_DEC__TARGET_COMP:
         setTargetComp((ComponentImpl)null);
         return;
       case ComponentModelPackage.COMP_CONN_DEC__TARGET_PORT:
-        setTargetPort((Port)null);
+        setTargetPort((InPort)null);
         return;
     }
     super.eUnset(featureID);

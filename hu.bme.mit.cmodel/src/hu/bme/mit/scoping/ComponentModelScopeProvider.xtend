@@ -6,7 +6,8 @@ package hu.bme.mit.scoping
 import hu.bme.mit.componentModel.CompConnDec
 import hu.bme.mit.componentModel.ComponentImpl
 import hu.bme.mit.componentModel.ComponentModelPackage
-import hu.bme.mit.componentModel.Port
+import hu.bme.mit.componentModel.InPort
+import hu.bme.mit.componentModel.OutPort
 import hu.bme.mit.componentModel.SystemConnDec
 import hu.bme.mit.componentModel.SystemDec
 import hu.bme.mit.componentModel.SystemPortDec
@@ -34,7 +35,7 @@ class ComponentModelScopeProvider extends AbstractComponentModelScopeProvider {
 				if(compI == null) return IScope.NULLSCOPE
 
 				val compT = compI.superType
-				val ports = EcoreUtil2.getAllContentsOfType(compT, Port)
+				val ports = EcoreUtil2.getAllContentsOfType(compT, OutPort)
 				if (ports == null) {
 					return IScope.NULLSCOPE
 				} else {
@@ -47,7 +48,7 @@ class ComponentModelScopeProvider extends AbstractComponentModelScopeProvider {
 				if(compI == null) return IScope.NULLSCOPE
 
 				val compT = compI.superType
-				val ports = EcoreUtil2.getAllContentsOfType(compT, Port)
+				val ports = EcoreUtil2.getAllContentsOfType(compT, InPort)
 				if (ports == null) {
 					return IScope.NULLSCOPE
 				} else {
@@ -71,7 +72,7 @@ class ComponentModelScopeProvider extends AbstractComponentModelScopeProvider {
 				if(compI == null) return IScope.NULLSCOPE
 
 				val compT = compI.superType
-				val ports = EcoreUtil2.getAllContentsOfType(compT, Port)
+				val ports = EcoreUtil2.getAllContentsOfType(compT, InPort)
 				if (ports == null) {
 					return IScope.NULLSCOPE
 				} else {
@@ -87,7 +88,7 @@ class ComponentModelScopeProvider extends AbstractComponentModelScopeProvider {
 				if(compI == null) return IScope.NULLSCOPE
 
 				val compT = compI.superType
-				val ports = EcoreUtil2.getAllContentsOfType(compT, Port)
+				val ports = EcoreUtil2.getAllContentsOfType(compT, OutPort)
 				if (ports == null) {
 					return IScope.NULLSCOPE
 				} else {

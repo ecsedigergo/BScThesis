@@ -10,7 +10,6 @@ import hu.bme.mit.componentModel.ComponentImpl;
 import hu.bme.mit.componentModel.ComponentModel;
 import hu.bme.mit.componentModel.ComponentModelPackage;
 import hu.bme.mit.componentModel.ComponentType;
-import hu.bme.mit.componentModel.ImportE;
 import hu.bme.mit.componentModel.InPort;
 import hu.bme.mit.componentModel.OutPort;
 import hu.bme.mit.componentModel.PortType;
@@ -60,9 +59,6 @@ public class ComponentModelSemanticSequencer extends AbstractDelegatingSemanticS
 			case ComponentModelPackage.COMPONENT_TYPE:
 				sequence_ComponentType(context, (ComponentType) semanticObject); 
 				return; 
-			case ComponentModelPackage.IMPORT_E:
-				sequence_ImportE(context, (ImportE) semanticObject); 
-				return; 
 			case ComponentModelPackage.IN_PORT:
 				sequence_InPort(context, (InPort) semanticObject); 
 				return; 
@@ -98,7 +94,7 @@ public class ComponentModelSemanticSequencer extends AbstractDelegatingSemanticS
 	 *     CompConnDec returns CompConnDec
 	 *
 	 * Constraint:
-	 *     (name=ID sourceComp=[ComponentImpl|ID] sourcePort=[Port|ID] targetComp=[ComponentImpl|ID] targetPort=[Port|ID])
+	 *     (name=ID sourceComp=[ComponentImpl|ID] sourcePort=[OutPort|ID] targetComp=[ComponentImpl|ID] targetPort=[InPort|ID])
 	 */
 	protected void sequence_CompConnDec(ISerializationContext context, CompConnDec semanticObject) {
 		if (errorAcceptor != null) {
@@ -116,9 +112,9 @@ public class ComponentModelSemanticSequencer extends AbstractDelegatingSemanticS
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getCompConnDecAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getCompConnDecAccess().getSourceCompComponentImplIDTerminalRuleCall_3_0_1(), semanticObject.getSourceComp());
-		feeder.accept(grammarAccess.getCompConnDecAccess().getSourcePortPortIDTerminalRuleCall_5_0_1(), semanticObject.getSourcePort());
+		feeder.accept(grammarAccess.getCompConnDecAccess().getSourcePortOutPortIDTerminalRuleCall_5_0_1(), semanticObject.getSourcePort());
 		feeder.accept(grammarAccess.getCompConnDecAccess().getTargetCompComponentImplIDTerminalRuleCall_7_0_1(), semanticObject.getTargetComp());
-		feeder.accept(grammarAccess.getCompConnDecAccess().getTargetPortPortIDTerminalRuleCall_9_0_1(), semanticObject.getTargetPort());
+		feeder.accept(grammarAccess.getCompConnDecAccess().getTargetPortInPortIDTerminalRuleCall_9_0_1(), semanticObject.getTargetPort());
 		feeder.finish();
 	}
 	
@@ -184,25 +180,6 @@ public class ComponentModelSemanticSequencer extends AbstractDelegatingSemanticS
 	
 	/**
 	 * Contexts:
-	 *     AbstractElement returns ImportE
-	 *     ImportE returns ImportE
-	 *
-	 * Constraint:
-	 *     includedEModel=[ErrorModel|ID]
-	 */
-	protected void sequence_ImportE(ISerializationContext context, ImportE semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, ComponentModelPackage.Literals.IMPORT_E__INCLUDED_EMODEL) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ComponentModelPackage.Literals.IMPORT_E__INCLUDED_EMODEL));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getImportEAccess().getIncludedEModelErrorModelIDTerminalRuleCall_1_0_1(), semanticObject.getIncludedEModel());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
 	 *     Port returns InPort
 	 *     InPort returns InPort
 	 *
@@ -251,19 +228,10 @@ public class ComponentModelSemanticSequencer extends AbstractDelegatingSemanticS
 	 *     PortType returns PortType
 	 *
 	 * Constraint:
-	 *     (name=QualifiedName eModes=errorModes)
+	 *     (name=QualifiedName eModes=errorModes*)
 	 */
 	protected void sequence_PortType(ISerializationContext context, PortType semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, ComponentModelPackage.Literals.ABSTRACT_FEATURES__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ComponentModelPackage.Literals.ABSTRACT_FEATURES__NAME));
-			if (transientValues.isValueTransient(semanticObject, ComponentModelPackage.Literals.PORT_TYPE__EMODES) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ComponentModelPackage.Literals.PORT_TYPE__EMODES));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getPortTypeAccess().getNameQualifiedNameParserRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getPortTypeAccess().getEModesErrorModesParserRuleCall_5_0(), semanticObject.getEModes());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -277,8 +245,8 @@ public class ComponentModelSemanticSequencer extends AbstractDelegatingSemanticS
 	 */
 	protected void sequence_SystemConnDec(ISerializationContext context, SystemConnDec semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, ComponentModelPackage.Literals.SYSTEM_CONN_DEC__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ComponentModelPackage.Literals.SYSTEM_CONN_DEC__NAME));
+			if (transientValues.isValueTransient(semanticObject, ComponentModelPackage.Literals.ABSTRACT_ELEMENT__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ComponentModelPackage.Literals.ABSTRACT_ELEMENT__NAME));
 			if (transientValues.isValueTransient(semanticObject, ComponentModelPackage.Literals.SYSTEM_CONN_DEC__SOURCE_SYSTEM) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ComponentModelPackage.Literals.SYSTEM_CONN_DEC__SOURCE_SYSTEM));
 			if (transientValues.isValueTransient(semanticObject, ComponentModelPackage.Literals.SYSTEM_CONN_DEC__SOURCE_PORT) == ValueTransient.YES)
@@ -318,7 +286,7 @@ public class ComponentModelSemanticSequencer extends AbstractDelegatingSemanticS
 	 *     SystemPortIn returns SystemPortIn
 	 *
 	 * Constraint:
-	 *     (name=QualifiedName inComp=[ComponentImpl|ID] inPort=[Port|ID])
+	 *     (name=QualifiedName inComp=[ComponentImpl|ID] inPort=[InPort|ID])
 	 */
 	protected void sequence_SystemPortIn(ISerializationContext context, SystemPortIn semanticObject) {
 		if (errorAcceptor != null) {
@@ -332,7 +300,7 @@ public class ComponentModelSemanticSequencer extends AbstractDelegatingSemanticS
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getSystemPortInAccess().getNameQualifiedNameParserRuleCall_1_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getSystemPortInAccess().getInCompComponentImplIDTerminalRuleCall_3_0_1(), semanticObject.getInComp());
-		feeder.accept(grammarAccess.getSystemPortInAccess().getInPortPortIDTerminalRuleCall_5_0_1(), semanticObject.getInPort());
+		feeder.accept(grammarAccess.getSystemPortInAccess().getInPortInPortIDTerminalRuleCall_5_0_1(), semanticObject.getInPort());
 		feeder.finish();
 	}
 	
@@ -344,7 +312,7 @@ public class ComponentModelSemanticSequencer extends AbstractDelegatingSemanticS
 	 *     SystemPortOut returns SystemPortOut
 	 *
 	 * Constraint:
-	 *     (name=QualifiedName outComp=[ComponentImpl|ID] outPort=[Port|ID])
+	 *     (name=QualifiedName outComp=[ComponentImpl|ID] outPort=[OutPort|ID])
 	 */
 	protected void sequence_SystemPortOut(ISerializationContext context, SystemPortOut semanticObject) {
 		if (errorAcceptor != null) {
@@ -358,7 +326,7 @@ public class ComponentModelSemanticSequencer extends AbstractDelegatingSemanticS
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getSystemPortOutAccess().getNameQualifiedNameParserRuleCall_1_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getSystemPortOutAccess().getOutCompComponentImplIDTerminalRuleCall_3_0_1(), semanticObject.getOutComp());
-		feeder.accept(grammarAccess.getSystemPortOutAccess().getOutPortPortIDTerminalRuleCall_5_0_1(), semanticObject.getOutPort());
+		feeder.accept(grammarAccess.getSystemPortOutAccess().getOutPortOutPortIDTerminalRuleCall_5_0_1(), semanticObject.getOutPort());
 		feeder.finish();
 	}
 	

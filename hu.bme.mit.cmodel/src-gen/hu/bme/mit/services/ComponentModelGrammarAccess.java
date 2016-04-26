@@ -41,52 +41,21 @@ public class ComponentModelGrammarAccess extends AbstractGrammarElementFinder {
 	public class AbstractElementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "hu.bme.mit.ComponentModel.AbstractElement");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cImportEParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cSystemDecParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cSystemConnDecParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cSystemDecParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cSystemConnDecParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//AbstractElement:
-		//	ImportE | SystemDec | SystemConnDec;
+		//	SystemDec | SystemConnDec;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//ImportE | SystemDec | SystemConnDec
+		//SystemDec | SystemConnDec
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//ImportE
-		public RuleCall getImportEParserRuleCall_0() { return cImportEParserRuleCall_0; }
-		
 		//SystemDec
-		public RuleCall getSystemDecParserRuleCall_1() { return cSystemDecParserRuleCall_1; }
+		public RuleCall getSystemDecParserRuleCall_0() { return cSystemDecParserRuleCall_0; }
 		
 		//SystemConnDec
-		public RuleCall getSystemConnDecParserRuleCall_2() { return cSystemConnDecParserRuleCall_2; }
-	}
-	public class ImportEElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "hu.bme.mit.ComponentModel.ImportE");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cImportEmodelKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cIncludedEModelAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cIncludedEModelErrorModelCrossReference_1_0 = (CrossReference)cIncludedEModelAssignment_1.eContents().get(0);
-		private final RuleCall cIncludedEModelErrorModelIDTerminalRuleCall_1_0_1 = (RuleCall)cIncludedEModelErrorModelCrossReference_1_0.eContents().get(1);
-		
-		//ImportE:
-		//	'import emodel' includedEModel=[emod::ErrorModel];
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'import emodel' includedEModel=[emod::ErrorModel]
-		public Group getGroup() { return cGroup; }
-		
-		//'import emodel'
-		public Keyword getImportEmodelKeyword_0() { return cImportEmodelKeyword_0; }
-		
-		//includedEModel=[emod::ErrorModel]
-		public Assignment getIncludedEModelAssignment_1() { return cIncludedEModelAssignment_1; }
-		
-		//[emod::ErrorModel]
-		public CrossReference getIncludedEModelErrorModelCrossReference_1_0() { return cIncludedEModelErrorModelCrossReference_1_0; }
-		
-		//ID
-		public RuleCall getIncludedEModelErrorModelIDTerminalRuleCall_1_0_1() { return cIncludedEModelErrorModelIDTerminalRuleCall_1_0_1; }
+		public RuleCall getSystemConnDecParserRuleCall_1() { return cSystemConnDecParserRuleCall_1; }
 	}
 	public class SystemConnDecElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "hu.bme.mit.ComponentModel.SystemConnDec");
@@ -111,6 +80,9 @@ public class ComponentModelGrammarAccess extends AbstractGrammarElementFinder {
 		private final CrossReference cTargetPortSystemPortDecCrossReference_9_0 = (CrossReference)cTargetPortAssignment_9.eContents().get(0);
 		private final RuleCall cTargetPortSystemPortDecIDTerminalRuleCall_9_0_1 = (RuleCall)cTargetPortSystemPortDecCrossReference_9_0.eContents().get(1);
 		
+		////ImportE | 
+		////ImportE:
+		////	'import emodel' includedEModel=[emod::ErrorModel];
 		//SystemConnDec:
 		//	'system connection' name=QualifiedName 'from' sourceSystem=[SystemDec] '.' sourcePort=[SystemPortDec]
 		//	'to' targetSystem=[SystemDec] '.' targetPort=[SystemPortDec];
@@ -249,29 +221,29 @@ public class ComponentModelGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "hu.bme.mit.ComponentModel.AbstractFeatures");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cComponentTypeParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cCompConnDecParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cPortTypeParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final RuleCall cComponentImplParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cComponentImplParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cCompConnDecParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cPortTypeParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		private final RuleCall cSystemPortDecParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		
 		//AbstractFeatures:
-		//	ComponentType | CompConnDec | PortType | ComponentImpl | SystemPortDec;
+		//	ComponentType | ComponentImpl | CompConnDec | PortType | SystemPortDec;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//ComponentType | CompConnDec | PortType | ComponentImpl | SystemPortDec
+		//ComponentType | ComponentImpl | CompConnDec | PortType | SystemPortDec
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//ComponentType
 		public RuleCall getComponentTypeParserRuleCall_0() { return cComponentTypeParserRuleCall_0; }
 		
+		//ComponentImpl
+		public RuleCall getComponentImplParserRuleCall_1() { return cComponentImplParserRuleCall_1; }
+		
 		//CompConnDec
-		public RuleCall getCompConnDecParserRuleCall_1() { return cCompConnDecParserRuleCall_1; }
+		public RuleCall getCompConnDecParserRuleCall_2() { return cCompConnDecParserRuleCall_2; }
 		
 		//PortType
-		public RuleCall getPortTypeParserRuleCall_2() { return cPortTypeParserRuleCall_2; }
-		
-		//ComponentImpl
-		public RuleCall getComponentImplParserRuleCall_3() { return cComponentImplParserRuleCall_3; }
+		public RuleCall getPortTypeParserRuleCall_3() { return cPortTypeParserRuleCall_3; }
 		
 		//SystemPortDec
 		public RuleCall getSystemPortDecParserRuleCall_4() { return cSystemPortDecParserRuleCall_4; }
@@ -307,14 +279,14 @@ public class ComponentModelGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cInCompComponentImplIDTerminalRuleCall_3_0_1 = (RuleCall)cInCompComponentImplCrossReference_3_0.eContents().get(1);
 		private final Keyword cFullStopKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Assignment cInPortAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final CrossReference cInPortPortCrossReference_5_0 = (CrossReference)cInPortAssignment_5.eContents().get(0);
-		private final RuleCall cInPortPortIDTerminalRuleCall_5_0_1 = (RuleCall)cInPortPortCrossReference_5_0.eContents().get(1);
+		private final CrossReference cInPortInPortCrossReference_5_0 = (CrossReference)cInPortAssignment_5.eContents().get(0);
+		private final RuleCall cInPortInPortIDTerminalRuleCall_5_0_1 = (RuleCall)cInPortInPortCrossReference_5_0.eContents().get(1);
 		
 		//SystemPortIn:
-		//	'system port in' name=QualifiedName 'to' inComp=[ComponentImpl] '.' inPort=[Port];
+		//	'system port in' name=QualifiedName 'to' inComp=[ComponentImpl] '.' inPort=[InPort];
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'system port in' name=QualifiedName 'to' inComp=[ComponentImpl] '.' inPort=[Port]
+		//'system port in' name=QualifiedName 'to' inComp=[ComponentImpl] '.' inPort=[InPort]
 		public Group getGroup() { return cGroup; }
 		
 		//'system port in'
@@ -341,14 +313,14 @@ public class ComponentModelGrammarAccess extends AbstractGrammarElementFinder {
 		//'.'
 		public Keyword getFullStopKeyword_4() { return cFullStopKeyword_4; }
 		
-		//inPort=[Port]
+		//inPort=[InPort]
 		public Assignment getInPortAssignment_5() { return cInPortAssignment_5; }
 		
-		//[Port]
-		public CrossReference getInPortPortCrossReference_5_0() { return cInPortPortCrossReference_5_0; }
+		//[InPort]
+		public CrossReference getInPortInPortCrossReference_5_0() { return cInPortInPortCrossReference_5_0; }
 		
 		//ID
-		public RuleCall getInPortPortIDTerminalRuleCall_5_0_1() { return cInPortPortIDTerminalRuleCall_5_0_1; }
+		public RuleCall getInPortInPortIDTerminalRuleCall_5_0_1() { return cInPortInPortIDTerminalRuleCall_5_0_1; }
 	}
 	public class SystemPortOutElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "hu.bme.mit.ComponentModel.SystemPortOut");
@@ -362,14 +334,14 @@ public class ComponentModelGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cOutCompComponentImplIDTerminalRuleCall_3_0_1 = (RuleCall)cOutCompComponentImplCrossReference_3_0.eContents().get(1);
 		private final Keyword cFullStopKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Assignment cOutPortAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final CrossReference cOutPortPortCrossReference_5_0 = (CrossReference)cOutPortAssignment_5.eContents().get(0);
-		private final RuleCall cOutPortPortIDTerminalRuleCall_5_0_1 = (RuleCall)cOutPortPortCrossReference_5_0.eContents().get(1);
+		private final CrossReference cOutPortOutPortCrossReference_5_0 = (CrossReference)cOutPortAssignment_5.eContents().get(0);
+		private final RuleCall cOutPortOutPortIDTerminalRuleCall_5_0_1 = (RuleCall)cOutPortOutPortCrossReference_5_0.eContents().get(1);
 		
 		//SystemPortOut:
-		//	'system port out' name=QualifiedName 'from' outComp=[ComponentImpl] '.' outPort=[Port];
+		//	'system port out' name=QualifiedName 'from' outComp=[ComponentImpl] '.' outPort=[OutPort];
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'system port out' name=QualifiedName 'from' outComp=[ComponentImpl] '.' outPort=[Port]
+		//'system port out' name=QualifiedName 'from' outComp=[ComponentImpl] '.' outPort=[OutPort]
 		public Group getGroup() { return cGroup; }
 		
 		//'system port out'
@@ -396,14 +368,14 @@ public class ComponentModelGrammarAccess extends AbstractGrammarElementFinder {
 		//'.'
 		public Keyword getFullStopKeyword_4() { return cFullStopKeyword_4; }
 		
-		//outPort=[Port]
+		//outPort=[OutPort]
 		public Assignment getOutPortAssignment_5() { return cOutPortAssignment_5; }
 		
-		//[Port]
-		public CrossReference getOutPortPortCrossReference_5_0() { return cOutPortPortCrossReference_5_0; }
+		//[OutPort]
+		public CrossReference getOutPortOutPortCrossReference_5_0() { return cOutPortOutPortCrossReference_5_0; }
 		
 		//ID
-		public RuleCall getOutPortPortIDTerminalRuleCall_5_0_1() { return cOutPortPortIDTerminalRuleCall_5_0_1; }
+		public RuleCall getOutPortOutPortIDTerminalRuleCall_5_0_1() { return cOutPortOutPortIDTerminalRuleCall_5_0_1; }
 	}
 	public class CompConnDecElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "hu.bme.mit.ComponentModel.CompConnDec");
@@ -417,24 +389,24 @@ public class ComponentModelGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cSourceCompComponentImplIDTerminalRuleCall_3_0_1 = (RuleCall)cSourceCompComponentImplCrossReference_3_0.eContents().get(1);
 		private final Keyword cFullStopKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Assignment cSourcePortAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final CrossReference cSourcePortPortCrossReference_5_0 = (CrossReference)cSourcePortAssignment_5.eContents().get(0);
-		private final RuleCall cSourcePortPortIDTerminalRuleCall_5_0_1 = (RuleCall)cSourcePortPortCrossReference_5_0.eContents().get(1);
+		private final CrossReference cSourcePortOutPortCrossReference_5_0 = (CrossReference)cSourcePortAssignment_5.eContents().get(0);
+		private final RuleCall cSourcePortOutPortIDTerminalRuleCall_5_0_1 = (RuleCall)cSourcePortOutPortCrossReference_5_0.eContents().get(1);
 		private final Keyword cToKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		private final Assignment cTargetCompAssignment_7 = (Assignment)cGroup.eContents().get(7);
 		private final CrossReference cTargetCompComponentImplCrossReference_7_0 = (CrossReference)cTargetCompAssignment_7.eContents().get(0);
 		private final RuleCall cTargetCompComponentImplIDTerminalRuleCall_7_0_1 = (RuleCall)cTargetCompComponentImplCrossReference_7_0.eContents().get(1);
 		private final Keyword cFullStopKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		private final Assignment cTargetPortAssignment_9 = (Assignment)cGroup.eContents().get(9);
-		private final CrossReference cTargetPortPortCrossReference_9_0 = (CrossReference)cTargetPortAssignment_9.eContents().get(0);
-		private final RuleCall cTargetPortPortIDTerminalRuleCall_9_0_1 = (RuleCall)cTargetPortPortCrossReference_9_0.eContents().get(1);
+		private final CrossReference cTargetPortInPortCrossReference_9_0 = (CrossReference)cTargetPortAssignment_9.eContents().get(0);
+		private final RuleCall cTargetPortInPortIDTerminalRuleCall_9_0_1 = (RuleCall)cTargetPortInPortCrossReference_9_0.eContents().get(1);
 		
 		//CompConnDec:
-		//	'connection' name=ID 'from' sourceComp=[ComponentImpl] '.' sourcePort=[Port]
-		//	'to' targetComp=[ComponentImpl] '.' targetPort=[Port];
+		//	'connection' name=ID 'from' sourceComp=[ComponentImpl] '.' sourcePort=[OutPort]
+		//	'to' targetComp=[ComponentImpl] '.' targetPort=[InPort];
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'connection' name=ID 'from' sourceComp=[ComponentImpl] '.' sourcePort=[Port] 'to' targetComp=[ComponentImpl] '.'
-		//targetPort=[Port]
+		//'connection' name=ID 'from' sourceComp=[ComponentImpl] '.' sourcePort=[OutPort] 'to' targetComp=[ComponentImpl] '.'
+		//targetPort=[InPort]
 		public Group getGroup() { return cGroup; }
 		
 		//'connection'
@@ -461,14 +433,14 @@ public class ComponentModelGrammarAccess extends AbstractGrammarElementFinder {
 		//'.'
 		public Keyword getFullStopKeyword_4() { return cFullStopKeyword_4; }
 		
-		//sourcePort=[Port]
+		//sourcePort=[OutPort]
 		public Assignment getSourcePortAssignment_5() { return cSourcePortAssignment_5; }
 		
-		//[Port]
-		public CrossReference getSourcePortPortCrossReference_5_0() { return cSourcePortPortCrossReference_5_0; }
+		//[OutPort]
+		public CrossReference getSourcePortOutPortCrossReference_5_0() { return cSourcePortOutPortCrossReference_5_0; }
 		
 		//ID
-		public RuleCall getSourcePortPortIDTerminalRuleCall_5_0_1() { return cSourcePortPortIDTerminalRuleCall_5_0_1; }
+		public RuleCall getSourcePortOutPortIDTerminalRuleCall_5_0_1() { return cSourcePortOutPortIDTerminalRuleCall_5_0_1; }
 		
 		//'to'
 		public Keyword getToKeyword_6() { return cToKeyword_6; }
@@ -485,14 +457,53 @@ public class ComponentModelGrammarAccess extends AbstractGrammarElementFinder {
 		//'.'
 		public Keyword getFullStopKeyword_8() { return cFullStopKeyword_8; }
 		
-		//targetPort=[Port]
+		//targetPort=[InPort]
 		public Assignment getTargetPortAssignment_9() { return cTargetPortAssignment_9; }
 		
-		//[Port]
-		public CrossReference getTargetPortPortCrossReference_9_0() { return cTargetPortPortCrossReference_9_0; }
+		//[InPort]
+		public CrossReference getTargetPortInPortCrossReference_9_0() { return cTargetPortInPortCrossReference_9_0; }
 		
 		//ID
-		public RuleCall getTargetPortPortIDTerminalRuleCall_9_0_1() { return cTargetPortPortIDTerminalRuleCall_9_0_1; }
+		public RuleCall getTargetPortInPortIDTerminalRuleCall_9_0_1() { return cTargetPortInPortIDTerminalRuleCall_9_0_1; }
+	}
+	public class ComponentImplElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "hu.bme.mit.ComponentModel.ComponentImpl");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cComponentImplementationKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameQualifiedNameParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cSuperTypeAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final CrossReference cSuperTypeComponentTypeCrossReference_3_0 = (CrossReference)cSuperTypeAssignment_3.eContents().get(0);
+		private final RuleCall cSuperTypeComponentTypeIDTerminalRuleCall_3_0_1 = (RuleCall)cSuperTypeComponentTypeCrossReference_3_0.eContents().get(1);
+		
+		//ComponentImpl:
+		//	'component implementation' name=QualifiedName ':' superType=[ComponentType];
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'component implementation' name=QualifiedName ':' superType=[ComponentType]
+		public Group getGroup() { return cGroup; }
+		
+		//'component implementation'
+		public Keyword getComponentImplementationKeyword_0() { return cComponentImplementationKeyword_0; }
+		
+		//name=QualifiedName
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//QualifiedName
+		public RuleCall getNameQualifiedNameParserRuleCall_1_0() { return cNameQualifiedNameParserRuleCall_1_0; }
+		
+		//':'
+		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
+		
+		//superType=[ComponentType]
+		public Assignment getSuperTypeAssignment_3() { return cSuperTypeAssignment_3; }
+		
+		//[ComponentType]
+		public CrossReference getSuperTypeComponentTypeCrossReference_3_0() { return cSuperTypeComponentTypeCrossReference_3_0; }
+		
+		//ID
+		public RuleCall getSuperTypeComponentTypeIDTerminalRuleCall_3_0_1() { return cSuperTypeComponentTypeIDTerminalRuleCall_3_0_1; }
 	}
 	public class ComponentTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "hu.bme.mit.ComponentModel.ComponentType");
@@ -653,19 +664,18 @@ public class ComponentModelGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cPortTypeKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameQualifiedNameParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cEModesKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Keyword cLeftCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cEModesAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cEModesErrorModesParserRuleCall_5_0 = (RuleCall)cEModesAssignment_5.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cEModesAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cEModesErrorModesParserRuleCall_3_0 = (RuleCall)cEModesAssignment_3.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//PortType:
-		//	'port type' name=QualifiedName ':' 'eModes' '{'
-		//	eModes=errorModes '}';
+		//	'port type' name=QualifiedName '{'
+		//	eModes=errorModes*
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'port type' name=QualifiedName ':' 'eModes' '{' eModes=errorModes '}'
+		//'port type' name=QualifiedName '{' eModes=errorModes* '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'port type'
@@ -677,91 +687,45 @@ public class ComponentModelGrammarAccess extends AbstractGrammarElementFinder {
 		//QualifiedName
 		public RuleCall getNameQualifiedNameParserRuleCall_1_0() { return cNameQualifiedNameParserRuleCall_1_0; }
 		
-		//':'
-		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
-		
-		//'eModes'
-		public Keyword getEModesKeyword_3() { return cEModesKeyword_3; }
-		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
-		//eModes=errorModes
-		public Assignment getEModesAssignment_5() { return cEModesAssignment_5; }
+		//eModes=errorModes*
+		public Assignment getEModesAssignment_3() { return cEModesAssignment_3; }
 		
 		//errorModes
-		public RuleCall getEModesErrorModesParserRuleCall_5_0() { return cEModesErrorModesParserRuleCall_5_0; }
+		public RuleCall getEModesErrorModesParserRuleCall_3_0() { return cEModesErrorModesParserRuleCall_3_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
 	public class ErrorModesElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "hu.bme.mit.ComponentModel.errorModes");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cEModeKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cErrorModeKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameQualifiedNameParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		
 		//errorModes:
-		//	'eMode' name=QualifiedName;
+		//	'error mode' name=QualifiedName;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'eMode' name=QualifiedName
+		//'error mode' name=QualifiedName
 		public Group getGroup() { return cGroup; }
 		
-		//'eMode'
-		public Keyword getEModeKeyword_0() { return cEModeKeyword_0; }
+		//'error mode'
+		public Keyword getErrorModeKeyword_0() { return cErrorModeKeyword_0; }
 		
 		//name=QualifiedName
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
 		//QualifiedName
 		public RuleCall getNameQualifiedNameParserRuleCall_1_0() { return cNameQualifiedNameParserRuleCall_1_0; }
-	}
-	public class ComponentImplElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "hu.bme.mit.ComponentModel.ComponentImpl");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cComponentImplementationKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameQualifiedNameParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cSuperTypeAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final CrossReference cSuperTypeComponentTypeCrossReference_3_0 = (CrossReference)cSuperTypeAssignment_3.eContents().get(0);
-		private final RuleCall cSuperTypeComponentTypeIDTerminalRuleCall_3_0_1 = (RuleCall)cSuperTypeComponentTypeCrossReference_3_0.eContents().get(1);
-		
-		//ComponentImpl:
-		//	'component implementation' name=QualifiedName ':' superType=[ComponentType];
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'component implementation' name=QualifiedName ':' superType=[ComponentType]
-		public Group getGroup() { return cGroup; }
-		
-		//'component implementation'
-		public Keyword getComponentImplementationKeyword_0() { return cComponentImplementationKeyword_0; }
-		
-		//name=QualifiedName
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
-		
-		//QualifiedName
-		public RuleCall getNameQualifiedNameParserRuleCall_1_0() { return cNameQualifiedNameParserRuleCall_1_0; }
-		
-		//':'
-		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
-		
-		//superType=[ComponentType]
-		public Assignment getSuperTypeAssignment_3() { return cSuperTypeAssignment_3; }
-		
-		//[ComponentType]
-		public CrossReference getSuperTypeComponentTypeCrossReference_3_0() { return cSuperTypeComponentTypeCrossReference_3_0; }
-		
-		//ID
-		public RuleCall getSuperTypeComponentTypeIDTerminalRuleCall_3_0_1() { return cSuperTypeComponentTypeIDTerminalRuleCall_3_0_1; }
 	}
 	
 	
 	private final ComponentModelElements pComponentModel;
 	private final AbstractElementElements pAbstractElement;
-	private final ImportEElements pImportE;
 	private final SystemConnDecElements pSystemConnDec;
 	private final QualifiedNameElements pQualifiedName;
 	private final SystemDecElements pSystemDec;
@@ -770,6 +734,7 @@ public class ComponentModelGrammarAccess extends AbstractGrammarElementFinder {
 	private final SystemPortInElements pSystemPortIn;
 	private final SystemPortOutElements pSystemPortOut;
 	private final CompConnDecElements pCompConnDec;
+	private final ComponentImplElements pComponentImpl;
 	private final ComponentTypeElements pComponentType;
 	private final ComponentFeatureElements pComponentFeature;
 	private final PortElements pPort;
@@ -777,7 +742,6 @@ public class ComponentModelGrammarAccess extends AbstractGrammarElementFinder {
 	private final OutPortElements pOutPort;
 	private final PortTypeElements pPortType;
 	private final ErrorModesElements pErrorModes;
-	private final ComponentImplElements pComponentImpl;
 	
 	private final Grammar grammar;
 	
@@ -790,7 +754,6 @@ public class ComponentModelGrammarAccess extends AbstractGrammarElementFinder {
 		this.gaTerminals = gaTerminals;
 		this.pComponentModel = new ComponentModelElements();
 		this.pAbstractElement = new AbstractElementElements();
-		this.pImportE = new ImportEElements();
 		this.pSystemConnDec = new SystemConnDecElements();
 		this.pQualifiedName = new QualifiedNameElements();
 		this.pSystemDec = new SystemDecElements();
@@ -799,6 +762,7 @@ public class ComponentModelGrammarAccess extends AbstractGrammarElementFinder {
 		this.pSystemPortIn = new SystemPortInElements();
 		this.pSystemPortOut = new SystemPortOutElements();
 		this.pCompConnDec = new CompConnDecElements();
+		this.pComponentImpl = new ComponentImplElements();
 		this.pComponentType = new ComponentTypeElements();
 		this.pComponentFeature = new ComponentFeatureElements();
 		this.pPort = new PortElements();
@@ -806,7 +770,6 @@ public class ComponentModelGrammarAccess extends AbstractGrammarElementFinder {
 		this.pOutPort = new OutPortElements();
 		this.pPortType = new PortTypeElements();
 		this.pErrorModes = new ErrorModesElements();
-		this.pComponentImpl = new ComponentImplElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -847,7 +810,7 @@ public class ComponentModelGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//AbstractElement:
-	//	ImportE | SystemDec | SystemConnDec;
+	//	SystemDec | SystemConnDec;
 	public AbstractElementElements getAbstractElementAccess() {
 		return pAbstractElement;
 	}
@@ -856,16 +819,9 @@ public class ComponentModelGrammarAccess extends AbstractGrammarElementFinder {
 		return getAbstractElementAccess().getRule();
 	}
 	
-	//ImportE:
-	//	'import emodel' includedEModel=[emod::ErrorModel];
-	public ImportEElements getImportEAccess() {
-		return pImportE;
-	}
-	
-	public ParserRule getImportERule() {
-		return getImportEAccess().getRule();
-	}
-	
+	////ImportE | 
+	////ImportE:
+	////	'import emodel' includedEModel=[emod::ErrorModel];
 	//SystemConnDec:
 	//	'system connection' name=QualifiedName 'from' sourceSystem=[SystemDec] '.' sourcePort=[SystemPortDec]
 	//	'to' targetSystem=[SystemDec] '.' targetPort=[SystemPortDec];
@@ -900,7 +856,7 @@ public class ComponentModelGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//AbstractFeatures:
-	//	ComponentType | CompConnDec | PortType | ComponentImpl | SystemPortDec;
+	//	ComponentType | ComponentImpl | CompConnDec | PortType | SystemPortDec;
 	public AbstractFeaturesElements getAbstractFeaturesAccess() {
 		return pAbstractFeatures;
 	}
@@ -920,7 +876,7 @@ public class ComponentModelGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//SystemPortIn:
-	//	'system port in' name=QualifiedName 'to' inComp=[ComponentImpl] '.' inPort=[Port];
+	//	'system port in' name=QualifiedName 'to' inComp=[ComponentImpl] '.' inPort=[InPort];
 	public SystemPortInElements getSystemPortInAccess() {
 		return pSystemPortIn;
 	}
@@ -930,7 +886,7 @@ public class ComponentModelGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//SystemPortOut:
-	//	'system port out' name=QualifiedName 'from' outComp=[ComponentImpl] '.' outPort=[Port];
+	//	'system port out' name=QualifiedName 'from' outComp=[ComponentImpl] '.' outPort=[OutPort];
 	public SystemPortOutElements getSystemPortOutAccess() {
 		return pSystemPortOut;
 	}
@@ -940,14 +896,24 @@ public class ComponentModelGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//CompConnDec:
-	//	'connection' name=ID 'from' sourceComp=[ComponentImpl] '.' sourcePort=[Port]
-	//	'to' targetComp=[ComponentImpl] '.' targetPort=[Port];
+	//	'connection' name=ID 'from' sourceComp=[ComponentImpl] '.' sourcePort=[OutPort]
+	//	'to' targetComp=[ComponentImpl] '.' targetPort=[InPort];
 	public CompConnDecElements getCompConnDecAccess() {
 		return pCompConnDec;
 	}
 	
 	public ParserRule getCompConnDecRule() {
 		return getCompConnDecAccess().getRule();
+	}
+	
+	//ComponentImpl:
+	//	'component implementation' name=QualifiedName ':' superType=[ComponentType];
+	public ComponentImplElements getComponentImplAccess() {
+		return pComponentImpl;
+	}
+	
+	public ParserRule getComponentImplRule() {
+		return getComponentImplAccess().getRule();
 	}
 	
 	//ComponentType:
@@ -1003,8 +969,9 @@ public class ComponentModelGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//PortType:
-	//	'port type' name=QualifiedName ':' 'eModes' '{'
-	//	eModes=errorModes '}';
+	//	'port type' name=QualifiedName '{'
+	//	eModes=errorModes*
+	//	'}';
 	public PortTypeElements getPortTypeAccess() {
 		return pPortType;
 	}
@@ -1014,23 +981,13 @@ public class ComponentModelGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//errorModes:
-	//	'eMode' name=QualifiedName;
+	//	'error mode' name=QualifiedName;
 	public ErrorModesElements getErrorModesAccess() {
 		return pErrorModes;
 	}
 	
 	public ParserRule getErrorModesRule() {
 		return getErrorModesAccess().getRule();
-	}
-	
-	//ComponentImpl:
-	//	'component implementation' name=QualifiedName ':' superType=[ComponentType];
-	public ComponentImplElements getComponentImplAccess() {
-		return pComponentImpl;
-	}
-	
-	public ParserRule getComponentImplRule() {
-		return getComponentImplAccess().getRule();
 	}
 	
 	//terminal ID:

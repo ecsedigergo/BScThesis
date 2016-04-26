@@ -8,7 +8,8 @@ import hu.bme.mit.componentModel.CompConnDec;
 import hu.bme.mit.componentModel.ComponentImpl;
 import hu.bme.mit.componentModel.ComponentModelPackage;
 import hu.bme.mit.componentModel.ComponentType;
-import hu.bme.mit.componentModel.Port;
+import hu.bme.mit.componentModel.InPort;
+import hu.bme.mit.componentModel.OutPort;
 import hu.bme.mit.componentModel.PortType;
 import hu.bme.mit.componentModel.SystemConnDec;
 import hu.bme.mit.componentModel.SystemDec;
@@ -48,7 +49,7 @@ public class ComponentModelScopeProvider extends AbstractComponentModelScopeProv
             return IScope.NULLSCOPE;
           }
           final ComponentType compT = compI.getSuperType();
-          final List<Port> ports = EcoreUtil2.<Port>getAllContentsOfType(compT, Port.class);
+          final List<OutPort> ports = EcoreUtil2.<OutPort>getAllContentsOfType(compT, OutPort.class);
           boolean _equals_2 = Objects.equal(ports, null);
           if (_equals_2) {
             return IScope.NULLSCOPE;
@@ -65,15 +66,15 @@ public class ComponentModelScopeProvider extends AbstractComponentModelScopeProv
             return IScope.NULLSCOPE;
           }
           final ComponentType compT_1 = compI_1.getSuperType();
-          final List<Port> ports_1 = EcoreUtil2.<Port>getAllContentsOfType(compT_1, Port.class);
+          final List<InPort> ports_1 = EcoreUtil2.<InPort>getAllContentsOfType(compT_1, InPort.class);
           boolean _equals_5 = Objects.equal(ports_1, null);
           if (_equals_5) {
             return IScope.NULLSCOPE;
           } else {
-            final ArrayList<Port> sourceTypePort = CollectionLiterals.<Port>newArrayList();
-            for (final Port port : ports_1) {
+            final ArrayList<InPort> sourceTypePort = CollectionLiterals.<InPort>newArrayList();
+            for (final InPort port : ports_1) {
               PortType _superType = port.getSuperType();
-              Port _sourcePort = conn.getSourcePort();
+              OutPort _sourcePort = conn.getSourcePort();
               PortType _superType_1 = _sourcePort.getSuperType();
               boolean _equals_6 = Objects.equal(_superType, _superType_1);
               if (_equals_6) {
@@ -98,7 +99,7 @@ public class ComponentModelScopeProvider extends AbstractComponentModelScopeProv
             return IScope.NULLSCOPE;
           }
           final ComponentType compT_2 = compI_2.getSuperType();
-          final List<Port> ports_2 = EcoreUtil2.<Port>getAllContentsOfType(compT_2, Port.class);
+          final List<InPort> ports_2 = EcoreUtil2.<InPort>getAllContentsOfType(compT_2, InPort.class);
           boolean _equals_9 = Objects.equal(ports_2, null);
           if (_equals_9) {
             return IScope.NULLSCOPE;
@@ -118,7 +119,7 @@ public class ComponentModelScopeProvider extends AbstractComponentModelScopeProv
             return IScope.NULLSCOPE;
           }
           final ComponentType compT_3 = compI_3.getSuperType();
-          final List<Port> ports_3 = EcoreUtil2.<Port>getAllContentsOfType(compT_3, Port.class);
+          final List<OutPort> ports_3 = EcoreUtil2.<OutPort>getAllContentsOfType(compT_3, OutPort.class);
           boolean _equals_12 = Objects.equal(ports_3, null);
           if (_equals_12) {
             return IScope.NULLSCOPE;

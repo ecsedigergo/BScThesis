@@ -58,12 +58,12 @@ public interface SystemPortOut extends SystemPortDec
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Out Port</em>' reference.
-   * @see #setOutPort(Port)
+   * @see #setOutPort(OutPort)
    * @see hu.bme.mit.componentModel.ComponentModelPackage#getSystemPortOut_OutPort()
    * @model
    * @generated
    */
-  Port getOutPort();
+  OutPort getOutPort();
 
   /**
    * Sets the value of the '{@link hu.bme.mit.componentModel.SystemPortOut#getOutPort <em>Out Port</em>}' reference.
@@ -73,6 +73,6 @@ public interface SystemPortOut extends SystemPortDec
    * @see #getOutPort()
    * @generated
    */
-  void setOutPort(Port value);
+  void setOutPort(OutPort value);
 
 } // SystemPortOut

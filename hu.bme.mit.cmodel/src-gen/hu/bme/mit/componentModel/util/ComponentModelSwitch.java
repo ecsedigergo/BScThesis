@@ -87,14 +87,6 @@ public class ComponentModelSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case ComponentModelPackage.IMPORT_E:
-      {
-        ImportE importE = (ImportE)theEObject;
-        T result = caseImportE(importE);
-        if (result == null) result = caseAbstractElement(importE);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case ComponentModelPackage.SYSTEM_CONN_DEC:
       {
         SystemConnDec systemConnDec = (SystemConnDec)theEObject;
@@ -152,6 +144,14 @@ public class ComponentModelSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case ComponentModelPackage.COMPONENT_IMPL:
+      {
+        ComponentImpl componentImpl = (ComponentImpl)theEObject;
+        T result = caseComponentImpl(componentImpl);
+        if (result == null) result = caseAbstractFeatures(componentImpl);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case ComponentModelPackage.COMPONENT_TYPE:
       {
         ComponentType componentType = (ComponentType)theEObject;
@@ -205,14 +205,6 @@ public class ComponentModelSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case ComponentModelPackage.COMPONENT_IMPL:
-      {
-        ComponentImpl componentImpl = (ComponentImpl)theEObject;
-        T result = caseComponentImpl(componentImpl);
-        if (result == null) result = caseAbstractFeatures(componentImpl);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       default: return defaultCase(theEObject);
     }
   }
@@ -245,22 +237,6 @@ public class ComponentModelSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseAbstractElement(AbstractElement object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Import E</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Import E</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseImportE(ImportE object)
   {
     return null;
   }
@@ -378,6 +354,22 @@ public class ComponentModelSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Component Impl</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Component Impl</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseComponentImpl(ComponentImpl object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Component Type</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -485,22 +477,6 @@ public class ComponentModelSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseerrorModes(errorModes object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Component Impl</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Component Impl</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseComponentImpl(ComponentImpl object)
   {
     return null;
   }

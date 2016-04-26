@@ -1,19 +1,17 @@
 grammar hu.bme.mit.ComponentModel with org.eclipse.xtext.common.Terminals
-//import "http://www.bme.hu/mit/ErrorModel" as emod
+
 import "http://www.bme.hu/mit/ErrorModel" as emod
 //import "platform:/resource/org.example/src/example.ecore"
-
 generate componentModel "http://www.bme.hu/mit/ComponentModel"
 
 ComponentModel:
 	(elements+=AbstractElement)*;
 
 AbstractElement:
-	ImportE | SystemDec | SystemConnDec;
+	SystemDec | SystemConnDec; //ImportE | 
 
-ImportE:
-	'import emodel' includedEModel=[emod::ErrorModel];
-
+//ImportE:
+//	'import emodel' includedEModel=[emod::ErrorModel];
 SystemConnDec:
 	'system connection' name=QualifiedName 'from' sourceSystem=[SystemDec] '.' sourcePort=[SystemPortDec]
 	'to' targetSystem=[SystemDec] '.' targetPort=[SystemPortDec];
@@ -27,30 +25,33 @@ SystemDec:
 	'}';
 
 AbstractFeatures:
-	ComponentType | CompConnDec | PortType | ComponentImpl | SystemPortDec;
+	ComponentType | ComponentImpl | CompConnDec | PortType | SystemPortDec;
 
 SystemPortDec:
 	SystemPortIn | SystemPortOut;
 
 SystemPortIn:
-	'system port in' name=QualifiedName 'to' inComp=[ComponentImpl] '.' inPort=[Port];
+	'system port in' name=QualifiedName 'to' inComp=[ComponentImpl] '.' inPort=[InPort];
 
 SystemPortOut:
-	'system port out' name=QualifiedName 'from' outComp=[ComponentImpl] '.' outPort=[Port];
+	'system port out' name=QualifiedName 'from' outComp=[ComponentImpl] '.' outPort=[OutPort];
 
 CompConnDec:
-	'connection' name=ID 'from' sourceComp=[ComponentImpl] '.' sourcePort=[Port]
-	'to' targetComp=[ComponentImpl] '.' targetPort=[Port];
+	'connection' name=ID 'from' sourceComp=[ComponentImpl] '.' sourcePort=[OutPort]
+	'to' targetComp=[ComponentImpl] '.' targetPort=[InPort];
+
+ComponentImpl:
+	'component implementation' name=QualifiedName ':' superType=[ComponentType];
 
 ComponentType:
 	'component type' name=QualifiedName '{'
-	(compFeatures+=(ComponentFeature))*
+	(compFeatures+=ComponentFeature)*
 	'}';
 
 ComponentFeature:
 	(ports+=Port);
 
-Port:
+Port: 
 	InPort | OutPort;
 
 InPort:
@@ -60,15 +61,14 @@ OutPort:
 	'port instance out' name=QualifiedName ':' superType=[PortType];
 
 PortType:
-	'port type' name=QualifiedName ':' 'eModes' '{'
-	(eModes=errorModes)
+	'port type' name=QualifiedName '{'
+	(eModes=errorModes)*
 	'}';
 
 errorModes:
-	'eMode' name=QualifiedName;
+	'error mode' name=QualifiedName;
 
-ComponentImpl:
-	'component implementation' name=QualifiedName ':' superType=[ComponentType];
+
 
 	
 

@@ -12,7 +12,6 @@ import hu.bme.mit.componentModel.ComponentModel;
 import hu.bme.mit.componentModel.ComponentModelFactory;
 import hu.bme.mit.componentModel.ComponentModelPackage;
 import hu.bme.mit.componentModel.ComponentType;
-import hu.bme.mit.componentModel.ImportE;
 import hu.bme.mit.componentModel.InPort;
 import hu.bme.mit.componentModel.OutPort;
 import hu.bme.mit.componentModel.Port;
@@ -23,8 +22,6 @@ import hu.bme.mit.componentModel.SystemPortDec;
 import hu.bme.mit.componentModel.SystemPortIn;
 import hu.bme.mit.componentModel.SystemPortOut;
 import hu.bme.mit.componentModel.errorModes;
-
-import hu.bme.mit.errorModel.ErrorModelPackage;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -54,13 +51,6 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
    * @generated
    */
   private EClass abstractElementEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass importEEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -116,6 +106,13 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass componentImplEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass componentTypeEClass = null;
 
   /**
@@ -159,13 +156,6 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
    * @generated
    */
   private EClass errorModesEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass componentImplEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -214,9 +204,6 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
     ComponentModelPackageImpl theComponentModelPackage = (ComponentModelPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ComponentModelPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new ComponentModelPackageImpl());
 
     isInited = true;
-
-    // Initialize simple dependencies
-    ErrorModelPackage.eINSTANCE.eClass();
 
     // Create package meta-data objects
     theComponentModelPackage.createPackageContents();
@@ -268,19 +255,9 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getImportE()
+  public EAttribute getAbstractElement_Name()
   {
-    return importEEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getImportE_IncludedEModel()
-  {
-    return (EReference)importEEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)abstractElementEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -298,19 +275,9 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getSystemConnDec_Name()
-  {
-    return (EAttribute)systemConnDecEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getSystemConnDec_SourceSystem()
   {
-    return (EReference)systemConnDecEClass.getEStructuralFeatures().get(1);
+    return (EReference)systemConnDecEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -320,7 +287,7 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
    */
   public EReference getSystemConnDec_SourcePort()
   {
-    return (EReference)systemConnDecEClass.getEStructuralFeatures().get(2);
+    return (EReference)systemConnDecEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -330,7 +297,7 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
    */
   public EReference getSystemConnDec_TargetSystem()
   {
-    return (EReference)systemConnDecEClass.getEStructuralFeatures().get(3);
+    return (EReference)systemConnDecEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -340,7 +307,7 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
    */
   public EReference getSystemConnDec_TargetPort()
   {
-    return (EReference)systemConnDecEClass.getEStructuralFeatures().get(4);
+    return (EReference)systemConnDecEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -358,19 +325,9 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getSystemDec_Name()
-  {
-    return (EAttribute)systemDecEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getSystemDec_SysFeatures()
   {
-    return (EReference)systemDecEClass.getEStructuralFeatures().get(1);
+    return (EReference)systemDecEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -518,6 +475,26 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getComponentImpl()
+  {
+    return componentImplEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getComponentImpl_SuperType()
+  {
+    return (EReference)componentImplEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getComponentType()
   {
     return componentTypeEClass;
@@ -648,26 +625,6 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getComponentImpl()
-  {
-    return componentImplEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getComponentImpl_SuperType()
-  {
-    return (EReference)componentImplEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public ComponentModelFactory getComponentModelFactory()
   {
     return (ComponentModelFactory)getEFactoryInstance();
@@ -697,19 +654,15 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
     createEReference(componentModelEClass, COMPONENT_MODEL__ELEMENTS);
 
     abstractElementEClass = createEClass(ABSTRACT_ELEMENT);
-
-    importEEClass = createEClass(IMPORT_E);
-    createEReference(importEEClass, IMPORT_E__INCLUDED_EMODEL);
+    createEAttribute(abstractElementEClass, ABSTRACT_ELEMENT__NAME);
 
     systemConnDecEClass = createEClass(SYSTEM_CONN_DEC);
-    createEAttribute(systemConnDecEClass, SYSTEM_CONN_DEC__NAME);
     createEReference(systemConnDecEClass, SYSTEM_CONN_DEC__SOURCE_SYSTEM);
     createEReference(systemConnDecEClass, SYSTEM_CONN_DEC__SOURCE_PORT);
     createEReference(systemConnDecEClass, SYSTEM_CONN_DEC__TARGET_SYSTEM);
     createEReference(systemConnDecEClass, SYSTEM_CONN_DEC__TARGET_PORT);
 
     systemDecEClass = createEClass(SYSTEM_DEC);
-    createEAttribute(systemDecEClass, SYSTEM_DEC__NAME);
     createEReference(systemDecEClass, SYSTEM_DEC__SYS_FEATURES);
 
     abstractFeaturesEClass = createEClass(ABSTRACT_FEATURES);
@@ -731,6 +684,9 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
     createEReference(compConnDecEClass, COMP_CONN_DEC__TARGET_COMP);
     createEReference(compConnDecEClass, COMP_CONN_DEC__TARGET_PORT);
 
+    componentImplEClass = createEClass(COMPONENT_IMPL);
+    createEReference(componentImplEClass, COMPONENT_IMPL__SUPER_TYPE);
+
     componentTypeEClass = createEClass(COMPONENT_TYPE);
     createEReference(componentTypeEClass, COMPONENT_TYPE__COMP_FEATURES);
 
@@ -750,9 +706,6 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
 
     errorModesEClass = createEClass(ERROR_MODES);
     createEAttribute(errorModesEClass, ERROR_MODES__NAME);
-
-    componentImplEClass = createEClass(COMPONENT_IMPL);
-    createEReference(componentImplEClass, COMPONENT_IMPL__SUPER_TYPE);
   }
 
   /**
@@ -779,45 +732,37 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
     setNsPrefix(eNS_PREFIX);
     setNsURI(eNS_URI);
 
-    // Obtain other dependent packages
-    ErrorModelPackage theErrorModelPackage = (ErrorModelPackage)EPackage.Registry.INSTANCE.getEPackage(ErrorModelPackage.eNS_URI);
-
     // Create type parameters
 
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    importEEClass.getESuperTypes().add(this.getAbstractElement());
     systemConnDecEClass.getESuperTypes().add(this.getAbstractElement());
     systemDecEClass.getESuperTypes().add(this.getAbstractElement());
     systemPortDecEClass.getESuperTypes().add(this.getAbstractFeatures());
     systemPortInEClass.getESuperTypes().add(this.getSystemPortDec());
     systemPortOutEClass.getESuperTypes().add(this.getSystemPortDec());
     compConnDecEClass.getESuperTypes().add(this.getAbstractFeatures());
+    componentImplEClass.getESuperTypes().add(this.getAbstractFeatures());
     componentTypeEClass.getESuperTypes().add(this.getAbstractFeatures());
     inPortEClass.getESuperTypes().add(this.getPort());
     outPortEClass.getESuperTypes().add(this.getPort());
     portTypeEClass.getESuperTypes().add(this.getAbstractFeatures());
-    componentImplEClass.getESuperTypes().add(this.getAbstractFeatures());
 
     // Initialize classes and features; add operations and parameters
     initEClass(componentModelEClass, ComponentModel.class, "ComponentModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getComponentModel_Elements(), this.getAbstractElement(), null, "elements", null, 0, -1, ComponentModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(abstractElementEClass, AbstractElement.class, "AbstractElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(importEEClass, ImportE.class, "ImportE", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getImportE_IncludedEModel(), theErrorModelPackage.getErrorModel(), null, "includedEModel", null, 0, 1, ImportE.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getAbstractElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, AbstractElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(systemConnDecEClass, SystemConnDec.class, "SystemConnDec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getSystemConnDec_Name(), ecorePackage.getEString(), "name", null, 0, 1, SystemConnDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSystemConnDec_SourceSystem(), this.getSystemDec(), null, "sourceSystem", null, 0, 1, SystemConnDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSystemConnDec_SourcePort(), this.getSystemPortDec(), null, "sourcePort", null, 0, 1, SystemConnDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSystemConnDec_TargetSystem(), this.getSystemDec(), null, "targetSystem", null, 0, 1, SystemConnDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSystemConnDec_TargetPort(), this.getSystemPortDec(), null, "targetPort", null, 0, 1, SystemConnDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(systemDecEClass, SystemDec.class, "SystemDec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getSystemDec_Name(), ecorePackage.getEString(), "name", null, 0, 1, SystemDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSystemDec_SysFeatures(), this.getAbstractFeatures(), null, "sysFeatures", null, 0, -1, SystemDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(abstractFeaturesEClass, AbstractFeatures.class, "AbstractFeatures", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -827,17 +772,20 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
 
     initEClass(systemPortInEClass, SystemPortIn.class, "SystemPortIn", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getSystemPortIn_InComp(), this.getComponentImpl(), null, "inComp", null, 0, 1, SystemPortIn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSystemPortIn_InPort(), this.getPort(), null, "inPort", null, 0, 1, SystemPortIn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSystemPortIn_InPort(), this.getInPort(), null, "inPort", null, 0, 1, SystemPortIn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(systemPortOutEClass, SystemPortOut.class, "SystemPortOut", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getSystemPortOut_OutComp(), this.getComponentImpl(), null, "outComp", null, 0, 1, SystemPortOut.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSystemPortOut_OutPort(), this.getPort(), null, "outPort", null, 0, 1, SystemPortOut.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSystemPortOut_OutPort(), this.getOutPort(), null, "outPort", null, 0, 1, SystemPortOut.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(compConnDecEClass, CompConnDec.class, "CompConnDec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getCompConnDec_SourceComp(), this.getComponentImpl(), null, "sourceComp", null, 0, 1, CompConnDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getCompConnDec_SourcePort(), this.getPort(), null, "sourcePort", null, 0, 1, CompConnDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCompConnDec_SourcePort(), this.getOutPort(), null, "sourcePort", null, 0, 1, CompConnDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getCompConnDec_TargetComp(), this.getComponentImpl(), null, "targetComp", null, 0, 1, CompConnDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getCompConnDec_TargetPort(), this.getPort(), null, "targetPort", null, 0, 1, CompConnDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCompConnDec_TargetPort(), this.getInPort(), null, "targetPort", null, 0, 1, CompConnDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(componentImplEClass, ComponentImpl.class, "ComponentImpl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getComponentImpl_SuperType(), this.getComponentType(), null, "superType", null, 0, 1, ComponentImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(componentTypeEClass, ComponentType.class, "ComponentType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getComponentType_CompFeatures(), this.getComponentFeature(), null, "compFeatures", null, 0, -1, ComponentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -858,9 +806,6 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
 
     initEClass(errorModesEClass, errorModes.class, "errorModes", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(geterrorModes_Name(), ecorePackage.getEString(), "name", null, 0, 1, errorModes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(componentImplEClass, ComponentImpl.class, "ComponentImpl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getComponentImpl_SuperType(), this.getComponentType(), null, "superType", null, 0, 1, ComponentImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

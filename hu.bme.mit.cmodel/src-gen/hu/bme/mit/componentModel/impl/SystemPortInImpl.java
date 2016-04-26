@@ -5,7 +5,7 @@ package hu.bme.mit.componentModel.impl;
 
 import hu.bme.mit.componentModel.ComponentImpl;
 import hu.bme.mit.componentModel.ComponentModelPackage;
-import hu.bme.mit.componentModel.Port;
+import hu.bme.mit.componentModel.InPort;
 import hu.bme.mit.componentModel.SystemPortIn;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -49,7 +49,7 @@ public class SystemPortInImpl extends SystemPortDecImpl implements SystemPortIn
    * @generated
    * @ordered
    */
-  protected Port inPort;
+  protected InPort inPort;
 
   /**
    * <!-- begin-user-doc -->
@@ -120,12 +120,12 @@ public class SystemPortInImpl extends SystemPortDecImpl implements SystemPortIn
    * <!-- end-user-doc -->
    * @generated
    */
-  public Port getInPort()
+  public InPort getInPort()
   {
     if (inPort != null && inPort.eIsProxy())
     {
       InternalEObject oldInPort = (InternalEObject)inPort;
-      inPort = (Port)eResolveProxy(oldInPort);
+      inPort = (InPort)eResolveProxy(oldInPort);
       if (inPort != oldInPort)
       {
         if (eNotificationRequired())
@@ -140,7 +140,7 @@ public class SystemPortInImpl extends SystemPortDecImpl implements SystemPortIn
    * <!-- end-user-doc -->
    * @generated
    */
-  public Port basicGetInPort()
+  public InPort basicGetInPort()
   {
     return inPort;
   }
@@ -150,9 +150,9 @@ public class SystemPortInImpl extends SystemPortDecImpl implements SystemPortIn
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setInPort(Port newInPort)
+  public void setInPort(InPort newInPort)
   {
-    Port oldInPort = inPort;
+    InPort oldInPort = inPort;
     inPort = newInPort;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, ComponentModelPackage.SYSTEM_PORT_IN__IN_PORT, oldInPort, inPort));
@@ -192,7 +192,7 @@ public class SystemPortInImpl extends SystemPortDecImpl implements SystemPortIn
         setInComp((ComponentImpl)newValue);
         return;
       case ComponentModelPackage.SYSTEM_PORT_IN__IN_PORT:
-        setInPort((Port)newValue);
+        setInPort((InPort)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -212,7 +212,7 @@ public class SystemPortInImpl extends SystemPortDecImpl implements SystemPortIn
         setInComp((ComponentImpl)null);
         return;
       case ComponentModelPackage.SYSTEM_PORT_IN__IN_PORT:
-        setInPort((Port)null);
+        setInPort((InPort)null);
         return;
     }
     super.eUnset(featureID);

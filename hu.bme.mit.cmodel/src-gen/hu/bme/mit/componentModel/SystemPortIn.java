@@ -58,12 +58,12 @@ public interface SystemPortIn extends SystemPortDec
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>In Port</em>' reference.
-   * @see #setInPort(Port)
+   * @see #setInPort(InPort)
    * @see hu.bme.mit.componentModel.ComponentModelPackage#getSystemPortIn_InPort()
    * @model
    * @generated
    */
-  Port getInPort();
+  InPort getInPort();
 
   /**
    * Sets the value of the '{@link hu.bme.mit.componentModel.SystemPortIn#getInPort <em>In Port</em>}' reference.
@@ -73,6 +73,6 @@ public interface SystemPortIn extends SystemPortDec
    * @see #getInPort()
    * @generated
    */
-  void setInPort(Port value);
+  void setInPort(InPort value);
 
 } // SystemPortIn

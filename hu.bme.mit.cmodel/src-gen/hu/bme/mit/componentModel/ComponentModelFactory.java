@@ -42,15 +42,6 @@ public interface ComponentModelFactory extends EFactory
   AbstractElement createAbstractElement();
 
   /**
-   * Returns a new object of class '<em>Import E</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Import E</em>'.
-   * @generated
-   */
-  ImportE createImportE();
-
-  /**
    * Returns a new object of class '<em>System Conn Dec</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -114,6 +105,15 @@ public interface ComponentModelFactory extends EFactory
   CompConnDec createCompConnDec();
 
   /**
+   * Returns a new object of class '<em>Component Impl</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Component Impl</em>'.
+   * @generated
+   */
+  ComponentImpl createComponentImpl();
+
+  /**
    * Returns a new object of class '<em>Component Type</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -175,15 +175,6 @@ public interface ComponentModelFactory extends EFactory
    * @generated
    */
   errorModes createerrorModes();
-
-  /**
-   * Returns a new object of class '<em>Component Impl</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Component Impl</em>'.
-   * @generated
-   */
-  ComponentImpl createComponentImpl();
 
   /**
    * Returns the package supported by this factory.

@@ -67,7 +67,6 @@ public class ComponentModelFactoryImpl extends EFactoryImpl implements Component
     {
       case ComponentModelPackage.COMPONENT_MODEL: return createComponentModel();
       case ComponentModelPackage.ABSTRACT_ELEMENT: return createAbstractElement();
-      case ComponentModelPackage.IMPORT_E: return createImportE();
       case ComponentModelPackage.SYSTEM_CONN_DEC: return createSystemConnDec();
       case ComponentModelPackage.SYSTEM_DEC: return createSystemDec();
       case ComponentModelPackage.ABSTRACT_FEATURES: return createAbstractFeatures();
@@ -75,6 +74,7 @@ public class ComponentModelFactoryImpl extends EFactoryImpl implements Component
       case ComponentModelPackage.SYSTEM_PORT_IN: return createSystemPortIn();
       case ComponentModelPackage.SYSTEM_PORT_OUT: return createSystemPortOut();
       case ComponentModelPackage.COMP_CONN_DEC: return createCompConnDec();
+      case ComponentModelPackage.COMPONENT_IMPL: return createComponentImpl();
       case ComponentModelPackage.COMPONENT_TYPE: return createComponentType();
       case ComponentModelPackage.COMPONENT_FEATURE: return createComponentFeature();
       case ComponentModelPackage.PORT: return createPort();
@@ -82,7 +82,6 @@ public class ComponentModelFactoryImpl extends EFactoryImpl implements Component
       case ComponentModelPackage.OUT_PORT: return createOutPort();
       case ComponentModelPackage.PORT_TYPE: return createPortType();
       case ComponentModelPackage.ERROR_MODES: return createerrorModes();
-      case ComponentModelPackage.COMPONENT_IMPL: return createComponentImpl();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -108,17 +107,6 @@ public class ComponentModelFactoryImpl extends EFactoryImpl implements Component
   {
     AbstractElementImpl abstractElement = new AbstractElementImpl();
     return abstractElement;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ImportE createImportE()
-  {
-    ImportEImpl importE = new ImportEImpl();
-    return importE;
   }
 
   /**
@@ -203,6 +191,17 @@ public class ComponentModelFactoryImpl extends EFactoryImpl implements Component
    * <!-- end-user-doc -->
    * @generated
    */
+  public ComponentImpl createComponentImpl()
+  {
+    ComponentImplImpl componentImpl = new ComponentImplImpl();
+    return componentImpl;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public ComponentType createComponentType()
   {
     ComponentTypeImpl componentType = new ComponentTypeImpl();
@@ -273,17 +272,6 @@ public class ComponentModelFactoryImpl extends EFactoryImpl implements Component
   {
     errorModesImpl errorModes = new errorModesImpl();
     return errorModes;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ComponentImpl createComponentImpl()
-  {
-    ComponentImplImpl componentImpl = new ComponentImplImpl();
-    return componentImpl;
   }
 
   /**

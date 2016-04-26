@@ -23,7 +23,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link hu.bme.mit.componentModel.impl.SystemConnDecImpl#getName <em>Name</em>}</li>
  *   <li>{@link hu.bme.mit.componentModel.impl.SystemConnDecImpl#getSourceSystem <em>Source System</em>}</li>
  *   <li>{@link hu.bme.mit.componentModel.impl.SystemConnDecImpl#getSourcePort <em>Source Port</em>}</li>
  *   <li>{@link hu.bme.mit.componentModel.impl.SystemConnDecImpl#getTargetSystem <em>Target System</em>}</li>
@@ -34,26 +33,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class SystemConnDecImpl extends AbstractElementImpl implements SystemConnDec
 {
-  /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
-
   /**
    * The cached value of the '{@link #getSourceSystem() <em>Source System</em>}' reference.
    * <!-- begin-user-doc -->
@@ -113,29 +92,6 @@ public class SystemConnDecImpl extends AbstractElementImpl implements SystemConn
   protected EClass eStaticClass()
   {
     return ComponentModelPackage.Literals.SYSTEM_CONN_DEC;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getName()
-  {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ComponentModelPackage.SYSTEM_CONN_DEC__NAME, oldName, name));
   }
 
   /**
@@ -320,8 +276,6 @@ public class SystemConnDecImpl extends AbstractElementImpl implements SystemConn
   {
     switch (featureID)
     {
-      case ComponentModelPackage.SYSTEM_CONN_DEC__NAME:
-        return getName();
       case ComponentModelPackage.SYSTEM_CONN_DEC__SOURCE_SYSTEM:
         if (resolve) return getSourceSystem();
         return basicGetSourceSystem();
@@ -348,9 +302,6 @@ public class SystemConnDecImpl extends AbstractElementImpl implements SystemConn
   {
     switch (featureID)
     {
-      case ComponentModelPackage.SYSTEM_CONN_DEC__NAME:
-        setName((String)newValue);
-        return;
       case ComponentModelPackage.SYSTEM_CONN_DEC__SOURCE_SYSTEM:
         setSourceSystem((SystemDec)newValue);
         return;
@@ -377,9 +328,6 @@ public class SystemConnDecImpl extends AbstractElementImpl implements SystemConn
   {
     switch (featureID)
     {
-      case ComponentModelPackage.SYSTEM_CONN_DEC__NAME:
-        setName(NAME_EDEFAULT);
-        return;
       case ComponentModelPackage.SYSTEM_CONN_DEC__SOURCE_SYSTEM:
         setSourceSystem((SystemDec)null);
         return;
@@ -406,8 +354,6 @@ public class SystemConnDecImpl extends AbstractElementImpl implements SystemConn
   {
     switch (featureID)
     {
-      case ComponentModelPackage.SYSTEM_CONN_DEC__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case ComponentModelPackage.SYSTEM_CONN_DEC__SOURCE_SYSTEM:
         return sourceSystem != null;
       case ComponentModelPackage.SYSTEM_CONN_DEC__SOURCE_PORT:
@@ -418,23 +364,6 @@ public class SystemConnDecImpl extends AbstractElementImpl implements SystemConn
         return targetPort != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(')');
-    return result.toString();
   }
 
 } //SystemConnDecImpl

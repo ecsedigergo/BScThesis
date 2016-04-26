@@ -5,7 +5,7 @@ package hu.bme.mit.componentModel.impl;
 
 import hu.bme.mit.componentModel.ComponentImpl;
 import hu.bme.mit.componentModel.ComponentModelPackage;
-import hu.bme.mit.componentModel.Port;
+import hu.bme.mit.componentModel.OutPort;
 import hu.bme.mit.componentModel.SystemPortOut;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -49,7 +49,7 @@ public class SystemPortOutImpl extends SystemPortDecImpl implements SystemPortOu
    * @generated
    * @ordered
    */
-  protected Port outPort;
+  protected OutPort outPort;
 
   /**
    * <!-- begin-user-doc -->
@@ -120,12 +120,12 @@ public class SystemPortOutImpl extends SystemPortDecImpl implements SystemPortOu
    * <!-- end-user-doc -->
    * @generated
    */
-  public Port getOutPort()
+  public OutPort getOutPort()
   {
     if (outPort != null && outPort.eIsProxy())
     {
       InternalEObject oldOutPort = (InternalEObject)outPort;
-      outPort = (Port)eResolveProxy(oldOutPort);
+      outPort = (OutPort)eResolveProxy(oldOutPort);
       if (outPort != oldOutPort)
       {
         if (eNotificationRequired())
@@ -140,7 +140,7 @@ public class SystemPortOutImpl extends SystemPortDecImpl implements SystemPortOu
    * <!-- end-user-doc -->
    * @generated
    */
-  public Port basicGetOutPort()
+  public OutPort basicGetOutPort()
   {
     return outPort;
   }
@@ -150,9 +150,9 @@ public class SystemPortOutImpl extends SystemPortDecImpl implements SystemPortOu
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setOutPort(Port newOutPort)
+  public void setOutPort(OutPort newOutPort)
   {
-    Port oldOutPort = outPort;
+    OutPort oldOutPort = outPort;
     outPort = newOutPort;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, ComponentModelPackage.SYSTEM_PORT_OUT__OUT_PORT, oldOutPort, outPort));
@@ -192,7 +192,7 @@ public class SystemPortOutImpl extends SystemPortDecImpl implements SystemPortOu
         setOutComp((ComponentImpl)newValue);
         return;
       case ComponentModelPackage.SYSTEM_PORT_OUT__OUT_PORT:
-        setOutPort((Port)newValue);
+        setOutPort((OutPort)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -212,7 +212,7 @@ public class SystemPortOutImpl extends SystemPortDecImpl implements SystemPortOu
         setOutComp((ComponentImpl)null);
         return;
       case ComponentModelPackage.SYSTEM_PORT_OUT__OUT_PORT:
-        setOutPort((Port)null);
+        setOutPort((OutPort)null);
         return;
     }
     super.eUnset(featureID);

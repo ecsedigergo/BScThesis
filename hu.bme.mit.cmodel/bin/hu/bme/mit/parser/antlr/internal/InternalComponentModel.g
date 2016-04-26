@@ -113,67 +113,22 @@ ruleAbstractElement returns [EObject current=null]
 }:
 	(
 		{
-			newCompositeNode(grammarAccess.getAbstractElementAccess().getImportEParserRuleCall_0());
+			newCompositeNode(grammarAccess.getAbstractElementAccess().getSystemDecParserRuleCall_0());
 		}
-		this_ImportE_0=ruleImportE
+		this_SystemDec_0=ruleSystemDec
 		{
-			$current = $this_ImportE_0.current;
+			$current = $this_SystemDec_0.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getAbstractElementAccess().getSystemDecParserRuleCall_1());
+			newCompositeNode(grammarAccess.getAbstractElementAccess().getSystemConnDecParserRuleCall_1());
 		}
-		this_SystemDec_1=ruleSystemDec
+		this_SystemConnDec_1=ruleSystemConnDec
 		{
-			$current = $this_SystemDec_1.current;
+			$current = $this_SystemConnDec_1.current;
 			afterParserOrEnumRuleCall();
 		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getAbstractElementAccess().getSystemConnDecParserRuleCall_2());
-		}
-		this_SystemConnDec_2=ruleSystemConnDec
-		{
-			$current = $this_SystemConnDec_2.current;
-			afterParserOrEnumRuleCall();
-		}
-	)
-;
-
-// Entry rule entryRuleImportE
-entryRuleImportE returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getImportERule()); }
-	iv_ruleImportE=ruleImportE
-	{ $current=$iv_ruleImportE.current; }
-	EOF;
-
-// Rule ImportE
-ruleImportE returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		otherlv_0='import emodel'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getImportEAccess().getImportEmodelKeyword_0());
-		}
-		(
-			(
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getImportERule());
-					}
-				}
-				otherlv_1=RULE_ID
-				{
-					newLeafNode(otherlv_1, grammarAccess.getImportEAccess().getIncludedEModelErrorModelCrossReference_1_0());
-				}
-			)
-		)
 	)
 ;
 
@@ -422,29 +377,29 @@ ruleAbstractFeatures returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getAbstractFeaturesAccess().getCompConnDecParserRuleCall_1());
+			newCompositeNode(grammarAccess.getAbstractFeaturesAccess().getComponentImplParserRuleCall_1());
 		}
-		this_CompConnDec_1=ruleCompConnDec
+		this_ComponentImpl_1=ruleComponentImpl
 		{
-			$current = $this_CompConnDec_1.current;
+			$current = $this_ComponentImpl_1.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getAbstractFeaturesAccess().getPortTypeParserRuleCall_2());
+			newCompositeNode(grammarAccess.getAbstractFeaturesAccess().getCompConnDecParserRuleCall_2());
 		}
-		this_PortType_2=rulePortType
+		this_CompConnDec_2=ruleCompConnDec
 		{
-			$current = $this_PortType_2.current;
+			$current = $this_CompConnDec_2.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getAbstractFeaturesAccess().getComponentImplParserRuleCall_3());
+			newCompositeNode(grammarAccess.getAbstractFeaturesAccess().getPortTypeParserRuleCall_3());
 		}
-		this_ComponentImpl_3=ruleComponentImpl
+		this_PortType_3=rulePortType
 		{
-			$current = $this_ComponentImpl_3.current;
+			$current = $this_PortType_3.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
@@ -564,7 +519,7 @@ ruleSystemPortIn returns [EObject current=null]
 				}
 				otherlv_5=RULE_ID
 				{
-					newLeafNode(otherlv_5, grammarAccess.getSystemPortInAccess().getInPortPortCrossReference_5_0());
+					newLeafNode(otherlv_5, grammarAccess.getSystemPortInAccess().getInPortInPortCrossReference_5_0());
 				}
 			)
 		)
@@ -640,7 +595,7 @@ ruleSystemPortOut returns [EObject current=null]
 				}
 				otherlv_5=RULE_ID
 				{
-					newLeafNode(otherlv_5, grammarAccess.getSystemPortOutAccess().getOutPortPortCrossReference_5_0());
+					newLeafNode(otherlv_5, grammarAccess.getSystemPortOutAccess().getOutPortOutPortCrossReference_5_0());
 				}
 			)
 		)
@@ -715,7 +670,7 @@ ruleCompConnDec returns [EObject current=null]
 				}
 				otherlv_5=RULE_ID
 				{
-					newLeafNode(otherlv_5, grammarAccess.getCompConnDecAccess().getSourcePortPortCrossReference_5_0());
+					newLeafNode(otherlv_5, grammarAccess.getCompConnDecAccess().getSourcePortOutPortCrossReference_5_0());
 				}
 			)
 		)
@@ -749,7 +704,66 @@ ruleCompConnDec returns [EObject current=null]
 				}
 				otherlv_9=RULE_ID
 				{
-					newLeafNode(otherlv_9, grammarAccess.getCompConnDecAccess().getTargetPortPortCrossReference_9_0());
+					newLeafNode(otherlv_9, grammarAccess.getCompConnDecAccess().getTargetPortInPortCrossReference_9_0());
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleComponentImpl
+entryRuleComponentImpl returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getComponentImplRule()); }
+	iv_ruleComponentImpl=ruleComponentImpl
+	{ $current=$iv_ruleComponentImpl.current; }
+	EOF;
+
+// Rule ComponentImpl
+ruleComponentImpl returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='component implementation'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getComponentImplAccess().getComponentImplementationKeyword_0());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getComponentImplAccess().getNameQualifiedNameParserRuleCall_1_0());
+				}
+				lv_name_1_0=ruleQualifiedName
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getComponentImplRule());
+					}
+					set(
+						$current,
+						"name",
+						lv_name_1_0,
+						"hu.bme.mit.ComponentModel.QualifiedName");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_2=':'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getComponentImplAccess().getColonKeyword_2());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getComponentImplRule());
+					}
+				}
+				otherlv_3=RULE_ID
+				{
+					newLeafNode(otherlv_3, grammarAccess.getComponentImplAccess().getSuperTypeComponentTypeCrossReference_3_0());
 				}
 			)
 		)
@@ -1054,24 +1068,16 @@ rulePortType returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_2=':'
+		otherlv_2='{'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getPortTypeAccess().getColonKeyword_2());
-		}
-		otherlv_3='eModes'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getPortTypeAccess().getEModesKeyword_3());
-		}
-		otherlv_4='{'
-		{
-			newLeafNode(otherlv_4, grammarAccess.getPortTypeAccess().getLeftCurlyBracketKeyword_4());
+			newLeafNode(otherlv_2, grammarAccess.getPortTypeAccess().getLeftCurlyBracketKeyword_2());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getPortTypeAccess().getEModesErrorModesParserRuleCall_5_0());
+					newCompositeNode(grammarAccess.getPortTypeAccess().getEModesErrorModesParserRuleCall_3_0());
 				}
-				lv_eModes_5_0=ruleerrorModes
+				lv_eModes_3_0=ruleerrorModes
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getPortTypeRule());
@@ -1079,15 +1085,15 @@ rulePortType returns [EObject current=null]
 					set(
 						$current,
 						"eModes",
-						lv_eModes_5_0,
+						lv_eModes_3_0,
 						"hu.bme.mit.ComponentModel.errorModes");
 					afterParserOrEnumRuleCall();
 				}
 			)
-		)
-		otherlv_6='}'
+		)*
+		otherlv_4='}'
 		{
-			newLeafNode(otherlv_6, grammarAccess.getPortTypeAccess().getRightCurlyBracketKeyword_6());
+			newLeafNode(otherlv_4, grammarAccess.getPortTypeAccess().getRightCurlyBracketKeyword_4());
 		}
 	)
 ;
@@ -1108,9 +1114,9 @@ ruleerrorModes returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='eMode'
+		otherlv_0='error mode'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getErrorModesAccess().getEModeKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getErrorModesAccess().getErrorModeKeyword_0());
 		}
 		(
 			(
@@ -1128,65 +1134,6 @@ ruleerrorModes returns [EObject current=null]
 						lv_name_1_0,
 						"hu.bme.mit.ComponentModel.QualifiedName");
 					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-	)
-;
-
-// Entry rule entryRuleComponentImpl
-entryRuleComponentImpl returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getComponentImplRule()); }
-	iv_ruleComponentImpl=ruleComponentImpl
-	{ $current=$iv_ruleComponentImpl.current; }
-	EOF;
-
-// Rule ComponentImpl
-ruleComponentImpl returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		otherlv_0='component implementation'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getComponentImplAccess().getComponentImplementationKeyword_0());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getComponentImplAccess().getNameQualifiedNameParserRuleCall_1_0());
-				}
-				lv_name_1_0=ruleQualifiedName
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getComponentImplRule());
-					}
-					set(
-						$current,
-						"name",
-						lv_name_1_0,
-						"hu.bme.mit.ComponentModel.QualifiedName");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		otherlv_2=':'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getComponentImplAccess().getColonKeyword_2());
-		}
-		(
-			(
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getComponentImplRule());
-					}
-				}
-				otherlv_3=RULE_ID
-				{
-					newLeafNode(otherlv_3, grammarAccess.getComponentImplAccess().getSuperTypeComponentTypeCrossReference_3_0());
 				}
 			)
 		)

@@ -96,41 +96,22 @@ public interface ComponentModelPackage extends EPackage
   int ABSTRACT_ELEMENT = 1;
 
   /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ABSTRACT_ELEMENT__NAME = 0;
+
+  /**
    * The number of structural features of the '<em>Abstract Element</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ABSTRACT_ELEMENT_FEATURE_COUNT = 0;
-
-  /**
-   * The meta object id for the '{@link hu.bme.mit.componentModel.impl.ImportEImpl <em>Import E</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see hu.bme.mit.componentModel.impl.ImportEImpl
-   * @see hu.bme.mit.componentModel.impl.ComponentModelPackageImpl#getImportE()
-   * @generated
-   */
-  int IMPORT_E = 2;
-
-  /**
-   * The feature id for the '<em><b>Included EModel</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IMPORT_E__INCLUDED_EMODEL = ABSTRACT_ELEMENT_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Import E</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IMPORT_E_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 1;
+  int ABSTRACT_ELEMENT_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.componentModel.impl.SystemConnDecImpl <em>System Conn Dec</em>}' class.
@@ -140,7 +121,7 @@ public interface ComponentModelPackage extends EPackage
    * @see hu.bme.mit.componentModel.impl.ComponentModelPackageImpl#getSystemConnDec()
    * @generated
    */
-  int SYSTEM_CONN_DEC = 3;
+  int SYSTEM_CONN_DEC = 2;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -149,7 +130,7 @@ public interface ComponentModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SYSTEM_CONN_DEC__NAME = ABSTRACT_ELEMENT_FEATURE_COUNT + 0;
+  int SYSTEM_CONN_DEC__NAME = ABSTRACT_ELEMENT__NAME;
 
   /**
    * The feature id for the '<em><b>Source System</b></em>' reference.
@@ -158,7 +139,7 @@ public interface ComponentModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SYSTEM_CONN_DEC__SOURCE_SYSTEM = ABSTRACT_ELEMENT_FEATURE_COUNT + 1;
+  int SYSTEM_CONN_DEC__SOURCE_SYSTEM = ABSTRACT_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Source Port</b></em>' reference.
@@ -167,7 +148,7 @@ public interface ComponentModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SYSTEM_CONN_DEC__SOURCE_PORT = ABSTRACT_ELEMENT_FEATURE_COUNT + 2;
+  int SYSTEM_CONN_DEC__SOURCE_PORT = ABSTRACT_ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Target System</b></em>' reference.
@@ -176,7 +157,7 @@ public interface ComponentModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SYSTEM_CONN_DEC__TARGET_SYSTEM = ABSTRACT_ELEMENT_FEATURE_COUNT + 3;
+  int SYSTEM_CONN_DEC__TARGET_SYSTEM = ABSTRACT_ELEMENT_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Target Port</b></em>' reference.
@@ -185,7 +166,7 @@ public interface ComponentModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SYSTEM_CONN_DEC__TARGET_PORT = ABSTRACT_ELEMENT_FEATURE_COUNT + 4;
+  int SYSTEM_CONN_DEC__TARGET_PORT = ABSTRACT_ELEMENT_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>System Conn Dec</em>' class.
@@ -194,7 +175,7 @@ public interface ComponentModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SYSTEM_CONN_DEC_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 5;
+  int SYSTEM_CONN_DEC_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.componentModel.impl.SystemDecImpl <em>System Dec</em>}' class.
@@ -204,7 +185,7 @@ public interface ComponentModelPackage extends EPackage
    * @see hu.bme.mit.componentModel.impl.ComponentModelPackageImpl#getSystemDec()
    * @generated
    */
-  int SYSTEM_DEC = 4;
+  int SYSTEM_DEC = 3;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -213,7 +194,7 @@ public interface ComponentModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SYSTEM_DEC__NAME = ABSTRACT_ELEMENT_FEATURE_COUNT + 0;
+  int SYSTEM_DEC__NAME = ABSTRACT_ELEMENT__NAME;
 
   /**
    * The feature id for the '<em><b>Sys Features</b></em>' containment reference list.
@@ -222,7 +203,7 @@ public interface ComponentModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SYSTEM_DEC__SYS_FEATURES = ABSTRACT_ELEMENT_FEATURE_COUNT + 1;
+  int SYSTEM_DEC__SYS_FEATURES = ABSTRACT_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>System Dec</em>' class.
@@ -231,7 +212,7 @@ public interface ComponentModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SYSTEM_DEC_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 2;
+  int SYSTEM_DEC_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.componentModel.impl.AbstractFeaturesImpl <em>Abstract Features</em>}' class.
@@ -241,7 +222,7 @@ public interface ComponentModelPackage extends EPackage
    * @see hu.bme.mit.componentModel.impl.ComponentModelPackageImpl#getAbstractFeatures()
    * @generated
    */
-  int ABSTRACT_FEATURES = 5;
+  int ABSTRACT_FEATURES = 4;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -269,7 +250,7 @@ public interface ComponentModelPackage extends EPackage
    * @see hu.bme.mit.componentModel.impl.ComponentModelPackageImpl#getSystemPortDec()
    * @generated
    */
-  int SYSTEM_PORT_DEC = 6;
+  int SYSTEM_PORT_DEC = 5;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -297,7 +278,7 @@ public interface ComponentModelPackage extends EPackage
    * @see hu.bme.mit.componentModel.impl.ComponentModelPackageImpl#getSystemPortIn()
    * @generated
    */
-  int SYSTEM_PORT_IN = 7;
+  int SYSTEM_PORT_IN = 6;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -343,7 +324,7 @@ public interface ComponentModelPackage extends EPackage
    * @see hu.bme.mit.componentModel.impl.ComponentModelPackageImpl#getSystemPortOut()
    * @generated
    */
-  int SYSTEM_PORT_OUT = 8;
+  int SYSTEM_PORT_OUT = 7;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -389,7 +370,7 @@ public interface ComponentModelPackage extends EPackage
    * @see hu.bme.mit.componentModel.impl.ComponentModelPackageImpl#getCompConnDec()
    * @generated
    */
-  int COMP_CONN_DEC = 9;
+  int COMP_CONN_DEC = 8;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -444,6 +425,43 @@ public interface ComponentModelPackage extends EPackage
    * @ordered
    */
   int COMP_CONN_DEC_FEATURE_COUNT = ABSTRACT_FEATURES_FEATURE_COUNT + 4;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.componentModel.impl.ComponentImplImpl <em>Component Impl</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.componentModel.impl.ComponentImplImpl
+   * @see hu.bme.mit.componentModel.impl.ComponentModelPackageImpl#getComponentImpl()
+   * @generated
+   */
+  int COMPONENT_IMPL = 9;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_IMPL__NAME = ABSTRACT_FEATURES__NAME;
+
+  /**
+   * The feature id for the '<em><b>Super Type</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_IMPL__SUPER_TYPE = ABSTRACT_FEATURES_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Component Impl</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_IMPL_FEATURE_COUNT = ABSTRACT_FEATURES_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.componentModel.impl.ComponentTypeImpl <em>Component Type</em>}' class.
@@ -686,43 +704,6 @@ public interface ComponentModelPackage extends EPackage
    */
   int ERROR_MODES_FEATURE_COUNT = 1;
 
-  /**
-   * The meta object id for the '{@link hu.bme.mit.componentModel.impl.ComponentImplImpl <em>Component Impl</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see hu.bme.mit.componentModel.impl.ComponentImplImpl
-   * @see hu.bme.mit.componentModel.impl.ComponentModelPackageImpl#getComponentImpl()
-   * @generated
-   */
-  int COMPONENT_IMPL = 17;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPONENT_IMPL__NAME = ABSTRACT_FEATURES__NAME;
-
-  /**
-   * The feature id for the '<em><b>Super Type</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPONENT_IMPL__SUPER_TYPE = ABSTRACT_FEATURES_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Component Impl</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPONENT_IMPL_FEATURE_COUNT = ABSTRACT_FEATURES_FEATURE_COUNT + 1;
-
 
   /**
    * Returns the meta object for class '{@link hu.bme.mit.componentModel.ComponentModel <em>Component Model</em>}'.
@@ -756,25 +737,15 @@ public interface ComponentModelPackage extends EPackage
   EClass getAbstractElement();
 
   /**
-   * Returns the meta object for class '{@link hu.bme.mit.componentModel.ImportE <em>Import E</em>}'.
+   * Returns the meta object for the attribute '{@link hu.bme.mit.componentModel.AbstractElement#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Import E</em>'.
-   * @see hu.bme.mit.componentModel.ImportE
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see hu.bme.mit.componentModel.AbstractElement#getName()
+   * @see #getAbstractElement()
    * @generated
    */
-  EClass getImportE();
-
-  /**
-   * Returns the meta object for the reference '{@link hu.bme.mit.componentModel.ImportE#getIncludedEModel <em>Included EModel</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Included EModel</em>'.
-   * @see hu.bme.mit.componentModel.ImportE#getIncludedEModel()
-   * @see #getImportE()
-   * @generated
-   */
-  EReference getImportE_IncludedEModel();
+  EAttribute getAbstractElement_Name();
 
   /**
    * Returns the meta object for class '{@link hu.bme.mit.componentModel.SystemConnDec <em>System Conn Dec</em>}'.
@@ -785,17 +756,6 @@ public interface ComponentModelPackage extends EPackage
    * @generated
    */
   EClass getSystemConnDec();
-
-  /**
-   * Returns the meta object for the attribute '{@link hu.bme.mit.componentModel.SystemConnDec#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see hu.bme.mit.componentModel.SystemConnDec#getName()
-   * @see #getSystemConnDec()
-   * @generated
-   */
-  EAttribute getSystemConnDec_Name();
 
   /**
    * Returns the meta object for the reference '{@link hu.bme.mit.componentModel.SystemConnDec#getSourceSystem <em>Source System</em>}'.
@@ -850,17 +810,6 @@ public interface ComponentModelPackage extends EPackage
    * @generated
    */
   EClass getSystemDec();
-
-  /**
-   * Returns the meta object for the attribute '{@link hu.bme.mit.componentModel.SystemDec#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see hu.bme.mit.componentModel.SystemDec#getName()
-   * @see #getSystemDec()
-   * @generated
-   */
-  EAttribute getSystemDec_Name();
 
   /**
    * Returns the meta object for the containment reference list '{@link hu.bme.mit.componentModel.SystemDec#getSysFeatures <em>Sys Features</em>}'.
@@ -1023,6 +972,27 @@ public interface ComponentModelPackage extends EPackage
   EReference getCompConnDec_TargetPort();
 
   /**
+   * Returns the meta object for class '{@link hu.bme.mit.componentModel.ComponentImpl <em>Component Impl</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Component Impl</em>'.
+   * @see hu.bme.mit.componentModel.ComponentImpl
+   * @generated
+   */
+  EClass getComponentImpl();
+
+  /**
+   * Returns the meta object for the reference '{@link hu.bme.mit.componentModel.ComponentImpl#getSuperType <em>Super Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Super Type</em>'.
+   * @see hu.bme.mit.componentModel.ComponentImpl#getSuperType()
+   * @see #getComponentImpl()
+   * @generated
+   */
+  EReference getComponentImpl_SuperType();
+
+  /**
    * Returns the meta object for class '{@link hu.bme.mit.componentModel.ComponentType <em>Component Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1159,27 +1129,6 @@ public interface ComponentModelPackage extends EPackage
   EAttribute geterrorModes_Name();
 
   /**
-   * Returns the meta object for class '{@link hu.bme.mit.componentModel.ComponentImpl <em>Component Impl</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Component Impl</em>'.
-   * @see hu.bme.mit.componentModel.ComponentImpl
-   * @generated
-   */
-  EClass getComponentImpl();
-
-  /**
-   * Returns the meta object for the reference '{@link hu.bme.mit.componentModel.ComponentImpl#getSuperType <em>Super Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Super Type</em>'.
-   * @see hu.bme.mit.componentModel.ComponentImpl#getSuperType()
-   * @see #getComponentImpl()
-   * @generated
-   */
-  EReference getComponentImpl_SuperType();
-
-  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1231,22 +1180,12 @@ public interface ComponentModelPackage extends EPackage
     EClass ABSTRACT_ELEMENT = eINSTANCE.getAbstractElement();
 
     /**
-     * The meta object literal for the '{@link hu.bme.mit.componentModel.impl.ImportEImpl <em>Import E</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see hu.bme.mit.componentModel.impl.ImportEImpl
-     * @see hu.bme.mit.componentModel.impl.ComponentModelPackageImpl#getImportE()
-     * @generated
-     */
-    EClass IMPORT_E = eINSTANCE.getImportE();
-
-    /**
-     * The meta object literal for the '<em><b>Included EModel</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference IMPORT_E__INCLUDED_EMODEL = eINSTANCE.getImportE_IncludedEModel();
+    EAttribute ABSTRACT_ELEMENT__NAME = eINSTANCE.getAbstractElement_Name();
 
     /**
      * The meta object literal for the '{@link hu.bme.mit.componentModel.impl.SystemConnDecImpl <em>System Conn Dec</em>}' class.
@@ -1257,14 +1196,6 @@ public interface ComponentModelPackage extends EPackage
      * @generated
      */
     EClass SYSTEM_CONN_DEC = eINSTANCE.getSystemConnDec();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute SYSTEM_CONN_DEC__NAME = eINSTANCE.getSystemConnDec_Name();
 
     /**
      * The meta object literal for the '<em><b>Source System</b></em>' reference feature.
@@ -1307,14 +1238,6 @@ public interface ComponentModelPackage extends EPackage
      * @generated
      */
     EClass SYSTEM_DEC = eINSTANCE.getSystemDec();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute SYSTEM_DEC__NAME = eINSTANCE.getSystemDec_Name();
 
     /**
      * The meta object literal for the '<em><b>Sys Features</b></em>' containment reference list feature.
@@ -1447,6 +1370,24 @@ public interface ComponentModelPackage extends EPackage
     EReference COMP_CONN_DEC__TARGET_PORT = eINSTANCE.getCompConnDec_TargetPort();
 
     /**
+     * The meta object literal for the '{@link hu.bme.mit.componentModel.impl.ComponentImplImpl <em>Component Impl</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.componentModel.impl.ComponentImplImpl
+     * @see hu.bme.mit.componentModel.impl.ComponentModelPackageImpl#getComponentImpl()
+     * @generated
+     */
+    EClass COMPONENT_IMPL = eINSTANCE.getComponentImpl();
+
+    /**
+     * The meta object literal for the '<em><b>Super Type</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMPONENT_IMPL__SUPER_TYPE = eINSTANCE.getComponentImpl_SuperType();
+
+    /**
      * The meta object literal for the '{@link hu.bme.mit.componentModel.impl.ComponentTypeImpl <em>Component Type</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1563,24 +1504,6 @@ public interface ComponentModelPackage extends EPackage
      * @generated
      */
     EAttribute ERROR_MODES__NAME = eINSTANCE.geterrorModes_Name();
-
-    /**
-     * The meta object literal for the '{@link hu.bme.mit.componentModel.impl.ComponentImplImpl <em>Component Impl</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see hu.bme.mit.componentModel.impl.ComponentImplImpl
-     * @see hu.bme.mit.componentModel.impl.ComponentModelPackageImpl#getComponentImpl()
-     * @generated
-     */
-    EClass COMPONENT_IMPL = eINSTANCE.getComponentImpl();
-
-    /**
-     * The meta object literal for the '<em><b>Super Type</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference COMPONENT_IMPL__SUPER_TYPE = eINSTANCE.getComponentImpl_SuperType();
 
   }
 

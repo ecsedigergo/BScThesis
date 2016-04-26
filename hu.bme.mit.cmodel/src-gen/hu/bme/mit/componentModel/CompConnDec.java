@@ -60,12 +60,12 @@ public interface CompConnDec extends AbstractFeatures
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Source Port</em>' reference.
-   * @see #setSourcePort(Port)
+   * @see #setSourcePort(OutPort)
    * @see hu.bme.mit.componentModel.ComponentModelPackage#getCompConnDec_SourcePort()
    * @model
    * @generated
    */
-  Port getSourcePort();
+  OutPort getSourcePort();
 
   /**
    * Sets the value of the '{@link hu.bme.mit.componentModel.CompConnDec#getSourcePort <em>Source Port</em>}' reference.
@@ -75,7 +75,7 @@ public interface CompConnDec extends AbstractFeatures
    * @see #getSourcePort()
    * @generated
    */
-  void setSourcePort(Port value);
+  void setSourcePort(OutPort value);
 
   /**
    * Returns the value of the '<em><b>Target Comp</b></em>' reference.
@@ -112,12 +112,12 @@ public interface CompConnDec extends AbstractFeatures
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Target Port</em>' reference.
-   * @see #setTargetPort(Port)
+   * @see #setTargetPort(InPort)
    * @see hu.bme.mit.componentModel.ComponentModelPackage#getCompConnDec_TargetPort()
    * @model
    * @generated
    */
-  Port getTargetPort();
+  InPort getTargetPort();
 
   /**
    * Sets the value of the '{@link hu.bme.mit.componentModel.CompConnDec#getTargetPort <em>Target Port</em>}' reference.
@@ -127,6 +127,6 @@ public interface CompConnDec extends AbstractFeatures
    * @see #getTargetPort()
    * @generated
    */
-  void setTargetPort(Port value);
+  void setTargetPort(InPort value);
 
 } // CompConnDec
