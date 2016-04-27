@@ -747,7 +747,7 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
     componentTypeEClass.getESuperTypes().add(this.getAbstractFeatures());
     inPortEClass.getESuperTypes().add(this.getPort());
     outPortEClass.getESuperTypes().add(this.getPort());
-    portTypeEClass.getESuperTypes().add(this.getAbstractFeatures());
+    portTypeEClass.getESuperTypes().add(this.getAbstractElement());
 
     // Initialize classes and features; add operations and parameters
     initEClass(componentModelEClass, ComponentModel.class, "ComponentModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

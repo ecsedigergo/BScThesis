@@ -5,7 +5,7 @@ package hu.bme.mit.errorModel.impl;
 
 import hu.bme.mit.errorModel.ErrorModelPackage;
 import hu.bme.mit.errorModel.EventDec;
-import hu.bme.mit.errorModel.EventFeature;
+import hu.bme.mit.errorModel.TransitionFeatureDec;
 
 import java.util.Collection;
 
@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link hu.bme.mit.errorModel.impl.EventDecImpl#getEventFeatures <em>Event Features</em>}</li>
+ *   <li>{@link hu.bme.mit.errorModel.impl.EventDecImpl#getFeatures <em>Features</em>}</li>
  * </ul>
  *
  * @generated
@@ -35,14 +35,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class EventDecImpl extends EModelElementImpl implements EventDec
 {
   /**
-   * The cached value of the '{@link #getEventFeatures() <em>Event Features</em>}' containment reference list.
+   * The cached value of the '{@link #getFeatures() <em>Features</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getEventFeatures()
+   * @see #getFeatures()
    * @generated
    * @ordered
    */
-  protected EList<EventFeature> eventFeatures;
+  protected EList<TransitionFeatureDec> features;
 
   /**
    * <!-- begin-user-doc -->
@@ -70,13 +70,13 @@ public class EventDecImpl extends EModelElementImpl implements EventDec
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<EventFeature> getEventFeatures()
+  public EList<TransitionFeatureDec> getFeatures()
   {
-    if (eventFeatures == null)
+    if (features == null)
     {
-      eventFeatures = new EObjectContainmentEList<EventFeature>(EventFeature.class, this, ErrorModelPackage.EVENT_DEC__EVENT_FEATURES);
+      features = new EObjectContainmentEList<TransitionFeatureDec>(TransitionFeatureDec.class, this, ErrorModelPackage.EVENT_DEC__FEATURES);
     }
-    return eventFeatures;
+    return features;
   }
 
   /**
@@ -89,8 +89,8 @@ public class EventDecImpl extends EModelElementImpl implements EventDec
   {
     switch (featureID)
     {
-      case ErrorModelPackage.EVENT_DEC__EVENT_FEATURES:
-        return ((InternalEList<?>)getEventFeatures()).basicRemove(otherEnd, msgs);
+      case ErrorModelPackage.EVENT_DEC__FEATURES:
+        return ((InternalEList<?>)getFeatures()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -105,8 +105,8 @@ public class EventDecImpl extends EModelElementImpl implements EventDec
   {
     switch (featureID)
     {
-      case ErrorModelPackage.EVENT_DEC__EVENT_FEATURES:
-        return getEventFeatures();
+      case ErrorModelPackage.EVENT_DEC__FEATURES:
+        return getFeatures();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -122,9 +122,9 @@ public class EventDecImpl extends EModelElementImpl implements EventDec
   {
     switch (featureID)
     {
-      case ErrorModelPackage.EVENT_DEC__EVENT_FEATURES:
-        getEventFeatures().clear();
-        getEventFeatures().addAll((Collection<? extends EventFeature>)newValue);
+      case ErrorModelPackage.EVENT_DEC__FEATURES:
+        getFeatures().clear();
+        getFeatures().addAll((Collection<? extends TransitionFeatureDec>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -140,8 +140,8 @@ public class EventDecImpl extends EModelElementImpl implements EventDec
   {
     switch (featureID)
     {
-      case ErrorModelPackage.EVENT_DEC__EVENT_FEATURES:
-        getEventFeatures().clear();
+      case ErrorModelPackage.EVENT_DEC__FEATURES:
+        getFeatures().clear();
         return;
     }
     super.eUnset(featureID);
@@ -157,8 +157,8 @@ public class EventDecImpl extends EModelElementImpl implements EventDec
   {
     switch (featureID)
     {
-      case ErrorModelPackage.EVENT_DEC__EVENT_FEATURES:
-        return eventFeatures != null && !eventFeatures.isEmpty();
+      case ErrorModelPackage.EVENT_DEC__FEATURES:
+        return features != null && !features.isEmpty();
     }
     return super.eIsSet(featureID);
   }

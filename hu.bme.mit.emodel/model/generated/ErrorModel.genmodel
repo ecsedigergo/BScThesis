@@ -9,16 +9,8 @@
     <genClasses ecoreClass="ErrorModel.ecore#//ErrorModel">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ErrorModel.ecore#//ErrorModel/AbstractElement"/>
     </genClasses>
-    <genClasses ecoreClass="ErrorModel.ecore#//Error">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ErrorModel.ecore#//Error/name"/>
-    </genClasses>
-    <genClasses ecoreClass="ErrorModel.ecore#//EPropagationDec">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ErrorModel.ecore#//EPropagationDec/sourceModel"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ErrorModel.ecore#//EPropagationDec/sourceProp"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ErrorModel.ecore#//EPropagationDec/targetModel"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ErrorModel.ecore#//EPropagationDec/targetProp"/>
-    </genClasses>
     <genClasses ecoreClass="ErrorModel.ecore#//EModelDec">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ErrorModel.ecore#//EModelDec/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ErrorModel.ecore#//EModelDec/emodelElements"/>
     </genClasses>
     <genClasses ecoreClass="ErrorModel.ecore#//EModelElement">
@@ -33,12 +25,18 @@
     </genClasses>
     <genClasses ecoreClass="ErrorModel.ecore#//StateDec"/>
     <genClasses ecoreClass="ErrorModel.ecore#//EventDec">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ErrorModel.ecore#//EventDec/eventFeatures"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ErrorModel.ecore#//EventDec/Features"/>
     </genClasses>
-    <genClasses ecoreClass="ErrorModel.ecore#//EventFeature"/>
-    <genClasses ecoreClass="ErrorModel.ecore#//EventState">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ErrorModel.ecore#//EventState/sourceState"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ErrorModel.ecore#//EventState/targetState"/>
+    <genClasses ecoreClass="ErrorModel.ecore#//TransitionFeatureDec"/>
+    <genClasses ecoreClass="ErrorModel.ecore#//TriggerDec">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ErrorModel.ecore#//TriggerDec/name"/>
+    </genClasses>
+    <genClasses ecoreClass="ErrorModel.ecore#//ActionDec">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ErrorModel.ecore#//ActionDec/name"/>
+    </genClasses>
+    <genClasses ecoreClass="ErrorModel.ecore#//TransitionState">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ErrorModel.ecore#//TransitionState/sourceState"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ErrorModel.ecore#//TransitionState/targetState"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -33,24 +33,6 @@ public interface ErrorModelFactory extends EFactory
   ErrorModel createErrorModel();
 
   /**
-   * Returns a new object of class '<em>Error</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Error</em>'.
-   * @generated
-   */
-  Error createError();
-
-  /**
-   * Returns a new object of class '<em>EPropagation Dec</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>EPropagation Dec</em>'.
-   * @generated
-   */
-  EPropagationDec createEPropagationDec();
-
-  /**
    * Returns a new object of class '<em>EModel Dec</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -114,22 +96,40 @@ public interface ErrorModelFactory extends EFactory
   EventDec createEventDec();
 
   /**
-   * Returns a new object of class '<em>Event Feature</em>'.
+   * Returns a new object of class '<em>Transition Feature Dec</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Event Feature</em>'.
+   * @return a new object of class '<em>Transition Feature Dec</em>'.
    * @generated
    */
-  EventFeature createEventFeature();
+  TransitionFeatureDec createTransitionFeatureDec();
 
   /**
-   * Returns a new object of class '<em>Event State</em>'.
+   * Returns a new object of class '<em>Trigger Dec</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Event State</em>'.
+   * @return a new object of class '<em>Trigger Dec</em>'.
    * @generated
    */
-  EventState createEventState();
+  TriggerDec createTriggerDec();
+
+  /**
+   * Returns a new object of class '<em>Action Dec</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Action Dec</em>'.
+   * @generated
+   */
+  ActionDec createActionDec();
+
+  /**
+   * Returns a new object of class '<em>Transition State</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Transition State</em>'.
+   * @generated
+   */
+  TransitionState createTransitionState();
 
   /**
    * Returns the package supported by this factory.

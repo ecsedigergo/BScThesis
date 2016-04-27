@@ -129,6 +129,15 @@ ruleAbstractElement returns [EObject current=null]
 			$current = $this_SystemConnDec_1.current;
 			afterParserOrEnumRuleCall();
 		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getAbstractElementAccess().getPortTypeParserRuleCall_2());
+		}
+		this_PortType_2=rulePortType
+		{
+			$current = $this_PortType_2.current;
+			afterParserOrEnumRuleCall();
+		}
 	)
 ;
 
@@ -395,20 +404,11 @@ ruleAbstractFeatures returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getAbstractFeaturesAccess().getPortTypeParserRuleCall_3());
+			newCompositeNode(grammarAccess.getAbstractFeaturesAccess().getSystemPortDecParserRuleCall_3());
 		}
-		this_PortType_3=rulePortType
+		this_SystemPortDec_3=ruleSystemPortDec
 		{
-			$current = $this_PortType_3.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getAbstractFeaturesAccess().getSystemPortDecParserRuleCall_4());
-		}
-		this_SystemPortDec_4=ruleSystemPortDec
-		{
-			$current = $this_SystemPortDec_4.current;
+			$current = $this_SystemPortDec_3.current;
 			afterParserOrEnumRuleCall();
 		}
 	)

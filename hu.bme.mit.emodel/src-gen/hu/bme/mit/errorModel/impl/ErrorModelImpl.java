@@ -3,6 +3,7 @@
  */
 package hu.bme.mit.errorModel.impl;
 
+import hu.bme.mit.errorModel.EModelDec;
 import hu.bme.mit.errorModel.ErrorModel;
 import hu.bme.mit.errorModel.ErrorModelPackage;
 
@@ -43,7 +44,7 @@ public class ErrorModelImpl extends MinimalEObjectImpl.Container implements Erro
    * @generated
    * @ordered
    */
-  protected EList<hu.bme.mit.errorModel.Error> abstractElement;
+  protected EList<EModelDec> abstractElement;
 
   /**
    * <!-- begin-user-doc -->
@@ -71,11 +72,11 @@ public class ErrorModelImpl extends MinimalEObjectImpl.Container implements Erro
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<hu.bme.mit.errorModel.Error> getAbstractElement()
+  public EList<EModelDec> getAbstractElement()
   {
     if (abstractElement == null)
     {
-      abstractElement = new EObjectContainmentEList<hu.bme.mit.errorModel.Error>(hu.bme.mit.errorModel.Error.class, this, ErrorModelPackage.ERROR_MODEL__ABSTRACT_ELEMENT);
+      abstractElement = new EObjectContainmentEList<EModelDec>(EModelDec.class, this, ErrorModelPackage.ERROR_MODEL__ABSTRACT_ELEMENT);
     }
     return abstractElement;
   }
@@ -125,7 +126,7 @@ public class ErrorModelImpl extends MinimalEObjectImpl.Container implements Erro
     {
       case ErrorModelPackage.ERROR_MODEL__ABSTRACT_ELEMENT:
         getAbstractElement().clear();
-        getAbstractElement().addAll((Collection<? extends hu.bme.mit.errorModel.Error>)newValue);
+        getAbstractElement().addAll((Collection<? extends EModelDec>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

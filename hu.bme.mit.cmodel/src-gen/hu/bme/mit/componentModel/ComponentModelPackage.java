@@ -656,7 +656,7 @@ public interface ComponentModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORT_TYPE__NAME = ABSTRACT_FEATURES__NAME;
+  int PORT_TYPE__NAME = ABSTRACT_ELEMENT__NAME;
 
   /**
    * The feature id for the '<em><b>EModes</b></em>' containment reference.
@@ -665,7 +665,7 @@ public interface ComponentModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORT_TYPE__EMODES = ABSTRACT_FEATURES_FEATURE_COUNT + 0;
+  int PORT_TYPE__EMODES = ABSTRACT_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Port Type</em>' class.
@@ -674,7 +674,7 @@ public interface ComponentModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORT_TYPE_FEATURE_COUNT = ABSTRACT_FEATURES_FEATURE_COUNT + 1;
+  int PORT_TYPE_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.componentModel.impl.errorModesImpl <em>error Modes</em>}' class.

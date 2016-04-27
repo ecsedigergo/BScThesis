@@ -27,7 +27,7 @@ public interface ErrorModel extends EObject
 {
   /**
    * Returns the value of the '<em><b>Abstract Element</b></em>' containment reference list.
-   * The list contents are of type {@link hu.bme.mit.errorModel.Error}.
+   * The list contents are of type {@link hu.bme.mit.errorModel.EModelDec}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Abstract Element</em>' containment reference list isn't clear,
@@ -39,6 +39,6 @@ public interface ErrorModel extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<hu.bme.mit.errorModel.Error> getAbstractElement();
+  EList<EModelDec> getAbstractElement();
 
 } // ErrorModel

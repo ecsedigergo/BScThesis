@@ -224,7 +224,7 @@ public class ComponentModelSemanticSequencer extends AbstractDelegatingSemanticS
 	
 	/**
 	 * Contexts:
-	 *     AbstractFeatures returns PortType
+	 *     AbstractElement returns PortType
 	 *     PortType returns PortType
 	 *
 	 * Constraint:

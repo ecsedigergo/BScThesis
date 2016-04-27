@@ -28,7 +28,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class PortTypeImpl extends AbstractFeaturesImpl implements PortType
+public class PortTypeImpl extends AbstractElementImpl implements PortType
 {
   /**
    * The cached value of the '{@link #getEModes() <em>EModes</em>}' containment reference.

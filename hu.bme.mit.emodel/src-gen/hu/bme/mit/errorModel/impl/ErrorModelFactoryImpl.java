@@ -3,19 +3,7 @@
  */
 package hu.bme.mit.errorModel.impl;
 
-import hu.bme.mit.errorModel.EModelDec;
-import hu.bme.mit.errorModel.EModelElement;
-import hu.bme.mit.errorModel.EPropagationDec;
-import hu.bme.mit.errorModel.ErrorModel;
-import hu.bme.mit.errorModel.ErrorModelFactory;
-import hu.bme.mit.errorModel.ErrorModelPackage;
-import hu.bme.mit.errorModel.EventDec;
-import hu.bme.mit.errorModel.EventFeature;
-import hu.bme.mit.errorModel.EventState;
-import hu.bme.mit.errorModel.InPropDec;
-import hu.bme.mit.errorModel.OutPropDec;
-import hu.bme.mit.errorModel.OuterPropagation;
-import hu.bme.mit.errorModel.StateDec;
+import hu.bme.mit.errorModel.*;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -78,8 +66,6 @@ public class ErrorModelFactoryImpl extends EFactoryImpl implements ErrorModelFac
     switch (eClass.getClassifierID())
     {
       case ErrorModelPackage.ERROR_MODEL: return createErrorModel();
-      case ErrorModelPackage.ERROR: return createError();
-      case ErrorModelPackage.EPROPAGATION_DEC: return createEPropagationDec();
       case ErrorModelPackage.EMODEL_DEC: return createEModelDec();
       case ErrorModelPackage.EMODEL_ELEMENT: return createEModelElement();
       case ErrorModelPackage.OUTER_PROPAGATION: return createOuterPropagation();
@@ -87,8 +73,10 @@ public class ErrorModelFactoryImpl extends EFactoryImpl implements ErrorModelFac
       case ErrorModelPackage.OUT_PROP_DEC: return createOutPropDec();
       case ErrorModelPackage.STATE_DEC: return createStateDec();
       case ErrorModelPackage.EVENT_DEC: return createEventDec();
-      case ErrorModelPackage.EVENT_FEATURE: return createEventFeature();
-      case ErrorModelPackage.EVENT_STATE: return createEventState();
+      case ErrorModelPackage.TRANSITION_FEATURE_DEC: return createTransitionFeatureDec();
+      case ErrorModelPackage.TRIGGER_DEC: return createTriggerDec();
+      case ErrorModelPackage.ACTION_DEC: return createActionDec();
+      case ErrorModelPackage.TRANSITION_STATE: return createTransitionState();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -103,28 +91,6 @@ public class ErrorModelFactoryImpl extends EFactoryImpl implements ErrorModelFac
   {
     ErrorModelImpl errorModel = new ErrorModelImpl();
     return errorModel;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public hu.bme.mit.errorModel.Error createError()
-  {
-    ErrorImpl error = new ErrorImpl();
-    return error;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EPropagationDec createEPropagationDec()
-  {
-    EPropagationDecImpl ePropagationDec = new EPropagationDecImpl();
-    return ePropagationDec;
   }
 
   /**
@@ -209,10 +175,10 @@ public class ErrorModelFactoryImpl extends EFactoryImpl implements ErrorModelFac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EventFeature createEventFeature()
+  public TransitionFeatureDec createTransitionFeatureDec()
   {
-    EventFeatureImpl eventFeature = new EventFeatureImpl();
-    return eventFeature;
+    TransitionFeatureDecImpl transitionFeatureDec = new TransitionFeatureDecImpl();
+    return transitionFeatureDec;
   }
 
   /**
@@ -220,10 +186,32 @@ public class ErrorModelFactoryImpl extends EFactoryImpl implements ErrorModelFac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EventState createEventState()
+  public TriggerDec createTriggerDec()
   {
-    EventStateImpl eventState = new EventStateImpl();
-    return eventState;
+    TriggerDecImpl triggerDec = new TriggerDecImpl();
+    return triggerDec;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ActionDec createActionDec()
+  {
+    ActionDecImpl actionDec = new ActionDecImpl();
+    return actionDec;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TransitionState createTransitionState()
+  {
+    TransitionStateImpl transitionState = new TransitionStateImpl();
+    return transitionState;
   }
 
   /**

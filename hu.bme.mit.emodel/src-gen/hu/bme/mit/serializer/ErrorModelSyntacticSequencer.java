@@ -26,9 +26,20 @@ public class ErrorModelSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (ruleCall.getRule() == grammarAccess.getOccurenceDecRule())
+			return getOccurenceDecToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
+	/**
+	 * OccurenceDec:
+	 * 	'occurrence' DOUBLE;
+	 */
+	protected String getOccurenceDecToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "occurrence.";
+	}
 	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {

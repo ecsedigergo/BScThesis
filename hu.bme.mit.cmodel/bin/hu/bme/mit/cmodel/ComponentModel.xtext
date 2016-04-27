@@ -1,6 +1,6 @@
 grammar hu.bme.mit.ComponentModel with org.eclipse.xtext.common.Terminals
 
-import "http://www.bme.hu/mit/ErrorModel" as emod
+//import "http://www.bme.hu/mit/ErrorModel" as emod
 //import "platform:/resource/org.example/src/example.ecore"
 generate componentModel "http://www.bme.hu/mit/ComponentModel"
 
@@ -8,10 +8,9 @@ ComponentModel:
 	(elements+=AbstractElement)*;
 
 AbstractElement:
-	SystemDec | SystemConnDec; //ImportE | 
+	SystemDec | SystemConnDec | PortType; 
 
-//ImportE:
-//	'import emodel' includedEModel=[emod::ErrorModel];
+
 SystemConnDec:
 	'system connection' name=QualifiedName 'from' sourceSystem=[SystemDec] '.' sourcePort=[SystemPortDec]
 	'to' targetSystem=[SystemDec] '.' targetPort=[SystemPortDec];
@@ -25,7 +24,7 @@ SystemDec:
 	'}';
 
 AbstractFeatures:
-	ComponentType | ComponentImpl | CompConnDec | PortType | SystemPortDec;
+	ComponentType | ComponentImpl | CompConnDec  | SystemPortDec;
 
 SystemPortDec:
 	SystemPortIn | SystemPortOut;

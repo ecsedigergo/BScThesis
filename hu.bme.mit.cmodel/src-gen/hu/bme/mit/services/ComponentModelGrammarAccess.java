@@ -43,12 +43,13 @@ public class ComponentModelGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cSystemDecParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cSystemConnDecParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cPortTypeParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//AbstractElement:
-		//	SystemDec | SystemConnDec;
+		//	SystemDec | SystemConnDec | PortType;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//SystemDec | SystemConnDec
+		//SystemDec | SystemConnDec | PortType
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//SystemDec
@@ -56,6 +57,9 @@ public class ComponentModelGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//SystemConnDec
 		public RuleCall getSystemConnDecParserRuleCall_1() { return cSystemConnDecParserRuleCall_1; }
+		
+		//PortType
+		public RuleCall getPortTypeParserRuleCall_2() { return cPortTypeParserRuleCall_2; }
 	}
 	public class SystemConnDecElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "hu.bme.mit.ComponentModel.SystemConnDec");
@@ -80,9 +84,6 @@ public class ComponentModelGrammarAccess extends AbstractGrammarElementFinder {
 		private final CrossReference cTargetPortSystemPortDecCrossReference_9_0 = (CrossReference)cTargetPortAssignment_9.eContents().get(0);
 		private final RuleCall cTargetPortSystemPortDecIDTerminalRuleCall_9_0_1 = (RuleCall)cTargetPortSystemPortDecCrossReference_9_0.eContents().get(1);
 		
-		////ImportE | 
-		////ImportE:
-		////	'import emodel' includedEModel=[emod::ErrorModel];
 		//SystemConnDec:
 		//	'system connection' name=QualifiedName 'from' sourceSystem=[SystemDec] '.' sourcePort=[SystemPortDec]
 		//	'to' targetSystem=[SystemDec] '.' targetPort=[SystemPortDec];
@@ -223,14 +224,13 @@ public class ComponentModelGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cComponentTypeParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cComponentImplParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cCompConnDecParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final RuleCall cPortTypeParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
-		private final RuleCall cSystemPortDecParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final RuleCall cSystemPortDecParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		
 		//AbstractFeatures:
-		//	ComponentType | ComponentImpl | CompConnDec | PortType | SystemPortDec;
+		//	ComponentType | ComponentImpl | CompConnDec | SystemPortDec;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//ComponentType | ComponentImpl | CompConnDec | PortType | SystemPortDec
+		//ComponentType | ComponentImpl | CompConnDec | SystemPortDec
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//ComponentType
@@ -242,11 +242,8 @@ public class ComponentModelGrammarAccess extends AbstractGrammarElementFinder {
 		//CompConnDec
 		public RuleCall getCompConnDecParserRuleCall_2() { return cCompConnDecParserRuleCall_2; }
 		
-		//PortType
-		public RuleCall getPortTypeParserRuleCall_3() { return cPortTypeParserRuleCall_3; }
-		
 		//SystemPortDec
-		public RuleCall getSystemPortDecParserRuleCall_4() { return cSystemPortDecParserRuleCall_4; }
+		public RuleCall getSystemPortDecParserRuleCall_3() { return cSystemPortDecParserRuleCall_3; }
 	}
 	public class SystemPortDecElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "hu.bme.mit.ComponentModel.SystemPortDec");
@@ -810,7 +807,7 @@ public class ComponentModelGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//AbstractElement:
-	//	SystemDec | SystemConnDec;
+	//	SystemDec | SystemConnDec | PortType;
 	public AbstractElementElements getAbstractElementAccess() {
 		return pAbstractElement;
 	}
@@ -819,9 +816,6 @@ public class ComponentModelGrammarAccess extends AbstractGrammarElementFinder {
 		return getAbstractElementAccess().getRule();
 	}
 	
-	////ImportE | 
-	////ImportE:
-	////	'import emodel' includedEModel=[emod::ErrorModel];
 	//SystemConnDec:
 	//	'system connection' name=QualifiedName 'from' sourceSystem=[SystemDec] '.' sourcePort=[SystemPortDec]
 	//	'to' targetSystem=[SystemDec] '.' targetPort=[SystemPortDec];
@@ -856,7 +850,7 @@ public class ComponentModelGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//AbstractFeatures:
-	//	ComponentType | ComponentImpl | CompConnDec | PortType | SystemPortDec;
+	//	ComponentType | ComponentImpl | CompConnDec | SystemPortDec;
 	public AbstractFeaturesElements getAbstractFeaturesAccess() {
 		return pAbstractFeatures;
 	}

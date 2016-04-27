@@ -14,7 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link hu.bme.mit.errorModel.EventDec#getEventFeatures <em>Event Features</em>}</li>
+ *   <li>{@link hu.bme.mit.errorModel.EventDec#getFeatures <em>Features</em>}</li>
  * </ul>
  *
  * @see hu.bme.mit.errorModel.ErrorModelPackage#getEventDec()
@@ -24,19 +24,19 @@ import org.eclipse.emf.common.util.EList;
 public interface EventDec extends EModelElement
 {
   /**
-   * Returns the value of the '<em><b>Event Features</b></em>' containment reference list.
-   * The list contents are of type {@link hu.bme.mit.errorModel.EventFeature}.
+   * Returns the value of the '<em><b>Features</b></em>' containment reference list.
+   * The list contents are of type {@link hu.bme.mit.errorModel.TransitionFeatureDec}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Event Features</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Features</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Event Features</em>' containment reference list.
-   * @see hu.bme.mit.errorModel.ErrorModelPackage#getEventDec_EventFeatures()
+   * @return the value of the '<em>Features</em>' containment reference list.
+   * @see hu.bme.mit.errorModel.ErrorModelPackage#getEventDec_Features()
    * @model containment="true"
    * @generated
    */
-  EList<EventFeature> getEventFeatures();
+  EList<TransitionFeatureDec> getFeatures();
 
 } // EventDec

@@ -3,18 +3,10 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="errorModel" nsURI="http://www.bme.hu/mit/ErrorModel" nsPrefix="errorModel">
   <eClassifiers xsi:type="ecore:EClass" name="ErrorModel">
     <eStructuralFeatures xsi:type="ecore:EReference" name="AbstractElement" upperBound="-1"
-        eType="#//Error" containment="true"/>
+        eType="#//EModelDec" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Error">
+  <eClassifiers xsi:type="ecore:EClass" name="EModelDec">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EPropagationDec" eSuperTypes="#//Error">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="sourceModel" eType="#//EModelDec"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="sourceProp" eType="#//OutPropDec"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="targetModel" eType="#//EModelDec"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="targetProp" eType="#//InPropDec"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EModelDec" eSuperTypes="#//Error">
     <eStructuralFeatures xsi:type="ecore:EReference" name="emodelElements" upperBound="-1"
         eType="#//EModelElement" containment="true"/>
   </eClassifiers>
@@ -30,11 +22,17 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StateDec" eSuperTypes="#//EModelElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="EventDec" eSuperTypes="#//EModelElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="eventFeatures" upperBound="-1"
-        eType="#//EventFeature" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Features" upperBound="-1"
+        eType="#//TransitionFeatureDec" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EventFeature"/>
-  <eClassifiers xsi:type="ecore:EClass" name="EventState" eSuperTypes="#//EventFeature">
+  <eClassifiers xsi:type="ecore:EClass" name="TransitionFeatureDec"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TriggerDec" eSuperTypes="#//TransitionFeatureDec">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActionDec" eSuperTypes="#//TransitionFeatureDec">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TransitionState" eSuperTypes="#//TransitionFeatureDec">
     <eStructuralFeatures xsi:type="ecore:EReference" name="sourceState" eType="#//StateDec"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="targetState" eType="#//StateDec"/>
   </eClassifiers>

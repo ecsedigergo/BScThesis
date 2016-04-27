@@ -6,7 +6,7 @@ import org.eclipse.xtext.xtext.generator.model.project.*
 var rootPath = ".."
 
 Workflow {
-	
+
 	component = XtextGenerator {
 		configuration = {
 			project = StandardProjectConfig {
@@ -22,7 +22,6 @@ Workflow {
 					enabled = true
 				}
 				createEclipseMetaData = true
-				
 			}
 			code = {
 				encoding = "windows-1250"
@@ -32,16 +31,14 @@ Workflow {
 		language = StandardLanguage {
 			name = "hu.bme.mit.cmodel.ComponentModel"
 			fileExtensions = "cmodel"
-			
-			referencedResource = "platform:/resource/hu.bme.mit.emodel/model/generated/ErrorModel.genmodel"
-			
+			//referencedResource = "platform:/resource/hu.bme.mit.emodel/model/generated/ErrorModel.genmodel"
 			serializer = {
 				generateStub = false
 			}
 			validator = {
-				// composedCheck = "org.eclipse.xtext.validation.NamesAreUniqueValidator"
+			// composedCheck = "org.eclipse.xtext.validation.NamesAreUniqueValidator"
 			}
-			
+
 		}
 	}
 }

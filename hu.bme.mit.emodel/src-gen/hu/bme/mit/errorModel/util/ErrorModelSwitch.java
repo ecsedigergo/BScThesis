@@ -3,18 +3,7 @@
  */
 package hu.bme.mit.errorModel.util;
 
-import hu.bme.mit.errorModel.EModelDec;
-import hu.bme.mit.errorModel.EModelElement;
-import hu.bme.mit.errorModel.EPropagationDec;
-import hu.bme.mit.errorModel.ErrorModel;
-import hu.bme.mit.errorModel.ErrorModelPackage;
-import hu.bme.mit.errorModel.EventDec;
-import hu.bme.mit.errorModel.EventFeature;
-import hu.bme.mit.errorModel.EventState;
-import hu.bme.mit.errorModel.InPropDec;
-import hu.bme.mit.errorModel.OutPropDec;
-import hu.bme.mit.errorModel.OuterPropagation;
-import hu.bme.mit.errorModel.StateDec;
+import hu.bme.mit.errorModel.*;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -91,26 +80,10 @@ public class ErrorModelSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case ErrorModelPackage.ERROR:
-      {
-        hu.bme.mit.errorModel.Error error = (hu.bme.mit.errorModel.Error)theEObject;
-        T result = caseError(error);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case ErrorModelPackage.EPROPAGATION_DEC:
-      {
-        EPropagationDec ePropagationDec = (EPropagationDec)theEObject;
-        T result = caseEPropagationDec(ePropagationDec);
-        if (result == null) result = caseError(ePropagationDec);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case ErrorModelPackage.EMODEL_DEC:
       {
         EModelDec eModelDec = (EModelDec)theEObject;
         T result = caseEModelDec(eModelDec);
-        if (result == null) result = caseError(eModelDec);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -163,18 +136,34 @@ public class ErrorModelSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case ErrorModelPackage.EVENT_FEATURE:
+      case ErrorModelPackage.TRANSITION_FEATURE_DEC:
       {
-        EventFeature eventFeature = (EventFeature)theEObject;
-        T result = caseEventFeature(eventFeature);
+        TransitionFeatureDec transitionFeatureDec = (TransitionFeatureDec)theEObject;
+        T result = caseTransitionFeatureDec(transitionFeatureDec);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case ErrorModelPackage.EVENT_STATE:
+      case ErrorModelPackage.TRIGGER_DEC:
       {
-        EventState eventState = (EventState)theEObject;
-        T result = caseEventState(eventState);
-        if (result == null) result = caseEventFeature(eventState);
+        TriggerDec triggerDec = (TriggerDec)theEObject;
+        T result = caseTriggerDec(triggerDec);
+        if (result == null) result = caseTransitionFeatureDec(triggerDec);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ErrorModelPackage.ACTION_DEC:
+      {
+        ActionDec actionDec = (ActionDec)theEObject;
+        T result = caseActionDec(actionDec);
+        if (result == null) result = caseTransitionFeatureDec(actionDec);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ErrorModelPackage.TRANSITION_STATE:
+      {
+        TransitionState transitionState = (TransitionState)theEObject;
+        T result = caseTransitionState(transitionState);
+        if (result == null) result = caseTransitionFeatureDec(transitionState);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -194,38 +183,6 @@ public class ErrorModelSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseErrorModel(ErrorModel object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Error</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Error</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseError(hu.bme.mit.errorModel.Error object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>EPropagation Dec</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>EPropagation Dec</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseEPropagationDec(EPropagationDec object)
   {
     return null;
   }
@@ -343,33 +300,65 @@ public class ErrorModelSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Event Feature</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Transition Feature Dec</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Event Feature</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Transition Feature Dec</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseEventFeature(EventFeature object)
+  public T caseTransitionFeatureDec(TransitionFeatureDec object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Event State</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Trigger Dec</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Event State</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Trigger Dec</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseEventState(EventState object)
+  public T caseTriggerDec(TriggerDec object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Action Dec</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Action Dec</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseActionDec(ActionDec object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Transition State</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Transition State</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTransitionState(TransitionState object)
   {
     return null;
   }

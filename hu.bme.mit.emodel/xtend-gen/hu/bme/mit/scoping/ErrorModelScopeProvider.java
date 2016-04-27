@@ -3,18 +3,7 @@
  */
 package hu.bme.mit.scoping;
 
-import com.google.common.base.Objects;
-import hu.bme.mit.errorModel.EModelDec;
-import hu.bme.mit.errorModel.EPropagationDec;
-import hu.bme.mit.errorModel.ErrorModelPackage;
-import hu.bme.mit.errorModel.OuterPropagation;
 import hu.bme.mit.scoping.AbstractErrorModelScopeProvider;
-import java.util.List;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EReference;
-import org.eclipse.xtext.EcoreUtil2;
-import org.eclipse.xtext.scoping.IScope;
-import org.eclipse.xtext.scoping.Scopes;
 
 /**
  * This class contains custom scoping description.
@@ -24,50 +13,4 @@ import org.eclipse.xtext.scoping.Scopes;
  */
 @SuppressWarnings("all")
 public class ErrorModelScopeProvider extends AbstractErrorModelScopeProvider {
-  @Override
-  public IScope getScope(final EObject context, final EReference reference) {
-    IScope _xblockexpression = null;
-    {
-      if ((context instanceof EPropagationDec)) {
-        final EPropagationDec prop = ((EPropagationDec) context);
-        boolean _equals = Objects.equal(reference, ErrorModelPackage.Literals.EPROPAGATION_DEC__SOURCE_PROP);
-        if (_equals) {
-          EModelDec _sourceModel = prop.getSourceModel();
-          final EModelDec eModelDec = EcoreUtil2.<EModelDec>getContainerOfType(_sourceModel, EModelDec.class);
-          boolean _equals_1 = Objects.equal(eModelDec, null);
-          if (_equals_1) {
-            return IScope.NULLSCOPE;
-          }
-          final List<OuterPropagation> props = EcoreUtil2.<OuterPropagation>getAllContentsOfType(eModelDec, OuterPropagation.class);
-          boolean _equals_2 = Objects.equal(props, null);
-          if (_equals_2) {
-            return IScope.NULLSCOPE;
-          } else {
-            return Scopes.scopeFor(props);
-          }
-        }
-      }
-      if ((context instanceof EPropagationDec)) {
-        final EPropagationDec prop_1 = ((EPropagationDec) context);
-        boolean _equals_3 = Objects.equal(reference, ErrorModelPackage.Literals.EPROPAGATION_DEC__TARGET_PROP);
-        if (_equals_3) {
-          EModelDec _targetModel = prop_1.getTargetModel();
-          final EModelDec eModelDec_1 = EcoreUtil2.<EModelDec>getContainerOfType(_targetModel, EModelDec.class);
-          boolean _equals_4 = Objects.equal(eModelDec_1, null);
-          if (_equals_4) {
-            return IScope.NULLSCOPE;
-          }
-          final List<OuterPropagation> props_1 = EcoreUtil2.<OuterPropagation>getAllContentsOfType(eModelDec_1, OuterPropagation.class);
-          boolean _equals_5 = Objects.equal(props_1, null);
-          if (_equals_5) {
-            return IScope.NULLSCOPE;
-          } else {
-            return Scopes.scopeFor(props_1);
-          }
-        }
-      }
-      _xblockexpression = super.getScope(context, reference);
-    }
-    return _xblockexpression;
-  }
 }

@@ -3,19 +3,20 @@
  */
 package hu.bme.mit.errorModel.impl;
 
+import hu.bme.mit.errorModel.ActionDec;
 import hu.bme.mit.errorModel.EModelDec;
 import hu.bme.mit.errorModel.EModelElement;
-import hu.bme.mit.errorModel.EPropagationDec;
 import hu.bme.mit.errorModel.ErrorModel;
 import hu.bme.mit.errorModel.ErrorModelFactory;
 import hu.bme.mit.errorModel.ErrorModelPackage;
 import hu.bme.mit.errorModel.EventDec;
-import hu.bme.mit.errorModel.EventFeature;
-import hu.bme.mit.errorModel.EventState;
 import hu.bme.mit.errorModel.InPropDec;
 import hu.bme.mit.errorModel.OutPropDec;
 import hu.bme.mit.errorModel.OuterPropagation;
 import hu.bme.mit.errorModel.StateDec;
+import hu.bme.mit.errorModel.TransitionFeatureDec;
+import hu.bme.mit.errorModel.TransitionState;
+import hu.bme.mit.errorModel.TriggerDec;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -38,20 +39,6 @@ public class ErrorModelPackageImpl extends EPackageImpl implements ErrorModelPac
    * @generated
    */
   private EClass errorModelEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass errorEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass ePropagationDecEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -107,14 +94,28 @@ public class ErrorModelPackageImpl extends EPackageImpl implements ErrorModelPac
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass eventFeatureEClass = null;
+  private EClass transitionFeatureDecEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass eventStateEClass = null;
+  private EClass triggerDecEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass actionDecEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass transitionStateEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -204,76 +205,6 @@ public class ErrorModelPackageImpl extends EPackageImpl implements ErrorModelPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getError()
-  {
-    return errorEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getError_Name()
-  {
-    return (EAttribute)errorEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getEPropagationDec()
-  {
-    return ePropagationDecEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getEPropagationDec_SourceModel()
-  {
-    return (EReference)ePropagationDecEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getEPropagationDec_SourceProp()
-  {
-    return (EReference)ePropagationDecEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getEPropagationDec_TargetModel()
-  {
-    return (EReference)ePropagationDecEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getEPropagationDec_TargetProp()
-  {
-    return (EReference)ePropagationDecEClass.getEStructuralFeatures().get(3);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getEModelDec()
   {
     return eModelDecEClass;
@@ -284,9 +215,19 @@ public class ErrorModelPackageImpl extends EPackageImpl implements ErrorModelPac
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getEModelDec_Name()
+  {
+    return (EAttribute)eModelDecEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getEModelDec_EmodelElements()
   {
-    return (EReference)eModelDecEClass.getEStructuralFeatures().get(0);
+    return (EReference)eModelDecEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -384,7 +325,7 @@ public class ErrorModelPackageImpl extends EPackageImpl implements ErrorModelPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getEventDec_EventFeatures()
+  public EReference getEventDec_Features()
   {
     return (EReference)eventDecEClass.getEStructuralFeatures().get(0);
   }
@@ -394,9 +335,9 @@ public class ErrorModelPackageImpl extends EPackageImpl implements ErrorModelPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getEventFeature()
+  public EClass getTransitionFeatureDec()
   {
-    return eventFeatureEClass;
+    return transitionFeatureDecEClass;
   }
 
   /**
@@ -404,9 +345,9 @@ public class ErrorModelPackageImpl extends EPackageImpl implements ErrorModelPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getEventState()
+  public EClass getTriggerDec()
   {
-    return eventStateEClass;
+    return triggerDecEClass;
   }
 
   /**
@@ -414,9 +355,9 @@ public class ErrorModelPackageImpl extends EPackageImpl implements ErrorModelPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getEventState_SourceState()
+  public EAttribute getTriggerDec_Name()
   {
-    return (EReference)eventStateEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)triggerDecEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -424,9 +365,49 @@ public class ErrorModelPackageImpl extends EPackageImpl implements ErrorModelPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getEventState_TargetState()
+  public EClass getActionDec()
   {
-    return (EReference)eventStateEClass.getEStructuralFeatures().get(1);
+    return actionDecEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getActionDec_Name()
+  {
+    return (EAttribute)actionDecEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getTransitionState()
+  {
+    return transitionStateEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTransitionState_SourceState()
+  {
+    return (EReference)transitionStateEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTransitionState_TargetState()
+  {
+    return (EReference)transitionStateEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -462,16 +443,8 @@ public class ErrorModelPackageImpl extends EPackageImpl implements ErrorModelPac
     errorModelEClass = createEClass(ERROR_MODEL);
     createEReference(errorModelEClass, ERROR_MODEL__ABSTRACT_ELEMENT);
 
-    errorEClass = createEClass(ERROR);
-    createEAttribute(errorEClass, ERROR__NAME);
-
-    ePropagationDecEClass = createEClass(EPROPAGATION_DEC);
-    createEReference(ePropagationDecEClass, EPROPAGATION_DEC__SOURCE_MODEL);
-    createEReference(ePropagationDecEClass, EPROPAGATION_DEC__SOURCE_PROP);
-    createEReference(ePropagationDecEClass, EPROPAGATION_DEC__TARGET_MODEL);
-    createEReference(ePropagationDecEClass, EPROPAGATION_DEC__TARGET_PROP);
-
     eModelDecEClass = createEClass(EMODEL_DEC);
+    createEAttribute(eModelDecEClass, EMODEL_DEC__NAME);
     createEReference(eModelDecEClass, EMODEL_DEC__EMODEL_ELEMENTS);
 
     eModelElementEClass = createEClass(EMODEL_ELEMENT);
@@ -488,13 +461,19 @@ public class ErrorModelPackageImpl extends EPackageImpl implements ErrorModelPac
     stateDecEClass = createEClass(STATE_DEC);
 
     eventDecEClass = createEClass(EVENT_DEC);
-    createEReference(eventDecEClass, EVENT_DEC__EVENT_FEATURES);
+    createEReference(eventDecEClass, EVENT_DEC__FEATURES);
 
-    eventFeatureEClass = createEClass(EVENT_FEATURE);
+    transitionFeatureDecEClass = createEClass(TRANSITION_FEATURE_DEC);
 
-    eventStateEClass = createEClass(EVENT_STATE);
-    createEReference(eventStateEClass, EVENT_STATE__SOURCE_STATE);
-    createEReference(eventStateEClass, EVENT_STATE__TARGET_STATE);
+    triggerDecEClass = createEClass(TRIGGER_DEC);
+    createEAttribute(triggerDecEClass, TRIGGER_DEC__NAME);
+
+    actionDecEClass = createEClass(ACTION_DEC);
+    createEAttribute(actionDecEClass, ACTION_DEC__NAME);
+
+    transitionStateEClass = createEClass(TRANSITION_STATE);
+    createEReference(transitionStateEClass, TRANSITION_STATE__SOURCE_STATE);
+    createEReference(transitionStateEClass, TRANSITION_STATE__TARGET_STATE);
   }
 
   /**
@@ -526,29 +505,21 @@ public class ErrorModelPackageImpl extends EPackageImpl implements ErrorModelPac
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    ePropagationDecEClass.getESuperTypes().add(this.getError());
-    eModelDecEClass.getESuperTypes().add(this.getError());
     outerPropagationEClass.getESuperTypes().add(this.getEModelElement());
     inPropDecEClass.getESuperTypes().add(this.getOuterPropagation());
     outPropDecEClass.getESuperTypes().add(this.getOuterPropagation());
     stateDecEClass.getESuperTypes().add(this.getEModelElement());
     eventDecEClass.getESuperTypes().add(this.getEModelElement());
-    eventStateEClass.getESuperTypes().add(this.getEventFeature());
+    triggerDecEClass.getESuperTypes().add(this.getTransitionFeatureDec());
+    actionDecEClass.getESuperTypes().add(this.getTransitionFeatureDec());
+    transitionStateEClass.getESuperTypes().add(this.getTransitionFeatureDec());
 
     // Initialize classes and features; add operations and parameters
     initEClass(errorModelEClass, ErrorModel.class, "ErrorModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getErrorModel_AbstractElement(), this.getError(), null, "AbstractElement", null, 0, -1, ErrorModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(errorEClass, hu.bme.mit.errorModel.Error.class, "Error", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getError_Name(), ecorePackage.getEString(), "name", null, 0, 1, hu.bme.mit.errorModel.Error.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(ePropagationDecEClass, EPropagationDec.class, "EPropagationDec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getEPropagationDec_SourceModel(), this.getEModelDec(), null, "sourceModel", null, 0, 1, EPropagationDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getEPropagationDec_SourceProp(), this.getOutPropDec(), null, "sourceProp", null, 0, 1, EPropagationDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getEPropagationDec_TargetModel(), this.getEModelDec(), null, "targetModel", null, 0, 1, EPropagationDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getEPropagationDec_TargetProp(), this.getInPropDec(), null, "targetProp", null, 0, 1, EPropagationDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getErrorModel_AbstractElement(), this.getEModelDec(), null, "AbstractElement", null, 0, -1, ErrorModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(eModelDecEClass, EModelDec.class, "EModelDec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getEModelDec_Name(), ecorePackage.getEString(), "name", null, 0, 1, EModelDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getEModelDec_EmodelElements(), this.getEModelElement(), null, "emodelElements", null, 0, -1, EModelDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(eModelElementEClass, EModelElement.class, "EModelElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -565,13 +536,19 @@ public class ErrorModelPackageImpl extends EPackageImpl implements ErrorModelPac
     initEClass(stateDecEClass, StateDec.class, "StateDec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(eventDecEClass, EventDec.class, "EventDec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getEventDec_EventFeatures(), this.getEventFeature(), null, "eventFeatures", null, 0, -1, EventDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEventDec_Features(), this.getTransitionFeatureDec(), null, "Features", null, 0, -1, EventDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(eventFeatureEClass, EventFeature.class, "EventFeature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(transitionFeatureDecEClass, TransitionFeatureDec.class, "TransitionFeatureDec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(eventStateEClass, EventState.class, "EventState", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getEventState_SourceState(), this.getStateDec(), null, "sourceState", null, 0, 1, EventState.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getEventState_TargetState(), this.getStateDec(), null, "targetState", null, 0, 1, EventState.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(triggerDecEClass, TriggerDec.class, "TriggerDec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getTriggerDec_Name(), ecorePackage.getEString(), "name", null, 0, 1, TriggerDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(actionDecEClass, ActionDec.class, "ActionDec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getActionDec_Name(), ecorePackage.getEString(), "name", null, 0, 1, ActionDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(transitionStateEClass, TransitionState.class, "TransitionState", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getTransitionState_SourceState(), this.getStateDec(), null, "sourceState", null, 0, 1, TransitionState.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTransitionState_TargetState(), this.getStateDec(), null, "targetState", null, 0, 1, TransitionState.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

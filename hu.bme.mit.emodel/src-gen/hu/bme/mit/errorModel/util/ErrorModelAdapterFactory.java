@@ -3,18 +3,7 @@
  */
 package hu.bme.mit.errorModel.util;
 
-import hu.bme.mit.errorModel.EModelDec;
-import hu.bme.mit.errorModel.EModelElement;
-import hu.bme.mit.errorModel.EPropagationDec;
-import hu.bme.mit.errorModel.ErrorModel;
-import hu.bme.mit.errorModel.ErrorModelPackage;
-import hu.bme.mit.errorModel.EventDec;
-import hu.bme.mit.errorModel.EventFeature;
-import hu.bme.mit.errorModel.EventState;
-import hu.bme.mit.errorModel.InPropDec;
-import hu.bme.mit.errorModel.OutPropDec;
-import hu.bme.mit.errorModel.OuterPropagation;
-import hu.bme.mit.errorModel.StateDec;
+import hu.bme.mit.errorModel.*;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
@@ -92,16 +81,6 @@ public class ErrorModelAdapterFactory extends AdapterFactoryImpl
         return createErrorModelAdapter();
       }
       @Override
-      public Adapter caseError(hu.bme.mit.errorModel.Error object)
-      {
-        return createErrorAdapter();
-      }
-      @Override
-      public Adapter caseEPropagationDec(EPropagationDec object)
-      {
-        return createEPropagationDecAdapter();
-      }
-      @Override
       public Adapter caseEModelDec(EModelDec object)
       {
         return createEModelDecAdapter();
@@ -137,14 +116,24 @@ public class ErrorModelAdapterFactory extends AdapterFactoryImpl
         return createEventDecAdapter();
       }
       @Override
-      public Adapter caseEventFeature(EventFeature object)
+      public Adapter caseTransitionFeatureDec(TransitionFeatureDec object)
       {
-        return createEventFeatureAdapter();
+        return createTransitionFeatureDecAdapter();
       }
       @Override
-      public Adapter caseEventState(EventState object)
+      public Adapter caseTriggerDec(TriggerDec object)
       {
-        return createEventStateAdapter();
+        return createTriggerDecAdapter();
+      }
+      @Override
+      public Adapter caseActionDec(ActionDec object)
+      {
+        return createActionDecAdapter();
+      }
+      @Override
+      public Adapter caseTransitionState(TransitionState object)
+      {
+        return createTransitionStateAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -179,36 +168,6 @@ public class ErrorModelAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createErrorModelAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.errorModel.Error <em>Error</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see hu.bme.mit.errorModel.Error
-   * @generated
-   */
-  public Adapter createErrorAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.errorModel.EPropagationDec <em>EPropagation Dec</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see hu.bme.mit.errorModel.EPropagationDec
-   * @generated
-   */
-  public Adapter createEPropagationDecAdapter()
   {
     return null;
   }
@@ -319,31 +278,61 @@ public class ErrorModelAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.errorModel.EventFeature <em>Event Feature</em>}'.
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.errorModel.TransitionFeatureDec <em>Transition Feature Dec</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see hu.bme.mit.errorModel.EventFeature
+   * @see hu.bme.mit.errorModel.TransitionFeatureDec
    * @generated
    */
-  public Adapter createEventFeatureAdapter()
+  public Adapter createTransitionFeatureDecAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.errorModel.EventState <em>Event State</em>}'.
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.errorModel.TriggerDec <em>Trigger Dec</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see hu.bme.mit.errorModel.EventState
+   * @see hu.bme.mit.errorModel.TriggerDec
    * @generated
    */
-  public Adapter createEventStateAdapter()
+  public Adapter createTriggerDecAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.errorModel.ActionDec <em>Action Dec</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.errorModel.ActionDec
+   * @generated
+   */
+  public Adapter createActionDecAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.errorModel.TransitionState <em>Transition State</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.errorModel.TransitionState
+   * @generated
+   */
+  public Adapter createTransitionStateAdapter()
   {
     return null;
   }

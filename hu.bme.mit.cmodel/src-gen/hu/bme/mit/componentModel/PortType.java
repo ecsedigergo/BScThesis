@@ -20,7 +20,7 @@ package hu.bme.mit.componentModel;
  * @model
  * @generated
  */
-public interface PortType extends AbstractFeatures
+public interface PortType extends AbstractElement
 {
   /**
    * Returns the value of the '<em><b>EModes</b></em>' containment reference.

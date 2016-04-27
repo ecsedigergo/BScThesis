@@ -4,15 +4,16 @@
 package hu.bme.mit.serializer;
 
 import com.google.inject.Inject;
+import hu.bme.mit.errorModel.ActionDec;
 import hu.bme.mit.errorModel.EModelDec;
-import hu.bme.mit.errorModel.EPropagationDec;
 import hu.bme.mit.errorModel.ErrorModel;
 import hu.bme.mit.errorModel.ErrorModelPackage;
 import hu.bme.mit.errorModel.EventDec;
-import hu.bme.mit.errorModel.EventState;
 import hu.bme.mit.errorModel.InPropDec;
 import hu.bme.mit.errorModel.OutPropDec;
 import hu.bme.mit.errorModel.StateDec;
+import hu.bme.mit.errorModel.TransitionState;
+import hu.bme.mit.errorModel.TriggerDec;
 import hu.bme.mit.services.ErrorModelGrammarAccess;
 import java.util.Set;
 import org.eclipse.emf.ecore.EObject;
@@ -39,20 +40,17 @@ public class ErrorModelSemanticSequencer extends AbstractDelegatingSemanticSeque
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == ErrorModelPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
+			case ErrorModelPackage.ACTION_DEC:
+				sequence_ActionDec(context, (ActionDec) semanticObject); 
+				return; 
 			case ErrorModelPackage.EMODEL_DEC:
 				sequence_EModelDec(context, (EModelDec) semanticObject); 
-				return; 
-			case ErrorModelPackage.EPROPAGATION_DEC:
-				sequence_EPropagationDec(context, (EPropagationDec) semanticObject); 
 				return; 
 			case ErrorModelPackage.ERROR_MODEL:
 				sequence_ErrorModel(context, (ErrorModel) semanticObject); 
 				return; 
 			case ErrorModelPackage.EVENT_DEC:
 				sequence_EventDec(context, (EventDec) semanticObject); 
-				return; 
-			case ErrorModelPackage.EVENT_STATE:
-				sequence_EventState(context, (EventState) semanticObject); 
 				return; 
 			case ErrorModelPackage.IN_PROP_DEC:
 				sequence_InPropDec(context, (InPropDec) semanticObject); 
@@ -63,6 +61,12 @@ public class ErrorModelSemanticSequencer extends AbstractDelegatingSemanticSeque
 			case ErrorModelPackage.STATE_DEC:
 				sequence_StateDec(context, (StateDec) semanticObject); 
 				return; 
+			case ErrorModelPackage.TRANSITION_STATE:
+				sequence_TransitionState(context, (TransitionState) semanticObject); 
+				return; 
+			case ErrorModelPackage.TRIGGER_DEC:
+				sequence_TriggerDec(context, (TriggerDec) semanticObject); 
+				return; 
 			}
 		if (errorAcceptor != null)
 			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
@@ -70,7 +74,25 @@ public class ErrorModelSemanticSequencer extends AbstractDelegatingSemanticSeque
 	
 	/**
 	 * Contexts:
-	 *     Error returns EModelDec
+	 *     TransitionFeatureDec returns ActionDec
+	 *     ActionDec returns ActionDec
+	 *
+	 * Constraint:
+	 *     name=QualifiedName
+	 */
+	protected void sequence_ActionDec(ISerializationContext context, ActionDec semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, ErrorModelPackage.Literals.ACTION_DEC__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ErrorModelPackage.Literals.ACTION_DEC__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getActionDecAccess().getNameQualifiedNameParserRuleCall_1_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     EModelDec returns EModelDec
 	 *
 	 * Constraint:
@@ -83,41 +105,10 @@ public class ErrorModelSemanticSequencer extends AbstractDelegatingSemanticSeque
 	
 	/**
 	 * Contexts:
-	 *     Error returns EPropagationDec
-	 *     EPropagationDec returns EPropagationDec
-	 *
-	 * Constraint:
-	 *     (name=QualifiedName sourceModel=[EModelDec|ID] sourceProp=[OutPropDec|ID] targetModel=[EModelDec|ID] targetProp=[InPropDec|ID])
-	 */
-	protected void sequence_EPropagationDec(ISerializationContext context, EPropagationDec semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, ErrorModelPackage.Literals.ERROR__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ErrorModelPackage.Literals.ERROR__NAME));
-			if (transientValues.isValueTransient(semanticObject, ErrorModelPackage.Literals.EPROPAGATION_DEC__SOURCE_MODEL) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ErrorModelPackage.Literals.EPROPAGATION_DEC__SOURCE_MODEL));
-			if (transientValues.isValueTransient(semanticObject, ErrorModelPackage.Literals.EPROPAGATION_DEC__SOURCE_PROP) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ErrorModelPackage.Literals.EPROPAGATION_DEC__SOURCE_PROP));
-			if (transientValues.isValueTransient(semanticObject, ErrorModelPackage.Literals.EPROPAGATION_DEC__TARGET_MODEL) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ErrorModelPackage.Literals.EPROPAGATION_DEC__TARGET_MODEL));
-			if (transientValues.isValueTransient(semanticObject, ErrorModelPackage.Literals.EPROPAGATION_DEC__TARGET_PROP) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ErrorModelPackage.Literals.EPROPAGATION_DEC__TARGET_PROP));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getEPropagationDecAccess().getNameQualifiedNameParserRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getEPropagationDecAccess().getSourceModelEModelDecIDTerminalRuleCall_3_0_1(), semanticObject.getSourceModel());
-		feeder.accept(grammarAccess.getEPropagationDecAccess().getSourcePropOutPropDecIDTerminalRuleCall_5_0_1(), semanticObject.getSourceProp());
-		feeder.accept(grammarAccess.getEPropagationDecAccess().getTargetModelEModelDecIDTerminalRuleCall_7_0_1(), semanticObject.getTargetModel());
-		feeder.accept(grammarAccess.getEPropagationDecAccess().getTargetPropInPropDecIDTerminalRuleCall_9_0_1(), semanticObject.getTargetProp());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
 	 *     ErrorModel returns ErrorModel
 	 *
 	 * Constraint:
-	 *     AbstractElement+=Error+
+	 *     AbstractElement+=EModelDec+
 	 */
 	protected void sequence_ErrorModel(ISerializationContext context, ErrorModel semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -130,32 +121,10 @@ public class ErrorModelSemanticSequencer extends AbstractDelegatingSemanticSeque
 	 *     EventDec returns EventDec
 	 *
 	 * Constraint:
-	 *     (name=QualifiedName eventFeatures+=EventFeature*)
+	 *     (name=QualifiedName Features+=TransitionFeatureDec*)
 	 */
 	protected void sequence_EventDec(ISerializationContext context, EventDec semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     EventFeature returns EventState
-	 *     EventState returns EventState
-	 *
-	 * Constraint:
-	 *     (sourceState=[StateDec|ID] targetState=[StateDec|ID])
-	 */
-	protected void sequence_EventState(ISerializationContext context, EventState semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, ErrorModelPackage.Literals.EVENT_STATE__SOURCE_STATE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ErrorModelPackage.Literals.EVENT_STATE__SOURCE_STATE));
-			if (transientValues.isValueTransient(semanticObject, ErrorModelPackage.Literals.EVENT_STATE__TARGET_STATE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ErrorModelPackage.Literals.EVENT_STATE__TARGET_STATE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getEventStateAccess().getSourceStateStateDecIDTerminalRuleCall_2_0_1(), semanticObject.getSourceState());
-		feeder.accept(grammarAccess.getEventStateAccess().getTargetStateStateDecIDTerminalRuleCall_4_0_1(), semanticObject.getTargetState());
-		feeder.finish();
 	}
 	
 	
@@ -220,6 +189,47 @@ public class ErrorModelSemanticSequencer extends AbstractDelegatingSemanticSeque
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getStateDecAccess().getNameQualifiedNameParserRuleCall_1_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     TransitionFeatureDec returns TransitionState
+	 *     TransitionState returns TransitionState
+	 *
+	 * Constraint:
+	 *     (sourceState=[StateDec|ID] targetState=[StateDec|ID])
+	 */
+	protected void sequence_TransitionState(ISerializationContext context, TransitionState semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, ErrorModelPackage.Literals.TRANSITION_STATE__SOURCE_STATE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ErrorModelPackage.Literals.TRANSITION_STATE__SOURCE_STATE));
+			if (transientValues.isValueTransient(semanticObject, ErrorModelPackage.Literals.TRANSITION_STATE__TARGET_STATE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ErrorModelPackage.Literals.TRANSITION_STATE__TARGET_STATE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getTransitionStateAccess().getSourceStateStateDecIDTerminalRuleCall_2_0_1(), semanticObject.getSourceState());
+		feeder.accept(grammarAccess.getTransitionStateAccess().getTargetStateStateDecIDTerminalRuleCall_4_0_1(), semanticObject.getTargetState());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     TransitionFeatureDec returns TriggerDec
+	 *     TriggerDec returns TriggerDec
+	 *
+	 * Constraint:
+	 *     name=QualifiedName
+	 */
+	protected void sequence_TriggerDec(ISerializationContext context, TriggerDec semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, ErrorModelPackage.Literals.TRIGGER_DEC__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ErrorModelPackage.Literals.TRIGGER_DEC__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getTriggerDecAccess().getNameQualifiedNameParserRuleCall_1_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	

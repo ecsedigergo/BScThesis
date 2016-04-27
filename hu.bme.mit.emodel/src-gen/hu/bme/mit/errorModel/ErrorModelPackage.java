@@ -86,98 +86,6 @@ public interface ErrorModelPackage extends EPackage
   int ERROR_MODEL_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link hu.bme.mit.errorModel.impl.ErrorImpl <em>Error</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see hu.bme.mit.errorModel.impl.ErrorImpl
-   * @see hu.bme.mit.errorModel.impl.ErrorModelPackageImpl#getError()
-   * @generated
-   */
-  int ERROR = 1;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ERROR__NAME = 0;
-
-  /**
-   * The number of structural features of the '<em>Error</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ERROR_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link hu.bme.mit.errorModel.impl.EPropagationDecImpl <em>EPropagation Dec</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see hu.bme.mit.errorModel.impl.EPropagationDecImpl
-   * @see hu.bme.mit.errorModel.impl.ErrorModelPackageImpl#getEPropagationDec()
-   * @generated
-   */
-  int EPROPAGATION_DEC = 2;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EPROPAGATION_DEC__NAME = ERROR__NAME;
-
-  /**
-   * The feature id for the '<em><b>Source Model</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EPROPAGATION_DEC__SOURCE_MODEL = ERROR_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Source Prop</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EPROPAGATION_DEC__SOURCE_PROP = ERROR_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Target Model</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EPROPAGATION_DEC__TARGET_MODEL = ERROR_FEATURE_COUNT + 2;
-
-  /**
-   * The feature id for the '<em><b>Target Prop</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EPROPAGATION_DEC__TARGET_PROP = ERROR_FEATURE_COUNT + 3;
-
-  /**
-   * The number of structural features of the '<em>EPropagation Dec</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EPROPAGATION_DEC_FEATURE_COUNT = ERROR_FEATURE_COUNT + 4;
-
-  /**
    * The meta object id for the '{@link hu.bme.mit.errorModel.impl.EModelDecImpl <em>EModel Dec</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -185,7 +93,7 @@ public interface ErrorModelPackage extends EPackage
    * @see hu.bme.mit.errorModel.impl.ErrorModelPackageImpl#getEModelDec()
    * @generated
    */
-  int EMODEL_DEC = 3;
+  int EMODEL_DEC = 1;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -194,7 +102,7 @@ public interface ErrorModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EMODEL_DEC__NAME = ERROR__NAME;
+  int EMODEL_DEC__NAME = 0;
 
   /**
    * The feature id for the '<em><b>Emodel Elements</b></em>' containment reference list.
@@ -203,7 +111,7 @@ public interface ErrorModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EMODEL_DEC__EMODEL_ELEMENTS = ERROR_FEATURE_COUNT + 0;
+  int EMODEL_DEC__EMODEL_ELEMENTS = 1;
 
   /**
    * The number of structural features of the '<em>EModel Dec</em>' class.
@@ -212,7 +120,7 @@ public interface ErrorModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EMODEL_DEC_FEATURE_COUNT = ERROR_FEATURE_COUNT + 1;
+  int EMODEL_DEC_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.errorModel.impl.EModelElementImpl <em>EModel Element</em>}' class.
@@ -222,7 +130,7 @@ public interface ErrorModelPackage extends EPackage
    * @see hu.bme.mit.errorModel.impl.ErrorModelPackageImpl#getEModelElement()
    * @generated
    */
-  int EMODEL_ELEMENT = 4;
+  int EMODEL_ELEMENT = 2;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -250,7 +158,7 @@ public interface ErrorModelPackage extends EPackage
    * @see hu.bme.mit.errorModel.impl.ErrorModelPackageImpl#getOuterPropagation()
    * @generated
    */
-  int OUTER_PROPAGATION = 5;
+  int OUTER_PROPAGATION = 3;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -278,7 +186,7 @@ public interface ErrorModelPackage extends EPackage
    * @see hu.bme.mit.errorModel.impl.ErrorModelPackageImpl#getInPropDec()
    * @generated
    */
-  int IN_PROP_DEC = 6;
+  int IN_PROP_DEC = 4;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -315,7 +223,7 @@ public interface ErrorModelPackage extends EPackage
    * @see hu.bme.mit.errorModel.impl.ErrorModelPackageImpl#getOutPropDec()
    * @generated
    */
-  int OUT_PROP_DEC = 7;
+  int OUT_PROP_DEC = 5;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -352,7 +260,7 @@ public interface ErrorModelPackage extends EPackage
    * @see hu.bme.mit.errorModel.impl.ErrorModelPackageImpl#getStateDec()
    * @generated
    */
-  int STATE_DEC = 8;
+  int STATE_DEC = 6;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -380,7 +288,7 @@ public interface ErrorModelPackage extends EPackage
    * @see hu.bme.mit.errorModel.impl.ErrorModelPackageImpl#getEventDec()
    * @generated
    */
-  int EVENT_DEC = 9;
+  int EVENT_DEC = 7;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -392,13 +300,13 @@ public interface ErrorModelPackage extends EPackage
   int EVENT_DEC__NAME = EMODEL_ELEMENT__NAME;
 
   /**
-   * The feature id for the '<em><b>Event Features</b></em>' containment reference list.
+   * The feature id for the '<em><b>Features</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EVENT_DEC__EVENT_FEATURES = EMODEL_ELEMENT_FEATURE_COUNT + 0;
+  int EVENT_DEC__FEATURES = EMODEL_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Event Dec</em>' class.
@@ -410,33 +318,89 @@ public interface ErrorModelPackage extends EPackage
   int EVENT_DEC_FEATURE_COUNT = EMODEL_ELEMENT_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link hu.bme.mit.errorModel.impl.EventFeatureImpl <em>Event Feature</em>}' class.
+   * The meta object id for the '{@link hu.bme.mit.errorModel.impl.TransitionFeatureDecImpl <em>Transition Feature Dec</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see hu.bme.mit.errorModel.impl.EventFeatureImpl
-   * @see hu.bme.mit.errorModel.impl.ErrorModelPackageImpl#getEventFeature()
+   * @see hu.bme.mit.errorModel.impl.TransitionFeatureDecImpl
+   * @see hu.bme.mit.errorModel.impl.ErrorModelPackageImpl#getTransitionFeatureDec()
    * @generated
    */
-  int EVENT_FEATURE = 10;
+  int TRANSITION_FEATURE_DEC = 8;
 
   /**
-   * The number of structural features of the '<em>Event Feature</em>' class.
+   * The number of structural features of the '<em>Transition Feature Dec</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EVENT_FEATURE_FEATURE_COUNT = 0;
+  int TRANSITION_FEATURE_DEC_FEATURE_COUNT = 0;
 
   /**
-   * The meta object id for the '{@link hu.bme.mit.errorModel.impl.EventStateImpl <em>Event State</em>}' class.
+   * The meta object id for the '{@link hu.bme.mit.errorModel.impl.TriggerDecImpl <em>Trigger Dec</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see hu.bme.mit.errorModel.impl.EventStateImpl
-   * @see hu.bme.mit.errorModel.impl.ErrorModelPackageImpl#getEventState()
+   * @see hu.bme.mit.errorModel.impl.TriggerDecImpl
+   * @see hu.bme.mit.errorModel.impl.ErrorModelPackageImpl#getTriggerDec()
    * @generated
    */
-  int EVENT_STATE = 11;
+  int TRIGGER_DEC = 9;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TRIGGER_DEC__NAME = TRANSITION_FEATURE_DEC_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Trigger Dec</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TRIGGER_DEC_FEATURE_COUNT = TRANSITION_FEATURE_DEC_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.errorModel.impl.ActionDecImpl <em>Action Dec</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.errorModel.impl.ActionDecImpl
+   * @see hu.bme.mit.errorModel.impl.ErrorModelPackageImpl#getActionDec()
+   * @generated
+   */
+  int ACTION_DEC = 10;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTION_DEC__NAME = TRANSITION_FEATURE_DEC_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Action Dec</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTION_DEC_FEATURE_COUNT = TRANSITION_FEATURE_DEC_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.errorModel.impl.TransitionStateImpl <em>Transition State</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.errorModel.impl.TransitionStateImpl
+   * @see hu.bme.mit.errorModel.impl.ErrorModelPackageImpl#getTransitionState()
+   * @generated
+   */
+  int TRANSITION_STATE = 11;
 
   /**
    * The feature id for the '<em><b>Source State</b></em>' reference.
@@ -445,7 +409,7 @@ public interface ErrorModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EVENT_STATE__SOURCE_STATE = EVENT_FEATURE_FEATURE_COUNT + 0;
+  int TRANSITION_STATE__SOURCE_STATE = TRANSITION_FEATURE_DEC_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Target State</b></em>' reference.
@@ -454,16 +418,16 @@ public interface ErrorModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EVENT_STATE__TARGET_STATE = EVENT_FEATURE_FEATURE_COUNT + 1;
+  int TRANSITION_STATE__TARGET_STATE = TRANSITION_FEATURE_DEC_FEATURE_COUNT + 1;
 
   /**
-   * The number of structural features of the '<em>Event State</em>' class.
+   * The number of structural features of the '<em>Transition State</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EVENT_STATE_FEATURE_COUNT = EVENT_FEATURE_FEATURE_COUNT + 2;
+  int TRANSITION_STATE_FEATURE_COUNT = TRANSITION_FEATURE_DEC_FEATURE_COUNT + 2;
 
 
   /**
@@ -488,81 +452,6 @@ public interface ErrorModelPackage extends EPackage
   EReference getErrorModel_AbstractElement();
 
   /**
-   * Returns the meta object for class '{@link hu.bme.mit.errorModel.Error <em>Error</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Error</em>'.
-   * @see hu.bme.mit.errorModel.Error
-   * @generated
-   */
-  EClass getError();
-
-  /**
-   * Returns the meta object for the attribute '{@link hu.bme.mit.errorModel.Error#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see hu.bme.mit.errorModel.Error#getName()
-   * @see #getError()
-   * @generated
-   */
-  EAttribute getError_Name();
-
-  /**
-   * Returns the meta object for class '{@link hu.bme.mit.errorModel.EPropagationDec <em>EPropagation Dec</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>EPropagation Dec</em>'.
-   * @see hu.bme.mit.errorModel.EPropagationDec
-   * @generated
-   */
-  EClass getEPropagationDec();
-
-  /**
-   * Returns the meta object for the reference '{@link hu.bme.mit.errorModel.EPropagationDec#getSourceModel <em>Source Model</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Source Model</em>'.
-   * @see hu.bme.mit.errorModel.EPropagationDec#getSourceModel()
-   * @see #getEPropagationDec()
-   * @generated
-   */
-  EReference getEPropagationDec_SourceModel();
-
-  /**
-   * Returns the meta object for the reference '{@link hu.bme.mit.errorModel.EPropagationDec#getSourceProp <em>Source Prop</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Source Prop</em>'.
-   * @see hu.bme.mit.errorModel.EPropagationDec#getSourceProp()
-   * @see #getEPropagationDec()
-   * @generated
-   */
-  EReference getEPropagationDec_SourceProp();
-
-  /**
-   * Returns the meta object for the reference '{@link hu.bme.mit.errorModel.EPropagationDec#getTargetModel <em>Target Model</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Target Model</em>'.
-   * @see hu.bme.mit.errorModel.EPropagationDec#getTargetModel()
-   * @see #getEPropagationDec()
-   * @generated
-   */
-  EReference getEPropagationDec_TargetModel();
-
-  /**
-   * Returns the meta object for the reference '{@link hu.bme.mit.errorModel.EPropagationDec#getTargetProp <em>Target Prop</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Target Prop</em>'.
-   * @see hu.bme.mit.errorModel.EPropagationDec#getTargetProp()
-   * @see #getEPropagationDec()
-   * @generated
-   */
-  EReference getEPropagationDec_TargetProp();
-
-  /**
    * Returns the meta object for class '{@link hu.bme.mit.errorModel.EModelDec <em>EModel Dec</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -571,6 +460,17 @@ public interface ErrorModelPackage extends EPackage
    * @generated
    */
   EClass getEModelDec();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.errorModel.EModelDec#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see hu.bme.mit.errorModel.EModelDec#getName()
+   * @see #getEModelDec()
+   * @generated
+   */
+  EAttribute getEModelDec_Name();
 
   /**
    * Returns the meta object for the containment reference list '{@link hu.bme.mit.errorModel.EModelDec#getEmodelElements <em>Emodel Elements</em>}'.
@@ -677,57 +577,99 @@ public interface ErrorModelPackage extends EPackage
   EClass getEventDec();
 
   /**
-   * Returns the meta object for the containment reference list '{@link hu.bme.mit.errorModel.EventDec#getEventFeatures <em>Event Features</em>}'.
+   * Returns the meta object for the containment reference list '{@link hu.bme.mit.errorModel.EventDec#getFeatures <em>Features</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Event Features</em>'.
-   * @see hu.bme.mit.errorModel.EventDec#getEventFeatures()
+   * @return the meta object for the containment reference list '<em>Features</em>'.
+   * @see hu.bme.mit.errorModel.EventDec#getFeatures()
    * @see #getEventDec()
    * @generated
    */
-  EReference getEventDec_EventFeatures();
+  EReference getEventDec_Features();
 
   /**
-   * Returns the meta object for class '{@link hu.bme.mit.errorModel.EventFeature <em>Event Feature</em>}'.
+   * Returns the meta object for class '{@link hu.bme.mit.errorModel.TransitionFeatureDec <em>Transition Feature Dec</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Event Feature</em>'.
-   * @see hu.bme.mit.errorModel.EventFeature
+   * @return the meta object for class '<em>Transition Feature Dec</em>'.
+   * @see hu.bme.mit.errorModel.TransitionFeatureDec
    * @generated
    */
-  EClass getEventFeature();
+  EClass getTransitionFeatureDec();
 
   /**
-   * Returns the meta object for class '{@link hu.bme.mit.errorModel.EventState <em>Event State</em>}'.
+   * Returns the meta object for class '{@link hu.bme.mit.errorModel.TriggerDec <em>Trigger Dec</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Event State</em>'.
-   * @see hu.bme.mit.errorModel.EventState
+   * @return the meta object for class '<em>Trigger Dec</em>'.
+   * @see hu.bme.mit.errorModel.TriggerDec
    * @generated
    */
-  EClass getEventState();
+  EClass getTriggerDec();
 
   /**
-   * Returns the meta object for the reference '{@link hu.bme.mit.errorModel.EventState#getSourceState <em>Source State</em>}'.
+   * Returns the meta object for the attribute '{@link hu.bme.mit.errorModel.TriggerDec#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see hu.bme.mit.errorModel.TriggerDec#getName()
+   * @see #getTriggerDec()
+   * @generated
+   */
+  EAttribute getTriggerDec_Name();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.errorModel.ActionDec <em>Action Dec</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Action Dec</em>'.
+   * @see hu.bme.mit.errorModel.ActionDec
+   * @generated
+   */
+  EClass getActionDec();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.errorModel.ActionDec#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see hu.bme.mit.errorModel.ActionDec#getName()
+   * @see #getActionDec()
+   * @generated
+   */
+  EAttribute getActionDec_Name();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.errorModel.TransitionState <em>Transition State</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Transition State</em>'.
+   * @see hu.bme.mit.errorModel.TransitionState
+   * @generated
+   */
+  EClass getTransitionState();
+
+  /**
+   * Returns the meta object for the reference '{@link hu.bme.mit.errorModel.TransitionState#getSourceState <em>Source State</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Source State</em>'.
-   * @see hu.bme.mit.errorModel.EventState#getSourceState()
-   * @see #getEventState()
+   * @see hu.bme.mit.errorModel.TransitionState#getSourceState()
+   * @see #getTransitionState()
    * @generated
    */
-  EReference getEventState_SourceState();
+  EReference getTransitionState_SourceState();
 
   /**
-   * Returns the meta object for the reference '{@link hu.bme.mit.errorModel.EventState#getTargetState <em>Target State</em>}'.
+   * Returns the meta object for the reference '{@link hu.bme.mit.errorModel.TransitionState#getTargetState <em>Target State</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Target State</em>'.
-   * @see hu.bme.mit.errorModel.EventState#getTargetState()
-   * @see #getEventState()
+   * @see hu.bme.mit.errorModel.TransitionState#getTargetState()
+   * @see #getTransitionState()
    * @generated
    */
-  EReference getEventState_TargetState();
+  EReference getTransitionState_TargetState();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -771,66 +713,6 @@ public interface ErrorModelPackage extends EPackage
     EReference ERROR_MODEL__ABSTRACT_ELEMENT = eINSTANCE.getErrorModel_AbstractElement();
 
     /**
-     * The meta object literal for the '{@link hu.bme.mit.errorModel.impl.ErrorImpl <em>Error</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see hu.bme.mit.errorModel.impl.ErrorImpl
-     * @see hu.bme.mit.errorModel.impl.ErrorModelPackageImpl#getError()
-     * @generated
-     */
-    EClass ERROR = eINSTANCE.getError();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ERROR__NAME = eINSTANCE.getError_Name();
-
-    /**
-     * The meta object literal for the '{@link hu.bme.mit.errorModel.impl.EPropagationDecImpl <em>EPropagation Dec</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see hu.bme.mit.errorModel.impl.EPropagationDecImpl
-     * @see hu.bme.mit.errorModel.impl.ErrorModelPackageImpl#getEPropagationDec()
-     * @generated
-     */
-    EClass EPROPAGATION_DEC = eINSTANCE.getEPropagationDec();
-
-    /**
-     * The meta object literal for the '<em><b>Source Model</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference EPROPAGATION_DEC__SOURCE_MODEL = eINSTANCE.getEPropagationDec_SourceModel();
-
-    /**
-     * The meta object literal for the '<em><b>Source Prop</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference EPROPAGATION_DEC__SOURCE_PROP = eINSTANCE.getEPropagationDec_SourceProp();
-
-    /**
-     * The meta object literal for the '<em><b>Target Model</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference EPROPAGATION_DEC__TARGET_MODEL = eINSTANCE.getEPropagationDec_TargetModel();
-
-    /**
-     * The meta object literal for the '<em><b>Target Prop</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference EPROPAGATION_DEC__TARGET_PROP = eINSTANCE.getEPropagationDec_TargetProp();
-
-    /**
      * The meta object literal for the '{@link hu.bme.mit.errorModel.impl.EModelDecImpl <em>EModel Dec</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -839,6 +721,14 @@ public interface ErrorModelPackage extends EPackage
      * @generated
      */
     EClass EMODEL_DEC = eINSTANCE.getEModelDec();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EMODEL_DEC__NAME = eINSTANCE.getEModelDec_Name();
 
     /**
      * The meta object literal for the '<em><b>Emodel Elements</b></em>' containment reference list feature.
@@ -933,32 +823,68 @@ public interface ErrorModelPackage extends EPackage
     EClass EVENT_DEC = eINSTANCE.getEventDec();
 
     /**
-     * The meta object literal for the '<em><b>Event Features</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Features</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference EVENT_DEC__EVENT_FEATURES = eINSTANCE.getEventDec_EventFeatures();
+    EReference EVENT_DEC__FEATURES = eINSTANCE.getEventDec_Features();
 
     /**
-     * The meta object literal for the '{@link hu.bme.mit.errorModel.impl.EventFeatureImpl <em>Event Feature</em>}' class.
+     * The meta object literal for the '{@link hu.bme.mit.errorModel.impl.TransitionFeatureDecImpl <em>Transition Feature Dec</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see hu.bme.mit.errorModel.impl.EventFeatureImpl
-     * @see hu.bme.mit.errorModel.impl.ErrorModelPackageImpl#getEventFeature()
+     * @see hu.bme.mit.errorModel.impl.TransitionFeatureDecImpl
+     * @see hu.bme.mit.errorModel.impl.ErrorModelPackageImpl#getTransitionFeatureDec()
      * @generated
      */
-    EClass EVENT_FEATURE = eINSTANCE.getEventFeature();
+    EClass TRANSITION_FEATURE_DEC = eINSTANCE.getTransitionFeatureDec();
 
     /**
-     * The meta object literal for the '{@link hu.bme.mit.errorModel.impl.EventStateImpl <em>Event State</em>}' class.
+     * The meta object literal for the '{@link hu.bme.mit.errorModel.impl.TriggerDecImpl <em>Trigger Dec</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see hu.bme.mit.errorModel.impl.EventStateImpl
-     * @see hu.bme.mit.errorModel.impl.ErrorModelPackageImpl#getEventState()
+     * @see hu.bme.mit.errorModel.impl.TriggerDecImpl
+     * @see hu.bme.mit.errorModel.impl.ErrorModelPackageImpl#getTriggerDec()
      * @generated
      */
-    EClass EVENT_STATE = eINSTANCE.getEventState();
+    EClass TRIGGER_DEC = eINSTANCE.getTriggerDec();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TRIGGER_DEC__NAME = eINSTANCE.getTriggerDec_Name();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.errorModel.impl.ActionDecImpl <em>Action Dec</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.errorModel.impl.ActionDecImpl
+     * @see hu.bme.mit.errorModel.impl.ErrorModelPackageImpl#getActionDec()
+     * @generated
+     */
+    EClass ACTION_DEC = eINSTANCE.getActionDec();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ACTION_DEC__NAME = eINSTANCE.getActionDec_Name();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.errorModel.impl.TransitionStateImpl <em>Transition State</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.errorModel.impl.TransitionStateImpl
+     * @see hu.bme.mit.errorModel.impl.ErrorModelPackageImpl#getTransitionState()
+     * @generated
+     */
+    EClass TRANSITION_STATE = eINSTANCE.getTransitionState();
 
     /**
      * The meta object literal for the '<em><b>Source State</b></em>' reference feature.
@@ -966,7 +892,7 @@ public interface ErrorModelPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference EVENT_STATE__SOURCE_STATE = eINSTANCE.getEventState_SourceState();
+    EReference TRANSITION_STATE__SOURCE_STATE = eINSTANCE.getTransitionState_SourceState();
 
     /**
      * The meta object literal for the '<em><b>Target State</b></em>' reference feature.
@@ -974,7 +900,7 @@ public interface ErrorModelPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference EVENT_STATE__TARGET_STATE = eINSTANCE.getEventState_TargetState();
+    EReference TRANSITION_STATE__TARGET_STATE = eINSTANCE.getTransitionState_TargetState();
 
   }
 

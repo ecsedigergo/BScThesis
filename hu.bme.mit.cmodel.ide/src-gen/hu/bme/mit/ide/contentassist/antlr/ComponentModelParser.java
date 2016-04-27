@@ -39,7 +39,6 @@ public class ComponentModelParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAbstractFeaturesAccess().getAlternatives(), "rule__AbstractFeatures__Alternatives");
 					put(grammarAccess.getSystemPortDecAccess().getAlternatives(), "rule__SystemPortDec__Alternatives");
 					put(grammarAccess.getPortAccess().getAlternatives(), "rule__Port__Alternatives");
-					put(grammarAccess.getImportEAccess().getGroup(), "rule__ImportE__Group__0");
 					put(grammarAccess.getSystemConnDecAccess().getGroup(), "rule__SystemConnDec__Group__0");
 					put(grammarAccess.getQualifiedNameAccess().getGroup(), "rule__QualifiedName__Group__0");
 					put(grammarAccess.getQualifiedNameAccess().getGroup_1(), "rule__QualifiedName__Group_1__0");
@@ -47,14 +46,13 @@ public class ComponentModelParser extends AbstractContentAssistParser {
 					put(grammarAccess.getSystemPortInAccess().getGroup(), "rule__SystemPortIn__Group__0");
 					put(grammarAccess.getSystemPortOutAccess().getGroup(), "rule__SystemPortOut__Group__0");
 					put(grammarAccess.getCompConnDecAccess().getGroup(), "rule__CompConnDec__Group__0");
+					put(grammarAccess.getComponentImplAccess().getGroup(), "rule__ComponentImpl__Group__0");
 					put(grammarAccess.getComponentTypeAccess().getGroup(), "rule__ComponentType__Group__0");
 					put(grammarAccess.getInPortAccess().getGroup(), "rule__InPort__Group__0");
 					put(grammarAccess.getOutPortAccess().getGroup(), "rule__OutPort__Group__0");
 					put(grammarAccess.getPortTypeAccess().getGroup(), "rule__PortType__Group__0");
 					put(grammarAccess.getErrorModesAccess().getGroup(), "rule__ErrorModes__Group__0");
-					put(grammarAccess.getComponentImplAccess().getGroup(), "rule__ComponentImpl__Group__0");
 					put(grammarAccess.getComponentModelAccess().getElementsAssignment(), "rule__ComponentModel__ElementsAssignment");
-					put(grammarAccess.getImportEAccess().getIncludedEModelAssignment_1(), "rule__ImportE__IncludedEModelAssignment_1");
 					put(grammarAccess.getSystemConnDecAccess().getNameAssignment_1(), "rule__SystemConnDec__NameAssignment_1");
 					put(grammarAccess.getSystemConnDecAccess().getSourceSystemAssignment_3(), "rule__SystemConnDec__SourceSystemAssignment_3");
 					put(grammarAccess.getSystemConnDecAccess().getSourcePortAssignment_5(), "rule__SystemConnDec__SourcePortAssignment_5");
@@ -73,6 +71,8 @@ public class ComponentModelParser extends AbstractContentAssistParser {
 					put(grammarAccess.getCompConnDecAccess().getSourcePortAssignment_5(), "rule__CompConnDec__SourcePortAssignment_5");
 					put(grammarAccess.getCompConnDecAccess().getTargetCompAssignment_7(), "rule__CompConnDec__TargetCompAssignment_7");
 					put(grammarAccess.getCompConnDecAccess().getTargetPortAssignment_9(), "rule__CompConnDec__TargetPortAssignment_9");
+					put(grammarAccess.getComponentImplAccess().getNameAssignment_1(), "rule__ComponentImpl__NameAssignment_1");
+					put(grammarAccess.getComponentImplAccess().getSuperTypeAssignment_3(), "rule__ComponentImpl__SuperTypeAssignment_3");
 					put(grammarAccess.getComponentTypeAccess().getNameAssignment_1(), "rule__ComponentType__NameAssignment_1");
 					put(grammarAccess.getComponentTypeAccess().getCompFeaturesAssignment_3(), "rule__ComponentType__CompFeaturesAssignment_3");
 					put(grammarAccess.getComponentFeatureAccess().getPortsAssignment(), "rule__ComponentFeature__PortsAssignment");
@@ -81,10 +81,8 @@ public class ComponentModelParser extends AbstractContentAssistParser {
 					put(grammarAccess.getOutPortAccess().getNameAssignment_1(), "rule__OutPort__NameAssignment_1");
 					put(grammarAccess.getOutPortAccess().getSuperTypeAssignment_3(), "rule__OutPort__SuperTypeAssignment_3");
 					put(grammarAccess.getPortTypeAccess().getNameAssignment_1(), "rule__PortType__NameAssignment_1");
-					put(grammarAccess.getPortTypeAccess().getEModesAssignment_5(), "rule__PortType__EModesAssignment_5");
+					put(grammarAccess.getPortTypeAccess().getEModesAssignment_3(), "rule__PortType__EModesAssignment_3");
 					put(grammarAccess.getErrorModesAccess().getNameAssignment_1(), "rule__ErrorModes__NameAssignment_1");
-					put(grammarAccess.getComponentImplAccess().getNameAssignment_1(), "rule__ComponentImpl__NameAssignment_1");
-					put(grammarAccess.getComponentImplAccess().getSuperTypeAssignment_3(), "rule__ComponentImpl__SuperTypeAssignment_3");
 				}
 			};
 		}

@@ -4,7 +4,6 @@
 package hu.bme.mit.scoping
 
 import hu.bme.mit.errorModel.EModelDec
-import hu.bme.mit.errorModel.EPropagationDec
 import hu.bme.mit.errorModel.ErrorModelPackage
 import hu.bme.mit.errorModel.OuterPropagation
 import org.eclipse.emf.ecore.EObject
@@ -20,7 +19,7 @@ import org.eclipse.xtext.scoping.Scopes
  * on how and when to use it.
  */
 class ErrorModelScopeProvider extends AbstractErrorModelScopeProvider {
-	override getScope(EObject context, EReference reference) {
+	/*override getScope(EObject context, EReference reference) {
 		if (context instanceof EPropagationDec) {
 			val prop = context as EPropagationDec
 			if (reference == ErrorModelPackage.Literals.EPROPAGATION_DEC__SOURCE_PROP) {
@@ -55,5 +54,9 @@ class ErrorModelScopeProvider extends AbstractErrorModelScopeProvider {
 		}
 		super.getScope(context, reference)
 	}
+*/
+
+
+
 
 }

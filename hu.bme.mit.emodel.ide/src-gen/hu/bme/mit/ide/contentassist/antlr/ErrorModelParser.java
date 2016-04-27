@@ -35,26 +35,22 @@ public class ErrorModelParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
-					put(grammarAccess.getErrorAccess().getAlternatives(), "rule__Error__Alternatives");
 					put(grammarAccess.getEModelElementAccess().getAlternatives(), "rule__EModelElement__Alternatives");
 					put(grammarAccess.getOuterPropagationAccess().getAlternatives(), "rule__OuterPropagation__Alternatives");
-					put(grammarAccess.getEPropagationDecAccess().getGroup(), "rule__EPropagationDec__Group__0");
+					put(grammarAccess.getTransitionFeatureDecAccess().getAlternatives(), "rule__TransitionFeatureDec__Alternatives");
 					put(grammarAccess.getEModelDecAccess().getGroup(), "rule__EModelDec__Group__0");
 					put(grammarAccess.getInPropDecAccess().getGroup(), "rule__InPropDec__Group__0");
 					put(grammarAccess.getOutPropDecAccess().getGroup(), "rule__OutPropDec__Group__0");
 					put(grammarAccess.getStateDecAccess().getGroup(), "rule__StateDec__Group__0");
 					put(grammarAccess.getEventDecAccess().getGroup(), "rule__EventDec__Group__0");
+					put(grammarAccess.getTriggerDecAccess().getGroup(), "rule__TriggerDec__Group__0");
+					put(grammarAccess.getActionDecAccess().getGroup(), "rule__ActionDec__Group__0");
 					put(grammarAccess.getOccurenceDecAccess().getGroup(), "rule__OccurenceDec__Group__0");
-					put(grammarAccess.getEventStateAccess().getGroup(), "rule__EventState__Group__0");
 					put(grammarAccess.getDOUBLEAccess().getGroup(), "rule__DOUBLE__Group__0");
+					put(grammarAccess.getTransitionStateAccess().getGroup(), "rule__TransitionState__Group__0");
 					put(grammarAccess.getQualifiedNameAccess().getGroup(), "rule__QualifiedName__Group__0");
 					put(grammarAccess.getQualifiedNameAccess().getGroup_1(), "rule__QualifiedName__Group_1__0");
 					put(grammarAccess.getErrorModelAccess().getAbstractElementAssignment(), "rule__ErrorModel__AbstractElementAssignment");
-					put(grammarAccess.getEPropagationDecAccess().getNameAssignment_1(), "rule__EPropagationDec__NameAssignment_1");
-					put(grammarAccess.getEPropagationDecAccess().getSourceModelAssignment_3(), "rule__EPropagationDec__SourceModelAssignment_3");
-					put(grammarAccess.getEPropagationDecAccess().getSourcePropAssignment_5(), "rule__EPropagationDec__SourcePropAssignment_5");
-					put(grammarAccess.getEPropagationDecAccess().getTargetModelAssignment_7(), "rule__EPropagationDec__TargetModelAssignment_7");
-					put(grammarAccess.getEPropagationDecAccess().getTargetPropAssignment_9(), "rule__EPropagationDec__TargetPropAssignment_9");
 					put(grammarAccess.getEModelDecAccess().getNameAssignment_1(), "rule__EModelDec__NameAssignment_1");
 					put(grammarAccess.getEModelDecAccess().getEmodelElementsAssignment_3(), "rule__EModelDec__EmodelElementsAssignment_3");
 					put(grammarAccess.getInPropDecAccess().getNameAssignment_1(), "rule__InPropDec__NameAssignment_1");
@@ -63,9 +59,11 @@ public class ErrorModelParser extends AbstractContentAssistParser {
 					put(grammarAccess.getOutPropDecAccess().getFromStateAssignment_3(), "rule__OutPropDec__FromStateAssignment_3");
 					put(grammarAccess.getStateDecAccess().getNameAssignment_1(), "rule__StateDec__NameAssignment_1");
 					put(grammarAccess.getEventDecAccess().getNameAssignment_1(), "rule__EventDec__NameAssignment_1");
-					put(grammarAccess.getEventDecAccess().getEventFeaturesAssignment_3(), "rule__EventDec__EventFeaturesAssignment_3");
-					put(grammarAccess.getEventStateAccess().getSourceStateAssignment_2(), "rule__EventState__SourceStateAssignment_2");
-					put(grammarAccess.getEventStateAccess().getTargetStateAssignment_4(), "rule__EventState__TargetStateAssignment_4");
+					put(grammarAccess.getEventDecAccess().getFeaturesAssignment_3(), "rule__EventDec__FeaturesAssignment_3");
+					put(grammarAccess.getTriggerDecAccess().getNameAssignment_1(), "rule__TriggerDec__NameAssignment_1");
+					put(grammarAccess.getActionDecAccess().getNameAssignment_1(), "rule__ActionDec__NameAssignment_1");
+					put(grammarAccess.getTransitionStateAccess().getSourceStateAssignment_2(), "rule__TransitionState__SourceStateAssignment_2");
+					put(grammarAccess.getTransitionStateAccess().getTargetStateAssignment_4(), "rule__TransitionState__TargetStateAssignment_4");
 				}
 			};
 		}

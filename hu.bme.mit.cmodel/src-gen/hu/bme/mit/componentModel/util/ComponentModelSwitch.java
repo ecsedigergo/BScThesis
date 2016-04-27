@@ -194,7 +194,7 @@ public class ComponentModelSwitch<T> extends Switch<T>
       {
         PortType portType = (PortType)theEObject;
         T result = casePortType(portType);
-        if (result == null) result = caseAbstractFeatures(portType);
+        if (result == null) result = caseAbstractElement(portType);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
