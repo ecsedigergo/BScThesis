@@ -3,25 +3,35 @@
  */
 package hu.bme.mit.componentModel.impl;
 
+import hu.bme.mit.componentModel.AbstractComponentFeatures;
 import hu.bme.mit.componentModel.AbstractElement;
 import hu.bme.mit.componentModel.AbstractFeatures;
+import hu.bme.mit.componentModel.ActionDec;
 import hu.bme.mit.componentModel.CompConnDec;
-import hu.bme.mit.componentModel.ComponentFeature;
 import hu.bme.mit.componentModel.ComponentImpl;
 import hu.bme.mit.componentModel.ComponentModel;
+import hu.bme.mit.componentModel.ComponentModelDec;
 import hu.bme.mit.componentModel.ComponentModelFactory;
 import hu.bme.mit.componentModel.ComponentModelPackage;
 import hu.bme.mit.componentModel.ComponentType;
+import hu.bme.mit.componentModel.EModelDec;
+import hu.bme.mit.componentModel.EModelElement;
+import hu.bme.mit.componentModel.ErrorModes;
 import hu.bme.mit.componentModel.InPort;
+import hu.bme.mit.componentModel.OccurrenceDec;
 import hu.bme.mit.componentModel.OutPort;
 import hu.bme.mit.componentModel.Port;
 import hu.bme.mit.componentModel.PortType;
+import hu.bme.mit.componentModel.StateDec;
 import hu.bme.mit.componentModel.SystemConnDec;
 import hu.bme.mit.componentModel.SystemDec;
 import hu.bme.mit.componentModel.SystemPortDec;
 import hu.bme.mit.componentModel.SystemPortIn;
 import hu.bme.mit.componentModel.SystemPortOut;
-import hu.bme.mit.componentModel.errorModes;
+import hu.bme.mit.componentModel.TransitionDec;
+import hu.bme.mit.componentModel.TransitionFeatureDec;
+import hu.bme.mit.componentModel.TransitionState;
+import hu.bme.mit.componentModel.TriggerDec;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -51,6 +61,27 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
    * @generated
    */
   private EClass abstractElementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass portTypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass errorModesEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass componentModelDecEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -120,7 +151,7 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass componentFeatureEClass = null;
+  private EClass abstractComponentFeaturesEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -148,14 +179,63 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass portTypeEClass = null;
+  private EClass eModelDecEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass errorModesEClass = null;
+  private EClass eModelElementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass stateDecEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass transitionDecEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass transitionFeatureDecEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass transitionStateEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass triggerDecEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass actionDecEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass occurrenceDecEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -258,6 +338,56 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
   public EAttribute getAbstractElement_Name()
   {
     return (EAttribute)abstractElementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getPortType()
+  {
+    return portTypeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getPortType_EModes()
+  {
+    return (EReference)portTypeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getErrorModes()
+  {
+    return errorModesEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getErrorModes_Name()
+  {
+    return (EAttribute)errorModesEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getComponentModelDec()
+  {
+    return componentModelDecEClass;
   }
 
   /**
@@ -505,7 +635,7 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getComponentType_CompFeatures()
+  public EReference getComponentType_ComponentFeatures()
   {
     return (EReference)componentTypeEClass.getEStructuralFeatures().get(0);
   }
@@ -515,19 +645,9 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getComponentFeature()
+  public EClass getAbstractComponentFeatures()
   {
-    return componentFeatureEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getComponentFeature_Ports()
-  {
-    return (EReference)componentFeatureEClass.getEStructuralFeatures().get(0);
+    return abstractComponentFeaturesEClass;
   }
 
   /**
@@ -545,19 +665,9 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getPort_Name()
-  {
-    return (EAttribute)portEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getPort_SuperType()
   {
-    return (EReference)portEClass.getEStructuralFeatures().get(1);
+    return (EReference)portEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -575,6 +685,16 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getInPort_NameInPort()
+  {
+    return (EAttribute)inPortEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getOutPort()
   {
     return outPortEClass;
@@ -585,9 +705,9 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getPortType()
+  public EAttribute getOutPort_NameOutPort()
   {
-    return portTypeEClass;
+    return (EAttribute)outPortEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -595,9 +715,9 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getPortType_EModes()
+  public EClass getEModelDec()
   {
-    return (EReference)portTypeEClass.getEStructuralFeatures().get(0);
+    return eModelDecEClass;
   }
 
   /**
@@ -605,9 +725,9 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass geterrorModes()
+  public EAttribute getEModelDec_NameEModelDec()
   {
-    return errorModesEClass;
+    return (EAttribute)eModelDecEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -615,9 +735,199 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute geterrorModes_Name()
+  public EReference getEModelDec_EmodelElements()
   {
-    return (EAttribute)errorModesEClass.getEStructuralFeatures().get(0);
+    return (EReference)eModelDecEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getEModelElement()
+  {
+    return eModelElementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getStateDec()
+  {
+    return stateDecEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getStateDec_NameStateDec()
+  {
+    return (EAttribute)stateDecEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getTransitionDec()
+  {
+    return transitionDecEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getTransitionDec_NameEventDec()
+  {
+    return (EAttribute)transitionDecEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTransitionDec_Features()
+  {
+    return (EReference)transitionDecEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getTransitionFeatureDec()
+  {
+    return transitionFeatureDecEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getTransitionState()
+  {
+    return transitionStateEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTransitionState_SourceState()
+  {
+    return (EReference)transitionStateEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTransitionState_TargetState()
+  {
+    return (EReference)transitionStateEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getTriggerDec()
+  {
+    return triggerDecEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getTriggerDec_Name()
+  {
+    return (EAttribute)triggerDecEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTriggerDec_PortInstance()
+  {
+    return (EReference)triggerDecEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTriggerDec_ErrorMode()
+  {
+    return (EReference)triggerDecEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getActionDec()
+  {
+    return actionDecEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getActionDec_Name()
+  {
+    return (EAttribute)actionDecEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getActionDec_PortInstance()
+  {
+    return (EReference)actionDecEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getActionDec_ErrorMode()
+  {
+    return (EReference)actionDecEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getOccurrenceDec()
+  {
+    return occurrenceDecEClass;
   }
 
   /**
@@ -656,6 +966,14 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
     abstractElementEClass = createEClass(ABSTRACT_ELEMENT);
     createEAttribute(abstractElementEClass, ABSTRACT_ELEMENT__NAME);
 
+    portTypeEClass = createEClass(PORT_TYPE);
+    createEReference(portTypeEClass, PORT_TYPE__EMODES);
+
+    errorModesEClass = createEClass(ERROR_MODES);
+    createEAttribute(errorModesEClass, ERROR_MODES__NAME);
+
+    componentModelDecEClass = createEClass(COMPONENT_MODEL_DEC);
+
     systemConnDecEClass = createEClass(SYSTEM_CONN_DEC);
     createEReference(systemConnDecEClass, SYSTEM_CONN_DEC__SOURCE_SYSTEM);
     createEReference(systemConnDecEClass, SYSTEM_CONN_DEC__SOURCE_PORT);
@@ -688,24 +1006,49 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
     createEReference(componentImplEClass, COMPONENT_IMPL__SUPER_TYPE);
 
     componentTypeEClass = createEClass(COMPONENT_TYPE);
-    createEReference(componentTypeEClass, COMPONENT_TYPE__COMP_FEATURES);
+    createEReference(componentTypeEClass, COMPONENT_TYPE__COMPONENT_FEATURES);
 
-    componentFeatureEClass = createEClass(COMPONENT_FEATURE);
-    createEReference(componentFeatureEClass, COMPONENT_FEATURE__PORTS);
+    abstractComponentFeaturesEClass = createEClass(ABSTRACT_COMPONENT_FEATURES);
 
     portEClass = createEClass(PORT);
-    createEAttribute(portEClass, PORT__NAME);
     createEReference(portEClass, PORT__SUPER_TYPE);
 
     inPortEClass = createEClass(IN_PORT);
+    createEAttribute(inPortEClass, IN_PORT__NAME_IN_PORT);
 
     outPortEClass = createEClass(OUT_PORT);
+    createEAttribute(outPortEClass, OUT_PORT__NAME_OUT_PORT);
 
-    portTypeEClass = createEClass(PORT_TYPE);
-    createEReference(portTypeEClass, PORT_TYPE__EMODES);
+    eModelDecEClass = createEClass(EMODEL_DEC);
+    createEAttribute(eModelDecEClass, EMODEL_DEC__NAME_EMODEL_DEC);
+    createEReference(eModelDecEClass, EMODEL_DEC__EMODEL_ELEMENTS);
 
-    errorModesEClass = createEClass(ERROR_MODES);
-    createEAttribute(errorModesEClass, ERROR_MODES__NAME);
+    eModelElementEClass = createEClass(EMODEL_ELEMENT);
+
+    stateDecEClass = createEClass(STATE_DEC);
+    createEAttribute(stateDecEClass, STATE_DEC__NAME_STATE_DEC);
+
+    transitionDecEClass = createEClass(TRANSITION_DEC);
+    createEAttribute(transitionDecEClass, TRANSITION_DEC__NAME_EVENT_DEC);
+    createEReference(transitionDecEClass, TRANSITION_DEC__FEATURES);
+
+    transitionFeatureDecEClass = createEClass(TRANSITION_FEATURE_DEC);
+
+    transitionStateEClass = createEClass(TRANSITION_STATE);
+    createEReference(transitionStateEClass, TRANSITION_STATE__SOURCE_STATE);
+    createEReference(transitionStateEClass, TRANSITION_STATE__TARGET_STATE);
+
+    triggerDecEClass = createEClass(TRIGGER_DEC);
+    createEAttribute(triggerDecEClass, TRIGGER_DEC__NAME);
+    createEReference(triggerDecEClass, TRIGGER_DEC__PORT_INSTANCE);
+    createEReference(triggerDecEClass, TRIGGER_DEC__ERROR_MODE);
+
+    actionDecEClass = createEClass(ACTION_DEC);
+    createEAttribute(actionDecEClass, ACTION_DEC__NAME);
+    createEReference(actionDecEClass, ACTION_DEC__PORT_INSTANCE);
+    createEReference(actionDecEClass, ACTION_DEC__ERROR_MODE);
+
+    occurrenceDecEClass = createEClass(OCCURRENCE_DEC);
   }
 
   /**
@@ -737,17 +1080,27 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    systemConnDecEClass.getESuperTypes().add(this.getAbstractElement());
-    systemDecEClass.getESuperTypes().add(this.getAbstractElement());
+    portTypeEClass.getESuperTypes().add(this.getAbstractElement());
+    componentModelDecEClass.getESuperTypes().add(this.getAbstractElement());
+    systemConnDecEClass.getESuperTypes().add(this.getComponentModelDec());
+    systemDecEClass.getESuperTypes().add(this.getComponentModelDec());
     systemPortDecEClass.getESuperTypes().add(this.getAbstractFeatures());
     systemPortInEClass.getESuperTypes().add(this.getSystemPortDec());
     systemPortOutEClass.getESuperTypes().add(this.getSystemPortDec());
     compConnDecEClass.getESuperTypes().add(this.getAbstractFeatures());
     componentImplEClass.getESuperTypes().add(this.getAbstractFeatures());
     componentTypeEClass.getESuperTypes().add(this.getAbstractFeatures());
+    portEClass.getESuperTypes().add(this.getAbstractComponentFeatures());
+    portEClass.getESuperTypes().add(this.getEModelElement());
     inPortEClass.getESuperTypes().add(this.getPort());
     outPortEClass.getESuperTypes().add(this.getPort());
-    portTypeEClass.getESuperTypes().add(this.getAbstractElement());
+    eModelDecEClass.getESuperTypes().add(this.getAbstractComponentFeatures());
+    stateDecEClass.getESuperTypes().add(this.getEModelElement());
+    transitionDecEClass.getESuperTypes().add(this.getEModelElement());
+    transitionStateEClass.getESuperTypes().add(this.getTransitionFeatureDec());
+    triggerDecEClass.getESuperTypes().add(this.getTransitionFeatureDec());
+    actionDecEClass.getESuperTypes().add(this.getTransitionFeatureDec());
+    occurrenceDecEClass.getESuperTypes().add(this.getTransitionFeatureDec());
 
     // Initialize classes and features; add operations and parameters
     initEClass(componentModelEClass, ComponentModel.class, "ComponentModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -755,6 +1108,14 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
 
     initEClass(abstractElementEClass, AbstractElement.class, "AbstractElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getAbstractElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, AbstractElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(portTypeEClass, PortType.class, "PortType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getPortType_EModes(), this.getErrorModes(), null, "eModes", null, 0, 1, PortType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(errorModesEClass, ErrorModes.class, "ErrorModes", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getErrorModes_Name(), ecorePackage.getEString(), "name", null, 0, 1, ErrorModes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(componentModelDecEClass, ComponentModelDec.class, "ComponentModelDec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(systemConnDecEClass, SystemConnDec.class, "SystemConnDec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getSystemConnDec_SourceSystem(), this.getSystemDec(), null, "sourceSystem", null, 0, 1, SystemConnDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -788,24 +1149,49 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
     initEReference(getComponentImpl_SuperType(), this.getComponentType(), null, "superType", null, 0, 1, ComponentImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(componentTypeEClass, ComponentType.class, "ComponentType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getComponentType_CompFeatures(), this.getComponentFeature(), null, "compFeatures", null, 0, -1, ComponentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getComponentType_ComponentFeatures(), this.getAbstractComponentFeatures(), null, "componentFeatures", null, 0, -1, ComponentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(componentFeatureEClass, ComponentFeature.class, "ComponentFeature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getComponentFeature_Ports(), this.getPort(), null, "ports", null, 0, -1, ComponentFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(abstractComponentFeaturesEClass, AbstractComponentFeatures.class, "AbstractComponentFeatures", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(portEClass, Port.class, "Port", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getPort_Name(), ecorePackage.getEString(), "name", null, 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getPort_SuperType(), this.getPortType(), null, "superType", null, 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(inPortEClass, InPort.class, "InPort", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getInPort_NameInPort(), ecorePackage.getEString(), "nameInPort", null, 0, 1, InPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(outPortEClass, OutPort.class, "OutPort", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getOutPort_NameOutPort(), ecorePackage.getEString(), "nameOutPort", null, 0, 1, OutPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(portTypeEClass, PortType.class, "PortType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getPortType_EModes(), this.geterrorModes(), null, "eModes", null, 0, 1, PortType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(eModelDecEClass, EModelDec.class, "EModelDec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getEModelDec_NameEModelDec(), ecorePackage.getEString(), "nameEModelDec", null, 0, 1, EModelDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEModelDec_EmodelElements(), this.getEModelElement(), null, "emodelElements", null, 0, -1, EModelDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(errorModesEClass, errorModes.class, "errorModes", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(geterrorModes_Name(), ecorePackage.getEString(), "name", null, 0, 1, errorModes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(eModelElementEClass, EModelElement.class, "EModelElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(stateDecEClass, StateDec.class, "StateDec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getStateDec_NameStateDec(), ecorePackage.getEString(), "nameStateDec", null, 0, 1, StateDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(transitionDecEClass, TransitionDec.class, "TransitionDec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getTransitionDec_NameEventDec(), ecorePackage.getEString(), "nameEventDec", null, 0, 1, TransitionDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTransitionDec_Features(), this.getTransitionFeatureDec(), null, "Features", null, 0, -1, TransitionDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(transitionFeatureDecEClass, TransitionFeatureDec.class, "TransitionFeatureDec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(transitionStateEClass, TransitionState.class, "TransitionState", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getTransitionState_SourceState(), this.getStateDec(), null, "sourceState", null, 0, 1, TransitionState.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTransitionState_TargetState(), this.getStateDec(), null, "targetState", null, 0, 1, TransitionState.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(triggerDecEClass, TriggerDec.class, "TriggerDec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getTriggerDec_Name(), ecorePackage.getEString(), "name", null, 0, 1, TriggerDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTriggerDec_PortInstance(), this.getPort(), null, "portInstance", null, 0, 1, TriggerDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTriggerDec_ErrorMode(), this.getErrorModes(), null, "errorMode", null, 0, 1, TriggerDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(actionDecEClass, ActionDec.class, "ActionDec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getActionDec_Name(), ecorePackage.getEString(), "name", null, 0, 1, ActionDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getActionDec_PortInstance(), this.getPort(), null, "portInstance", null, 0, 1, ActionDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getActionDec_ErrorMode(), this.getErrorModes(), null, "errorMode", null, 0, 1, ActionDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(occurrenceDecEClass, OccurrenceDec.class, "OccurrenceDec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     // Create resource
     createResource(eNS_URI);

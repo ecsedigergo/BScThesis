@@ -1,0 +1,28 @@
+grammar hu.bme.mit.DepModel with org.eclipse.xtext.common.Terminals
+
+generate depModel "http://www.bme.hu/mit/DepModel"
+
+DepModel:
+	(depmodels+=abstractModelDec)*
+;
+
+abstractModelDec:
+	ComponentModel | ErrorModel | PortType
+;
+
+
+PortType:
+	'port type' name=ID '{'
+	(eModes=errorModes)*
+	'}'
+;
+errorModes:
+	'error mode' name=ID;
+ErrorModel:
+	
+;
+
+ComponentModel:
+	
+;
+	

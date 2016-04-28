@@ -87,10 +87,34 @@ public class ComponentModelSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case ComponentModelPackage.PORT_TYPE:
+      {
+        PortType portType = (PortType)theEObject;
+        T result = casePortType(portType);
+        if (result == null) result = caseAbstractElement(portType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ComponentModelPackage.ERROR_MODES:
+      {
+        ErrorModes errorModes = (ErrorModes)theEObject;
+        T result = caseErrorModes(errorModes);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ComponentModelPackage.COMPONENT_MODEL_DEC:
+      {
+        ComponentModelDec componentModelDec = (ComponentModelDec)theEObject;
+        T result = caseComponentModelDec(componentModelDec);
+        if (result == null) result = caseAbstractElement(componentModelDec);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case ComponentModelPackage.SYSTEM_CONN_DEC:
       {
         SystemConnDec systemConnDec = (SystemConnDec)theEObject;
         T result = caseSystemConnDec(systemConnDec);
+        if (result == null) result = caseComponentModelDec(systemConnDec);
         if (result == null) result = caseAbstractElement(systemConnDec);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -99,6 +123,7 @@ public class ComponentModelSwitch<T> extends Switch<T>
       {
         SystemDec systemDec = (SystemDec)theEObject;
         T result = caseSystemDec(systemDec);
+        if (result == null) result = caseComponentModelDec(systemDec);
         if (result == null) result = caseAbstractElement(systemDec);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -160,10 +185,10 @@ public class ComponentModelSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case ComponentModelPackage.COMPONENT_FEATURE:
+      case ComponentModelPackage.ABSTRACT_COMPONENT_FEATURES:
       {
-        ComponentFeature componentFeature = (ComponentFeature)theEObject;
-        T result = caseComponentFeature(componentFeature);
+        AbstractComponentFeatures abstractComponentFeatures = (AbstractComponentFeatures)theEObject;
+        T result = caseAbstractComponentFeatures(abstractComponentFeatures);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -171,6 +196,8 @@ public class ComponentModelSwitch<T> extends Switch<T>
       {
         Port port = (Port)theEObject;
         T result = casePort(port);
+        if (result == null) result = caseAbstractComponentFeatures(port);
+        if (result == null) result = caseEModelElement(port);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -179,6 +206,8 @@ public class ComponentModelSwitch<T> extends Switch<T>
         InPort inPort = (InPort)theEObject;
         T result = caseInPort(inPort);
         if (result == null) result = casePort(inPort);
+        if (result == null) result = caseAbstractComponentFeatures(inPort);
+        if (result == null) result = caseEModelElement(inPort);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -187,21 +216,78 @@ public class ComponentModelSwitch<T> extends Switch<T>
         OutPort outPort = (OutPort)theEObject;
         T result = caseOutPort(outPort);
         if (result == null) result = casePort(outPort);
+        if (result == null) result = caseAbstractComponentFeatures(outPort);
+        if (result == null) result = caseEModelElement(outPort);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case ComponentModelPackage.PORT_TYPE:
+      case ComponentModelPackage.EMODEL_DEC:
       {
-        PortType portType = (PortType)theEObject;
-        T result = casePortType(portType);
-        if (result == null) result = caseAbstractElement(portType);
+        EModelDec eModelDec = (EModelDec)theEObject;
+        T result = caseEModelDec(eModelDec);
+        if (result == null) result = caseAbstractComponentFeatures(eModelDec);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case ComponentModelPackage.ERROR_MODES:
+      case ComponentModelPackage.EMODEL_ELEMENT:
       {
-        errorModes errorModes = (errorModes)theEObject;
-        T result = caseerrorModes(errorModes);
+        EModelElement eModelElement = (EModelElement)theEObject;
+        T result = caseEModelElement(eModelElement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ComponentModelPackage.STATE_DEC:
+      {
+        StateDec stateDec = (StateDec)theEObject;
+        T result = caseStateDec(stateDec);
+        if (result == null) result = caseEModelElement(stateDec);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ComponentModelPackage.TRANSITION_DEC:
+      {
+        TransitionDec transitionDec = (TransitionDec)theEObject;
+        T result = caseTransitionDec(transitionDec);
+        if (result == null) result = caseEModelElement(transitionDec);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ComponentModelPackage.TRANSITION_FEATURE_DEC:
+      {
+        TransitionFeatureDec transitionFeatureDec = (TransitionFeatureDec)theEObject;
+        T result = caseTransitionFeatureDec(transitionFeatureDec);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ComponentModelPackage.TRANSITION_STATE:
+      {
+        TransitionState transitionState = (TransitionState)theEObject;
+        T result = caseTransitionState(transitionState);
+        if (result == null) result = caseTransitionFeatureDec(transitionState);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ComponentModelPackage.TRIGGER_DEC:
+      {
+        TriggerDec triggerDec = (TriggerDec)theEObject;
+        T result = caseTriggerDec(triggerDec);
+        if (result == null) result = caseTransitionFeatureDec(triggerDec);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ComponentModelPackage.ACTION_DEC:
+      {
+        ActionDec actionDec = (ActionDec)theEObject;
+        T result = caseActionDec(actionDec);
+        if (result == null) result = caseTransitionFeatureDec(actionDec);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ComponentModelPackage.OCCURRENCE_DEC:
+      {
+        OccurrenceDec occurrenceDec = (OccurrenceDec)theEObject;
+        T result = caseOccurrenceDec(occurrenceDec);
+        if (result == null) result = caseTransitionFeatureDec(occurrenceDec);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -237,6 +323,54 @@ public class ComponentModelSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseAbstractElement(AbstractElement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Port Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Port Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePortType(PortType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Error Modes</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Error Modes</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseErrorModes(ErrorModes object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Dec</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Dec</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseComponentModelDec(ComponentModelDec object)
   {
     return null;
   }
@@ -386,17 +520,17 @@ public class ComponentModelSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Component Feature</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Abstract Component Features</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Component Feature</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Abstract Component Features</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseComponentFeature(ComponentFeature object)
+  public T caseAbstractComponentFeatures(AbstractComponentFeatures object)
   {
     return null;
   }
@@ -450,33 +584,145 @@ public class ComponentModelSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Port Type</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>EModel Dec</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Port Type</em>'.
+   * @return the result of interpreting the object as an instance of '<em>EModel Dec</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T casePortType(PortType object)
+  public T caseEModelDec(EModelDec object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>error Modes</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>EModel Element</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>error Modes</em>'.
+   * @return the result of interpreting the object as an instance of '<em>EModel Element</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseerrorModes(errorModes object)
+  public T caseEModelElement(EModelElement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>State Dec</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>State Dec</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStateDec(StateDec object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Transition Dec</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Transition Dec</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTransitionDec(TransitionDec object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Transition Feature Dec</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Transition Feature Dec</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTransitionFeatureDec(TransitionFeatureDec object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Transition State</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Transition State</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTransitionState(TransitionState object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Trigger Dec</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Trigger Dec</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTriggerDec(TriggerDec object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Action Dec</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Action Dec</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseActionDec(ActionDec object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Occurrence Dec</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Occurrence Dec</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseOccurrenceDec(OccurrenceDec object)
   {
     return null;
   }

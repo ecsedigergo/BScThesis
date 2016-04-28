@@ -6,17 +6,47 @@ package hu.bme.mit.componentModel.impl;
 import hu.bme.mit.componentModel.ComponentModelPackage;
 import hu.bme.mit.componentModel.OutPort;
 
+import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Out Port</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link hu.bme.mit.componentModel.impl.OutPortImpl#getNameOutPort <em>Name Out Port</em>}</li>
+ * </ul>
  *
  * @generated
  */
 public class OutPortImpl extends PortImpl implements OutPort
 {
+  /**
+   * The default value of the '{@link #getNameOutPort() <em>Name Out Port</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getNameOutPort()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_OUT_PORT_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getNameOutPort() <em>Name Out Port</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getNameOutPort()
+   * @generated
+   * @ordered
+   */
+  protected String nameOutPort = NAME_OUT_PORT_EDEFAULT;
+
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -36,6 +66,112 @@ public class OutPortImpl extends PortImpl implements OutPort
   protected EClass eStaticClass()
   {
     return ComponentModelPackage.Literals.OUT_PORT;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getNameOutPort()
+  {
+    return nameOutPort;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setNameOutPort(String newNameOutPort)
+  {
+    String oldNameOutPort = nameOutPort;
+    nameOutPort = newNameOutPort;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ComponentModelPackage.OUT_PORT__NAME_OUT_PORT, oldNameOutPort, nameOutPort));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object eGet(int featureID, boolean resolve, boolean coreType)
+  {
+    switch (featureID)
+    {
+      case ComponentModelPackage.OUT_PORT__NAME_OUT_PORT:
+        return getNameOutPort();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eSet(int featureID, Object newValue)
+  {
+    switch (featureID)
+    {
+      case ComponentModelPackage.OUT_PORT__NAME_OUT_PORT:
+        setNameOutPort((String)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eUnset(int featureID)
+  {
+    switch (featureID)
+    {
+      case ComponentModelPackage.OUT_PORT__NAME_OUT_PORT:
+        setNameOutPort(NAME_OUT_PORT_EDEFAULT);
+        return;
+    }
+    super.eUnset(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean eIsSet(int featureID)
+  {
+    switch (featureID)
+    {
+      case ComponentModelPackage.OUT_PORT__NAME_OUT_PORT:
+        return NAME_OUT_PORT_EDEFAULT == null ? nameOutPort != null : !NAME_OUT_PORT_EDEFAULT.equals(nameOutPort);
+    }
+    return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (nameOutPort: ");
+    result.append(nameOutPort);
+    result.append(')');
+    return result.toString();
   }
 
 } //OutPortImpl

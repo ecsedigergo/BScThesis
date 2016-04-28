@@ -6,17 +6,47 @@ package hu.bme.mit.componentModel.impl;
 import hu.bme.mit.componentModel.ComponentModelPackage;
 import hu.bme.mit.componentModel.InPort;
 
+import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>In Port</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link hu.bme.mit.componentModel.impl.InPortImpl#getNameInPort <em>Name In Port</em>}</li>
+ * </ul>
  *
  * @generated
  */
 public class InPortImpl extends PortImpl implements InPort
 {
+  /**
+   * The default value of the '{@link #getNameInPort() <em>Name In Port</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getNameInPort()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_IN_PORT_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getNameInPort() <em>Name In Port</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getNameInPort()
+   * @generated
+   * @ordered
+   */
+  protected String nameInPort = NAME_IN_PORT_EDEFAULT;
+
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -36,6 +66,112 @@ public class InPortImpl extends PortImpl implements InPort
   protected EClass eStaticClass()
   {
     return ComponentModelPackage.Literals.IN_PORT;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getNameInPort()
+  {
+    return nameInPort;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setNameInPort(String newNameInPort)
+  {
+    String oldNameInPort = nameInPort;
+    nameInPort = newNameInPort;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ComponentModelPackage.IN_PORT__NAME_IN_PORT, oldNameInPort, nameInPort));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object eGet(int featureID, boolean resolve, boolean coreType)
+  {
+    switch (featureID)
+    {
+      case ComponentModelPackage.IN_PORT__NAME_IN_PORT:
+        return getNameInPort();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eSet(int featureID, Object newValue)
+  {
+    switch (featureID)
+    {
+      case ComponentModelPackage.IN_PORT__NAME_IN_PORT:
+        setNameInPort((String)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eUnset(int featureID)
+  {
+    switch (featureID)
+    {
+      case ComponentModelPackage.IN_PORT__NAME_IN_PORT:
+        setNameInPort(NAME_IN_PORT_EDEFAULT);
+        return;
+    }
+    super.eUnset(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean eIsSet(int featureID)
+  {
+    switch (featureID)
+    {
+      case ComponentModelPackage.IN_PORT__NAME_IN_PORT:
+        return NAME_IN_PORT_EDEFAULT == null ? nameInPort != null : !NAME_IN_PORT_EDEFAULT.equals(nameInPort);
+    }
+    return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (nameInPort: ");
+    result.append(nameInPort);
+    result.append(')');
+    return result.toString();
   }
 
 } //InPortImpl

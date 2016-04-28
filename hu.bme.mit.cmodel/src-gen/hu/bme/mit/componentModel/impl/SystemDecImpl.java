@@ -32,7 +32,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class SystemDecImpl extends AbstractElementImpl implements SystemDec
+public class SystemDecImpl extends ComponentModelDecImpl implements SystemDec
 {
   /**
    * The cached value of the '{@link #getSysFeatures() <em>Sys Features</em>}' containment reference list.

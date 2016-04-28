@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="depModel" nsURI="http://www.bme.hu/mit/DepModel" nsPrefix="depModel">
+  <eClassifiers xsi:type="ecore:EClass" name="DepModel">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="depmodels" upperBound="-1"
+        eType="#//abstractModelDec" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="abstractModelDec"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PortType" eSuperTypes="#//abstractModelDec">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eModes" eType="#//errorModes"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="errorModes">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ErrorModel" eSuperTypes="#//abstractModelDec">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="emodelElements" upperBound="-1"
+        eType="#//EModelElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EModelElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StateDec" eSuperTypes="#//EModelElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EventDec" eSuperTypes="#//EModelElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Features" upperBound="-1"
+        eType="#//TransitionFeatureDec" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TransitionFeatureDec"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TransitionState" eSuperTypes="#//TransitionFeatureDec">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourceState" eType="#//StateDec"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetState" eType="#//StateDec"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TriggerDec" eSuperTypes="#//TransitionFeatureDec">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="portType" eType="#//Port"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="errorMode" eType="#//errorModes"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActionDec" eSuperTypes="#//TransitionFeatureDec">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="portType" eType="#//Port"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="errorMode" eType="#//errorModes"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentModel" eSuperTypes="#//abstractModelDec">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//ComponentModelDec" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentModelDec">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SystemConnDec" eSuperTypes="#//ComponentModelDec">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourceSystem" eType="#//SystemDec"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourcePort" eType="#//SystemPortDec"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetSystem" eType="#//SystemDec"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetPort" eType="#//SystemPortDec"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SystemDec" eSuperTypes="#//ComponentModelDec">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sysFeatures" upperBound="-1"
+        eType="#//AbstractFeatures" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractFeatures">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SystemPortDec" eSuperTypes="#//AbstractFeatures"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SystemPortIn" eSuperTypes="#//SystemPortDec">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inComp" eType="#//ComponentImpl"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inPort" eType="#//InPort"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SystemPortOut" eSuperTypes="#//SystemPortDec">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outComp" eType="#//ComponentImpl"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outPort" eType="#//OutPort"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CompConnDec" eSuperTypes="#//AbstractFeatures">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourceComp" eType="#//ComponentImpl"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourcePort" eType="#//OutPort"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetComp" eType="#//ComponentImpl"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetPort" eType="#//InPort"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentImpl" eSuperTypes="#//AbstractFeatures">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="superType" eType="#//ComponentType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentType" eSuperTypes="#//AbstractFeatures">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="compFeatures" upperBound="-1"
+        eType="#//Port" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Port">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="superType" eType="#//PortType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InPort" eSuperTypes="#//Port"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OutPort" eSuperTypes="#//Port"/>
+</ecore:EPackage>

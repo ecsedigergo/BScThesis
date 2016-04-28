@@ -7,66 +7,107 @@ generate componentModel "http://www.bme.hu/mit/ComponentModel"
 ComponentModel:
 	(elements+=AbstractElement)*;
 
-AbstractElement:
-	SystemDec | SystemConnDec | PortType; 
-
-
-SystemConnDec:
-	'system connection' name=QualifiedName 'from' sourceSystem=[SystemDec] '.' sourcePort=[SystemPortDec]
-	'to' targetSystem=[SystemDec] '.' targetPort=[SystemPortDec];
-
 QualifiedName:
 	ID ('.' ID)*;
 
+AbstractElement:
+	ComponentModelDec | PortType;
+
+PortType:
+	'port' 'type' name=QualifiedName '{'
+	(eModes=ErrorModes)*
+	'}';
+
+ErrorModes:
+	'error' 'mode' name=QualifiedName;
+
+	//Component Model ********************************************************************
+ComponentModelDec:
+	SystemConnDec | SystemDec ;
+
+SystemConnDec:
+	'system' 'connection' name=QualifiedName 'from' sourceSystem=[SystemDec] '.' sourcePort=[SystemPortDec]
+	'to' targetSystem=[SystemDec] '.' targetPort=[SystemPortDec];
+
 SystemDec:
-	'system declaration' name=QualifiedName '{'
+	'system' 'declaration' name=QualifiedName '{'
 	(sysFeatures+=AbstractFeatures)*
 	'}';
 
 AbstractFeatures:
-	ComponentType | ComponentImpl | CompConnDec  | SystemPortDec;
+	ComponentType | ComponentImpl | CompConnDec | SystemPortDec;
 
 SystemPortDec:
 	SystemPortIn | SystemPortOut;
 
 SystemPortIn:
-	'system port in' name=QualifiedName 'to' inComp=[ComponentImpl] '.' inPort=[InPort];
+	'system' 'port' 'in' name=QualifiedName 'to' inComp=[ComponentImpl] '.' inPort=[InPort];
 
 SystemPortOut:
-	'system port out' name=QualifiedName 'from' outComp=[ComponentImpl] '.' outPort=[OutPort];
+	'system' 'port' 'out' name=QualifiedName 'from' outComp=[ComponentImpl] '.' outPort=[OutPort];
 
 CompConnDec:
-	'connection' name=ID 'from' sourceComp=[ComponentImpl] '.' sourcePort=[OutPort]
+	'component' 'connection' name=ID 'from' sourceComp=[ComponentImpl] '.' sourcePort=[OutPort]
 	'to' targetComp=[ComponentImpl] '.' targetPort=[InPort];
 
 ComponentImpl:
-	'component implementation' name=QualifiedName ':' superType=[ComponentType];
+	'component' 'implementation' name=QualifiedName ':' superType=[ComponentType];
 
 ComponentType:
-	'component type' name=QualifiedName '{'
-	(compFeatures+=ComponentFeature)*
+	'component' 'type' name=QualifiedName '{'
+	(componentFeatures+=AbstractComponentFeatures)*
 	'}';
 
-ComponentFeature:
-	(ports+=Port);
+AbstractComponentFeatures:
+	Port | EModelDec;
 
-Port: 
-	InPort | OutPort;
+Port:
+	InPort | OutPort //| ErrorModelConn
+;
 
 InPort:
-	'port instance in' name=QualifiedName ':' superType=[PortType];
+	'port' 'instance' 'in' nameInPort=QualifiedName ':' superType=[PortType];
 
 OutPort:
-	'port instance out' name=QualifiedName ':' superType=[PortType];
+	'port' 'instance' 'out' nameOutPort=QualifiedName ':' superType=[PortType];
+	//ErrorModelConn:
+//	'error model' 'connection' nameEModelConn=QualifiedName '{'
+//	sourcePort=[Port] '=' targetPort=[Port]
+//	'}';
 
-PortType:
-	'port type' name=QualifiedName '{'
-	(eModes=errorModes)*
+
+//Error Model *********************************
+EModelDec:
+	'error' 'model' nameEModelDec=QualifiedName '{'
+	(emodelElements+=EModelElement)*
 	'}';
 
-errorModes:
-	'error mode' name=QualifiedName;
+EModelElement:
+	StateDec | TransitionDec | Port;
 
+StateDec:
+	'error' 'state' nameStateDec=QualifiedName;
+
+TransitionDec:
+	'transition' nameEventDec=QualifiedName '{'
+	(Features+=TransitionFeatureDec)*
+	'}';
+
+TransitionFeatureDec:
+//TransitionState | TriggerDec | ActionDec | OccurenceDec;
+	TransitionState | TriggerDec | ActionDec | "occurrence" {OccurrenceDec} DOUBLE;
+
+TransitionState:
+	'states' sourceState=[StateDec] '->' targetState=[StateDec];
+
+TriggerDec:
+	'trigger' name=QualifiedName ':' portInstance=[Port] '.' errorMode=[ErrorModes];
+
+ActionDec:
+	'action' name=QualifiedName ':' portInstance=[Port] '.' errorMode=[ErrorModes];
+
+DOUBLE:
+	INT '.' INT;
 
 
 	

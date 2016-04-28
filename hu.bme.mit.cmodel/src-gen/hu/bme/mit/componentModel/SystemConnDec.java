@@ -23,7 +23,7 @@ package hu.bme.mit.componentModel;
  * @model
  * @generated
  */
-public interface SystemConnDec extends AbstractElement
+public interface SystemConnDec extends ComponentModelDec
 {
   /**
    * Returns the value of the '<em><b>Source System</b></em>' reference.

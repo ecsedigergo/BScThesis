@@ -1,0 +1,9 @@
+grammar hu.bme.mit.DepModel with org.eclipse.xtext.common.Terminals
+
+generate depModel "http://www.bme.hu/mit/DepModel"
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'Hello' name=ID '!';

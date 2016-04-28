@@ -114,14 +114,14 @@ public interface ComponentModelPackage extends EPackage
   int ABSTRACT_ELEMENT_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link hu.bme.mit.componentModel.impl.SystemConnDecImpl <em>System Conn Dec</em>}' class.
+   * The meta object id for the '{@link hu.bme.mit.componentModel.impl.PortTypeImpl <em>Port Type</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see hu.bme.mit.componentModel.impl.SystemConnDecImpl
-   * @see hu.bme.mit.componentModel.impl.ComponentModelPackageImpl#getSystemConnDec()
+   * @see hu.bme.mit.componentModel.impl.PortTypeImpl
+   * @see hu.bme.mit.componentModel.impl.ComponentModelPackageImpl#getPortType()
    * @generated
    */
-  int SYSTEM_CONN_DEC = 2;
+  int PORT_TYPE = 2;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -130,7 +130,100 @@ public interface ComponentModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SYSTEM_CONN_DEC__NAME = ABSTRACT_ELEMENT__NAME;
+  int PORT_TYPE__NAME = ABSTRACT_ELEMENT__NAME;
+
+  /**
+   * The feature id for the '<em><b>EModes</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PORT_TYPE__EMODES = ABSTRACT_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Port Type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PORT_TYPE_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.componentModel.impl.ErrorModesImpl <em>Error Modes</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.componentModel.impl.ErrorModesImpl
+   * @see hu.bme.mit.componentModel.impl.ComponentModelPackageImpl#getErrorModes()
+   * @generated
+   */
+  int ERROR_MODES = 3;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ERROR_MODES__NAME = 0;
+
+  /**
+   * The number of structural features of the '<em>Error Modes</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ERROR_MODES_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.componentModel.impl.ComponentModelDecImpl <em>Dec</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.componentModel.impl.ComponentModelDecImpl
+   * @see hu.bme.mit.componentModel.impl.ComponentModelPackageImpl#getComponentModelDec()
+   * @generated
+   */
+  int COMPONENT_MODEL_DEC = 4;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_MODEL_DEC__NAME = ABSTRACT_ELEMENT__NAME;
+
+  /**
+   * The number of structural features of the '<em>Dec</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_MODEL_DEC_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.componentModel.impl.SystemConnDecImpl <em>System Conn Dec</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.componentModel.impl.SystemConnDecImpl
+   * @see hu.bme.mit.componentModel.impl.ComponentModelPackageImpl#getSystemConnDec()
+   * @generated
+   */
+  int SYSTEM_CONN_DEC = 5;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SYSTEM_CONN_DEC__NAME = COMPONENT_MODEL_DEC__NAME;
 
   /**
    * The feature id for the '<em><b>Source System</b></em>' reference.
@@ -139,7 +232,7 @@ public interface ComponentModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SYSTEM_CONN_DEC__SOURCE_SYSTEM = ABSTRACT_ELEMENT_FEATURE_COUNT + 0;
+  int SYSTEM_CONN_DEC__SOURCE_SYSTEM = COMPONENT_MODEL_DEC_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Source Port</b></em>' reference.
@@ -148,7 +241,7 @@ public interface ComponentModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SYSTEM_CONN_DEC__SOURCE_PORT = ABSTRACT_ELEMENT_FEATURE_COUNT + 1;
+  int SYSTEM_CONN_DEC__SOURCE_PORT = COMPONENT_MODEL_DEC_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Target System</b></em>' reference.
@@ -157,7 +250,7 @@ public interface ComponentModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SYSTEM_CONN_DEC__TARGET_SYSTEM = ABSTRACT_ELEMENT_FEATURE_COUNT + 2;
+  int SYSTEM_CONN_DEC__TARGET_SYSTEM = COMPONENT_MODEL_DEC_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Target Port</b></em>' reference.
@@ -166,7 +259,7 @@ public interface ComponentModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SYSTEM_CONN_DEC__TARGET_PORT = ABSTRACT_ELEMENT_FEATURE_COUNT + 3;
+  int SYSTEM_CONN_DEC__TARGET_PORT = COMPONENT_MODEL_DEC_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>System Conn Dec</em>' class.
@@ -175,7 +268,7 @@ public interface ComponentModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SYSTEM_CONN_DEC_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 4;
+  int SYSTEM_CONN_DEC_FEATURE_COUNT = COMPONENT_MODEL_DEC_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.componentModel.impl.SystemDecImpl <em>System Dec</em>}' class.
@@ -185,7 +278,7 @@ public interface ComponentModelPackage extends EPackage
    * @see hu.bme.mit.componentModel.impl.ComponentModelPackageImpl#getSystemDec()
    * @generated
    */
-  int SYSTEM_DEC = 3;
+  int SYSTEM_DEC = 6;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -194,7 +287,7 @@ public interface ComponentModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SYSTEM_DEC__NAME = ABSTRACT_ELEMENT__NAME;
+  int SYSTEM_DEC__NAME = COMPONENT_MODEL_DEC__NAME;
 
   /**
    * The feature id for the '<em><b>Sys Features</b></em>' containment reference list.
@@ -203,7 +296,7 @@ public interface ComponentModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SYSTEM_DEC__SYS_FEATURES = ABSTRACT_ELEMENT_FEATURE_COUNT + 0;
+  int SYSTEM_DEC__SYS_FEATURES = COMPONENT_MODEL_DEC_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>System Dec</em>' class.
@@ -212,7 +305,7 @@ public interface ComponentModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SYSTEM_DEC_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 1;
+  int SYSTEM_DEC_FEATURE_COUNT = COMPONENT_MODEL_DEC_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.componentModel.impl.AbstractFeaturesImpl <em>Abstract Features</em>}' class.
@@ -222,7 +315,7 @@ public interface ComponentModelPackage extends EPackage
    * @see hu.bme.mit.componentModel.impl.ComponentModelPackageImpl#getAbstractFeatures()
    * @generated
    */
-  int ABSTRACT_FEATURES = 4;
+  int ABSTRACT_FEATURES = 7;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -250,7 +343,7 @@ public interface ComponentModelPackage extends EPackage
    * @see hu.bme.mit.componentModel.impl.ComponentModelPackageImpl#getSystemPortDec()
    * @generated
    */
-  int SYSTEM_PORT_DEC = 5;
+  int SYSTEM_PORT_DEC = 8;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -278,7 +371,7 @@ public interface ComponentModelPackage extends EPackage
    * @see hu.bme.mit.componentModel.impl.ComponentModelPackageImpl#getSystemPortIn()
    * @generated
    */
-  int SYSTEM_PORT_IN = 6;
+  int SYSTEM_PORT_IN = 9;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -324,7 +417,7 @@ public interface ComponentModelPackage extends EPackage
    * @see hu.bme.mit.componentModel.impl.ComponentModelPackageImpl#getSystemPortOut()
    * @generated
    */
-  int SYSTEM_PORT_OUT = 7;
+  int SYSTEM_PORT_OUT = 10;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -370,7 +463,7 @@ public interface ComponentModelPackage extends EPackage
    * @see hu.bme.mit.componentModel.impl.ComponentModelPackageImpl#getCompConnDec()
    * @generated
    */
-  int COMP_CONN_DEC = 8;
+  int COMP_CONN_DEC = 11;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -434,7 +527,7 @@ public interface ComponentModelPackage extends EPackage
    * @see hu.bme.mit.componentModel.impl.ComponentModelPackageImpl#getComponentImpl()
    * @generated
    */
-  int COMPONENT_IMPL = 9;
+  int COMPONENT_IMPL = 12;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -471,7 +564,7 @@ public interface ComponentModelPackage extends EPackage
    * @see hu.bme.mit.componentModel.impl.ComponentModelPackageImpl#getComponentType()
    * @generated
    */
-  int COMPONENT_TYPE = 10;
+  int COMPONENT_TYPE = 13;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -483,13 +576,13 @@ public interface ComponentModelPackage extends EPackage
   int COMPONENT_TYPE__NAME = ABSTRACT_FEATURES__NAME;
 
   /**
-   * The feature id for the '<em><b>Comp Features</b></em>' containment reference list.
+   * The feature id for the '<em><b>Component Features</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPONENT_TYPE__COMP_FEATURES = ABSTRACT_FEATURES_FEATURE_COUNT + 0;
+  int COMPONENT_TYPE__COMPONENT_FEATURES = ABSTRACT_FEATURES_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Component Type</em>' class.
@@ -501,32 +594,23 @@ public interface ComponentModelPackage extends EPackage
   int COMPONENT_TYPE_FEATURE_COUNT = ABSTRACT_FEATURES_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link hu.bme.mit.componentModel.impl.ComponentFeatureImpl <em>Component Feature</em>}' class.
+   * The meta object id for the '{@link hu.bme.mit.componentModel.impl.AbstractComponentFeaturesImpl <em>Abstract Component Features</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see hu.bme.mit.componentModel.impl.ComponentFeatureImpl
-   * @see hu.bme.mit.componentModel.impl.ComponentModelPackageImpl#getComponentFeature()
+   * @see hu.bme.mit.componentModel.impl.AbstractComponentFeaturesImpl
+   * @see hu.bme.mit.componentModel.impl.ComponentModelPackageImpl#getAbstractComponentFeatures()
    * @generated
    */
-  int COMPONENT_FEATURE = 11;
+  int ABSTRACT_COMPONENT_FEATURES = 14;
 
   /**
-   * The feature id for the '<em><b>Ports</b></em>' containment reference list.
+   * The number of structural features of the '<em>Abstract Component Features</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPONENT_FEATURE__PORTS = 0;
-
-  /**
-   * The number of structural features of the '<em>Component Feature</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPONENT_FEATURE_FEATURE_COUNT = 1;
+  int ABSTRACT_COMPONENT_FEATURES_FEATURE_COUNT = 0;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.componentModel.impl.PortImpl <em>Port</em>}' class.
@@ -536,16 +620,7 @@ public interface ComponentModelPackage extends EPackage
    * @see hu.bme.mit.componentModel.impl.ComponentModelPackageImpl#getPort()
    * @generated
    */
-  int PORT = 12;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PORT__NAME = 0;
+  int PORT = 15;
 
   /**
    * The feature id for the '<em><b>Super Type</b></em>' reference.
@@ -554,7 +629,7 @@ public interface ComponentModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORT__SUPER_TYPE = 1;
+  int PORT__SUPER_TYPE = ABSTRACT_COMPONENT_FEATURES_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Port</em>' class.
@@ -563,7 +638,7 @@ public interface ComponentModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORT_FEATURE_COUNT = 2;
+  int PORT_FEATURE_COUNT = ABSTRACT_COMPONENT_FEATURES_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.componentModel.impl.InPortImpl <em>In Port</em>}' class.
@@ -573,16 +648,7 @@ public interface ComponentModelPackage extends EPackage
    * @see hu.bme.mit.componentModel.impl.ComponentModelPackageImpl#getInPort()
    * @generated
    */
-  int IN_PORT = 13;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IN_PORT__NAME = PORT__NAME;
+  int IN_PORT = 16;
 
   /**
    * The feature id for the '<em><b>Super Type</b></em>' reference.
@@ -594,13 +660,22 @@ public interface ComponentModelPackage extends EPackage
   int IN_PORT__SUPER_TYPE = PORT__SUPER_TYPE;
 
   /**
+   * The feature id for the '<em><b>Name In Port</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IN_PORT__NAME_IN_PORT = PORT_FEATURE_COUNT + 0;
+
+  /**
    * The number of structural features of the '<em>In Port</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int IN_PORT_FEATURE_COUNT = PORT_FEATURE_COUNT + 0;
+  int IN_PORT_FEATURE_COUNT = PORT_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.componentModel.impl.OutPortImpl <em>Out Port</em>}' class.
@@ -610,16 +685,7 @@ public interface ComponentModelPackage extends EPackage
    * @see hu.bme.mit.componentModel.impl.ComponentModelPackageImpl#getOutPort()
    * @generated
    */
-  int OUT_PORT = 14;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OUT_PORT__NAME = PORT__NAME;
+  int OUT_PORT = 17;
 
   /**
    * The feature id for the '<em><b>Super Type</b></em>' reference.
@@ -631,23 +697,209 @@ public interface ComponentModelPackage extends EPackage
   int OUT_PORT__SUPER_TYPE = PORT__SUPER_TYPE;
 
   /**
+   * The feature id for the '<em><b>Name Out Port</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OUT_PORT__NAME_OUT_PORT = PORT_FEATURE_COUNT + 0;
+
+  /**
    * The number of structural features of the '<em>Out Port</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int OUT_PORT_FEATURE_COUNT = PORT_FEATURE_COUNT + 0;
+  int OUT_PORT_FEATURE_COUNT = PORT_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link hu.bme.mit.componentModel.impl.PortTypeImpl <em>Port Type</em>}' class.
+   * The meta object id for the '{@link hu.bme.mit.componentModel.impl.EModelDecImpl <em>EModel Dec</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see hu.bme.mit.componentModel.impl.PortTypeImpl
-   * @see hu.bme.mit.componentModel.impl.ComponentModelPackageImpl#getPortType()
+   * @see hu.bme.mit.componentModel.impl.EModelDecImpl
+   * @see hu.bme.mit.componentModel.impl.ComponentModelPackageImpl#getEModelDec()
    * @generated
    */
-  int PORT_TYPE = 15;
+  int EMODEL_DEC = 18;
+
+  /**
+   * The feature id for the '<em><b>Name EModel Dec</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EMODEL_DEC__NAME_EMODEL_DEC = ABSTRACT_COMPONENT_FEATURES_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Emodel Elements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EMODEL_DEC__EMODEL_ELEMENTS = ABSTRACT_COMPONENT_FEATURES_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>EModel Dec</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EMODEL_DEC_FEATURE_COUNT = ABSTRACT_COMPONENT_FEATURES_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.componentModel.impl.EModelElementImpl <em>EModel Element</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.componentModel.impl.EModelElementImpl
+   * @see hu.bme.mit.componentModel.impl.ComponentModelPackageImpl#getEModelElement()
+   * @generated
+   */
+  int EMODEL_ELEMENT = 19;
+
+  /**
+   * The number of structural features of the '<em>EModel Element</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EMODEL_ELEMENT_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.componentModel.impl.StateDecImpl <em>State Dec</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.componentModel.impl.StateDecImpl
+   * @see hu.bme.mit.componentModel.impl.ComponentModelPackageImpl#getStateDec()
+   * @generated
+   */
+  int STATE_DEC = 20;
+
+  /**
+   * The feature id for the '<em><b>Name State Dec</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATE_DEC__NAME_STATE_DEC = EMODEL_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>State Dec</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATE_DEC_FEATURE_COUNT = EMODEL_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.componentModel.impl.TransitionDecImpl <em>Transition Dec</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.componentModel.impl.TransitionDecImpl
+   * @see hu.bme.mit.componentModel.impl.ComponentModelPackageImpl#getTransitionDec()
+   * @generated
+   */
+  int TRANSITION_DEC = 21;
+
+  /**
+   * The feature id for the '<em><b>Name Event Dec</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TRANSITION_DEC__NAME_EVENT_DEC = EMODEL_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Features</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TRANSITION_DEC__FEATURES = EMODEL_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Transition Dec</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TRANSITION_DEC_FEATURE_COUNT = EMODEL_ELEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.componentModel.impl.TransitionFeatureDecImpl <em>Transition Feature Dec</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.componentModel.impl.TransitionFeatureDecImpl
+   * @see hu.bme.mit.componentModel.impl.ComponentModelPackageImpl#getTransitionFeatureDec()
+   * @generated
+   */
+  int TRANSITION_FEATURE_DEC = 22;
+
+  /**
+   * The number of structural features of the '<em>Transition Feature Dec</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TRANSITION_FEATURE_DEC_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.componentModel.impl.TransitionStateImpl <em>Transition State</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.componentModel.impl.TransitionStateImpl
+   * @see hu.bme.mit.componentModel.impl.ComponentModelPackageImpl#getTransitionState()
+   * @generated
+   */
+  int TRANSITION_STATE = 23;
+
+  /**
+   * The feature id for the '<em><b>Source State</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TRANSITION_STATE__SOURCE_STATE = TRANSITION_FEATURE_DEC_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Target State</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TRANSITION_STATE__TARGET_STATE = TRANSITION_FEATURE_DEC_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Transition State</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TRANSITION_STATE_FEATURE_COUNT = TRANSITION_FEATURE_DEC_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.componentModel.impl.TriggerDecImpl <em>Trigger Dec</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.componentModel.impl.TriggerDecImpl
+   * @see hu.bme.mit.componentModel.impl.ComponentModelPackageImpl#getTriggerDec()
+   * @generated
+   */
+  int TRIGGER_DEC = 24;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -656,35 +908,44 @@ public interface ComponentModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORT_TYPE__NAME = ABSTRACT_ELEMENT__NAME;
+  int TRIGGER_DEC__NAME = TRANSITION_FEATURE_DEC_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>EModes</b></em>' containment reference.
+   * The feature id for the '<em><b>Port Instance</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PORT_TYPE__EMODES = ABSTRACT_ELEMENT_FEATURE_COUNT + 0;
+  int TRIGGER_DEC__PORT_INSTANCE = TRANSITION_FEATURE_DEC_FEATURE_COUNT + 1;
 
   /**
-   * The number of structural features of the '<em>Port Type</em>' class.
+   * The feature id for the '<em><b>Error Mode</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PORT_TYPE_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 1;
+  int TRIGGER_DEC__ERROR_MODE = TRANSITION_FEATURE_DEC_FEATURE_COUNT + 2;
 
   /**
-   * The meta object id for the '{@link hu.bme.mit.componentModel.impl.errorModesImpl <em>error Modes</em>}' class.
+   * The number of structural features of the '<em>Trigger Dec</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see hu.bme.mit.componentModel.impl.errorModesImpl
-   * @see hu.bme.mit.componentModel.impl.ComponentModelPackageImpl#geterrorModes()
+   * @generated
+   * @ordered
+   */
+  int TRIGGER_DEC_FEATURE_COUNT = TRANSITION_FEATURE_DEC_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.componentModel.impl.ActionDecImpl <em>Action Dec</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.componentModel.impl.ActionDecImpl
+   * @see hu.bme.mit.componentModel.impl.ComponentModelPackageImpl#getActionDec()
    * @generated
    */
-  int ERROR_MODES = 16;
+  int ACTION_DEC = 25;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -693,16 +954,53 @@ public interface ComponentModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ERROR_MODES__NAME = 0;
+  int ACTION_DEC__NAME = TRANSITION_FEATURE_DEC_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>error Modes</em>' class.
+   * The feature id for the '<em><b>Port Instance</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ERROR_MODES_FEATURE_COUNT = 1;
+  int ACTION_DEC__PORT_INSTANCE = TRANSITION_FEATURE_DEC_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Error Mode</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTION_DEC__ERROR_MODE = TRANSITION_FEATURE_DEC_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Action Dec</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTION_DEC_FEATURE_COUNT = TRANSITION_FEATURE_DEC_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link hu.bme.mit.componentModel.impl.OccurrenceDecImpl <em>Occurrence Dec</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.componentModel.impl.OccurrenceDecImpl
+   * @see hu.bme.mit.componentModel.impl.ComponentModelPackageImpl#getOccurrenceDec()
+   * @generated
+   */
+  int OCCURRENCE_DEC = 26;
+
+  /**
+   * The number of structural features of the '<em>Occurrence Dec</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OCCURRENCE_DEC_FEATURE_COUNT = TRANSITION_FEATURE_DEC_FEATURE_COUNT + 0;
 
 
   /**
@@ -746,6 +1044,58 @@ public interface ComponentModelPackage extends EPackage
    * @generated
    */
   EAttribute getAbstractElement_Name();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.componentModel.PortType <em>Port Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Port Type</em>'.
+   * @see hu.bme.mit.componentModel.PortType
+   * @generated
+   */
+  EClass getPortType();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.componentModel.PortType#getEModes <em>EModes</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>EModes</em>'.
+   * @see hu.bme.mit.componentModel.PortType#getEModes()
+   * @see #getPortType()
+   * @generated
+   */
+  EReference getPortType_EModes();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.componentModel.ErrorModes <em>Error Modes</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Error Modes</em>'.
+   * @see hu.bme.mit.componentModel.ErrorModes
+   * @generated
+   */
+  EClass getErrorModes();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.componentModel.ErrorModes#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see hu.bme.mit.componentModel.ErrorModes#getName()
+   * @see #getErrorModes()
+   * @generated
+   */
+  EAttribute getErrorModes_Name();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.componentModel.ComponentModelDec <em>Dec</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Dec</em>'.
+   * @see hu.bme.mit.componentModel.ComponentModelDec
+   * @generated
+   */
+  EClass getComponentModelDec();
 
   /**
    * Returns the meta object for class '{@link hu.bme.mit.componentModel.SystemConnDec <em>System Conn Dec</em>}'.
@@ -1003,36 +1353,25 @@ public interface ComponentModelPackage extends EPackage
   EClass getComponentType();
 
   /**
-   * Returns the meta object for the containment reference list '{@link hu.bme.mit.componentModel.ComponentType#getCompFeatures <em>Comp Features</em>}'.
+   * Returns the meta object for the containment reference list '{@link hu.bme.mit.componentModel.ComponentType#getComponentFeatures <em>Component Features</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Comp Features</em>'.
-   * @see hu.bme.mit.componentModel.ComponentType#getCompFeatures()
+   * @return the meta object for the containment reference list '<em>Component Features</em>'.
+   * @see hu.bme.mit.componentModel.ComponentType#getComponentFeatures()
    * @see #getComponentType()
    * @generated
    */
-  EReference getComponentType_CompFeatures();
+  EReference getComponentType_ComponentFeatures();
 
   /**
-   * Returns the meta object for class '{@link hu.bme.mit.componentModel.ComponentFeature <em>Component Feature</em>}'.
+   * Returns the meta object for class '{@link hu.bme.mit.componentModel.AbstractComponentFeatures <em>Abstract Component Features</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Component Feature</em>'.
-   * @see hu.bme.mit.componentModel.ComponentFeature
+   * @return the meta object for class '<em>Abstract Component Features</em>'.
+   * @see hu.bme.mit.componentModel.AbstractComponentFeatures
    * @generated
    */
-  EClass getComponentFeature();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link hu.bme.mit.componentModel.ComponentFeature#getPorts <em>Ports</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Ports</em>'.
-   * @see hu.bme.mit.componentModel.ComponentFeature#getPorts()
-   * @see #getComponentFeature()
-   * @generated
-   */
-  EReference getComponentFeature_Ports();
+  EClass getAbstractComponentFeatures();
 
   /**
    * Returns the meta object for class '{@link hu.bme.mit.componentModel.Port <em>Port</em>}'.
@@ -1043,17 +1382,6 @@ public interface ComponentModelPackage extends EPackage
    * @generated
    */
   EClass getPort();
-
-  /**
-   * Returns the meta object for the attribute '{@link hu.bme.mit.componentModel.Port#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see hu.bme.mit.componentModel.Port#getName()
-   * @see #getPort()
-   * @generated
-   */
-  EAttribute getPort_Name();
 
   /**
    * Returns the meta object for the reference '{@link hu.bme.mit.componentModel.Port#getSuperType <em>Super Type</em>}'.
@@ -1077,6 +1405,17 @@ public interface ComponentModelPackage extends EPackage
   EClass getInPort();
 
   /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.componentModel.InPort#getNameInPort <em>Name In Port</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name In Port</em>'.
+   * @see hu.bme.mit.componentModel.InPort#getNameInPort()
+   * @see #getInPort()
+   * @generated
+   */
+  EAttribute getInPort_NameInPort();
+
+  /**
    * Returns the meta object for class '{@link hu.bme.mit.componentModel.OutPort <em>Out Port</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1087,46 +1426,248 @@ public interface ComponentModelPackage extends EPackage
   EClass getOutPort();
 
   /**
-   * Returns the meta object for class '{@link hu.bme.mit.componentModel.PortType <em>Port Type</em>}'.
+   * Returns the meta object for the attribute '{@link hu.bme.mit.componentModel.OutPort#getNameOutPort <em>Name Out Port</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Port Type</em>'.
-   * @see hu.bme.mit.componentModel.PortType
+   * @return the meta object for the attribute '<em>Name Out Port</em>'.
+   * @see hu.bme.mit.componentModel.OutPort#getNameOutPort()
+   * @see #getOutPort()
    * @generated
    */
-  EClass getPortType();
+  EAttribute getOutPort_NameOutPort();
 
   /**
-   * Returns the meta object for the containment reference '{@link hu.bme.mit.componentModel.PortType#getEModes <em>EModes</em>}'.
+   * Returns the meta object for class '{@link hu.bme.mit.componentModel.EModelDec <em>EModel Dec</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>EModes</em>'.
-   * @see hu.bme.mit.componentModel.PortType#getEModes()
-   * @see #getPortType()
+   * @return the meta object for class '<em>EModel Dec</em>'.
+   * @see hu.bme.mit.componentModel.EModelDec
    * @generated
    */
-  EReference getPortType_EModes();
+  EClass getEModelDec();
 
   /**
-   * Returns the meta object for class '{@link hu.bme.mit.componentModel.errorModes <em>error Modes</em>}'.
+   * Returns the meta object for the attribute '{@link hu.bme.mit.componentModel.EModelDec#getNameEModelDec <em>Name EModel Dec</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>error Modes</em>'.
-   * @see hu.bme.mit.componentModel.errorModes
+   * @return the meta object for the attribute '<em>Name EModel Dec</em>'.
+   * @see hu.bme.mit.componentModel.EModelDec#getNameEModelDec()
+   * @see #getEModelDec()
    * @generated
    */
-  EClass geterrorModes();
+  EAttribute getEModelDec_NameEModelDec();
 
   /**
-   * Returns the meta object for the attribute '{@link hu.bme.mit.componentModel.errorModes#getName <em>Name</em>}'.
+   * Returns the meta object for the containment reference list '{@link hu.bme.mit.componentModel.EModelDec#getEmodelElements <em>Emodel Elements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Emodel Elements</em>'.
+   * @see hu.bme.mit.componentModel.EModelDec#getEmodelElements()
+   * @see #getEModelDec()
+   * @generated
+   */
+  EReference getEModelDec_EmodelElements();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.componentModel.EModelElement <em>EModel Element</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>EModel Element</em>'.
+   * @see hu.bme.mit.componentModel.EModelElement
+   * @generated
+   */
+  EClass getEModelElement();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.componentModel.StateDec <em>State Dec</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>State Dec</em>'.
+   * @see hu.bme.mit.componentModel.StateDec
+   * @generated
+   */
+  EClass getStateDec();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.componentModel.StateDec#getNameStateDec <em>Name State Dec</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name State Dec</em>'.
+   * @see hu.bme.mit.componentModel.StateDec#getNameStateDec()
+   * @see #getStateDec()
+   * @generated
+   */
+  EAttribute getStateDec_NameStateDec();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.componentModel.TransitionDec <em>Transition Dec</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Transition Dec</em>'.
+   * @see hu.bme.mit.componentModel.TransitionDec
+   * @generated
+   */
+  EClass getTransitionDec();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.componentModel.TransitionDec#getNameEventDec <em>Name Event Dec</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name Event Dec</em>'.
+   * @see hu.bme.mit.componentModel.TransitionDec#getNameEventDec()
+   * @see #getTransitionDec()
+   * @generated
+   */
+  EAttribute getTransitionDec_NameEventDec();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link hu.bme.mit.componentModel.TransitionDec#getFeatures <em>Features</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Features</em>'.
+   * @see hu.bme.mit.componentModel.TransitionDec#getFeatures()
+   * @see #getTransitionDec()
+   * @generated
+   */
+  EReference getTransitionDec_Features();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.componentModel.TransitionFeatureDec <em>Transition Feature Dec</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Transition Feature Dec</em>'.
+   * @see hu.bme.mit.componentModel.TransitionFeatureDec
+   * @generated
+   */
+  EClass getTransitionFeatureDec();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.componentModel.TransitionState <em>Transition State</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Transition State</em>'.
+   * @see hu.bme.mit.componentModel.TransitionState
+   * @generated
+   */
+  EClass getTransitionState();
+
+  /**
+   * Returns the meta object for the reference '{@link hu.bme.mit.componentModel.TransitionState#getSourceState <em>Source State</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Source State</em>'.
+   * @see hu.bme.mit.componentModel.TransitionState#getSourceState()
+   * @see #getTransitionState()
+   * @generated
+   */
+  EReference getTransitionState_SourceState();
+
+  /**
+   * Returns the meta object for the reference '{@link hu.bme.mit.componentModel.TransitionState#getTargetState <em>Target State</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Target State</em>'.
+   * @see hu.bme.mit.componentModel.TransitionState#getTargetState()
+   * @see #getTransitionState()
+   * @generated
+   */
+  EReference getTransitionState_TargetState();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.componentModel.TriggerDec <em>Trigger Dec</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Trigger Dec</em>'.
+   * @see hu.bme.mit.componentModel.TriggerDec
+   * @generated
+   */
+  EClass getTriggerDec();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.componentModel.TriggerDec#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see hu.bme.mit.componentModel.errorModes#getName()
-   * @see #geterrorModes()
+   * @see hu.bme.mit.componentModel.TriggerDec#getName()
+   * @see #getTriggerDec()
    * @generated
    */
-  EAttribute geterrorModes_Name();
+  EAttribute getTriggerDec_Name();
+
+  /**
+   * Returns the meta object for the reference '{@link hu.bme.mit.componentModel.TriggerDec#getPortInstance <em>Port Instance</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Port Instance</em>'.
+   * @see hu.bme.mit.componentModel.TriggerDec#getPortInstance()
+   * @see #getTriggerDec()
+   * @generated
+   */
+  EReference getTriggerDec_PortInstance();
+
+  /**
+   * Returns the meta object for the reference '{@link hu.bme.mit.componentModel.TriggerDec#getErrorMode <em>Error Mode</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Error Mode</em>'.
+   * @see hu.bme.mit.componentModel.TriggerDec#getErrorMode()
+   * @see #getTriggerDec()
+   * @generated
+   */
+  EReference getTriggerDec_ErrorMode();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.componentModel.ActionDec <em>Action Dec</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Action Dec</em>'.
+   * @see hu.bme.mit.componentModel.ActionDec
+   * @generated
+   */
+  EClass getActionDec();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.componentModel.ActionDec#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see hu.bme.mit.componentModel.ActionDec#getName()
+   * @see #getActionDec()
+   * @generated
+   */
+  EAttribute getActionDec_Name();
+
+  /**
+   * Returns the meta object for the reference '{@link hu.bme.mit.componentModel.ActionDec#getPortInstance <em>Port Instance</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Port Instance</em>'.
+   * @see hu.bme.mit.componentModel.ActionDec#getPortInstance()
+   * @see #getActionDec()
+   * @generated
+   */
+  EReference getActionDec_PortInstance();
+
+  /**
+   * Returns the meta object for the reference '{@link hu.bme.mit.componentModel.ActionDec#getErrorMode <em>Error Mode</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Error Mode</em>'.
+   * @see hu.bme.mit.componentModel.ActionDec#getErrorMode()
+   * @see #getActionDec()
+   * @generated
+   */
+  EReference getActionDec_ErrorMode();
+
+  /**
+   * Returns the meta object for class '{@link hu.bme.mit.componentModel.OccurrenceDec <em>Occurrence Dec</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Occurrence Dec</em>'.
+   * @see hu.bme.mit.componentModel.OccurrenceDec
+   * @generated
+   */
+  EClass getOccurrenceDec();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -1186,6 +1727,52 @@ public interface ComponentModelPackage extends EPackage
      * @generated
      */
     EAttribute ABSTRACT_ELEMENT__NAME = eINSTANCE.getAbstractElement_Name();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.componentModel.impl.PortTypeImpl <em>Port Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.componentModel.impl.PortTypeImpl
+     * @see hu.bme.mit.componentModel.impl.ComponentModelPackageImpl#getPortType()
+     * @generated
+     */
+    EClass PORT_TYPE = eINSTANCE.getPortType();
+
+    /**
+     * The meta object literal for the '<em><b>EModes</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PORT_TYPE__EMODES = eINSTANCE.getPortType_EModes();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.componentModel.impl.ErrorModesImpl <em>Error Modes</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.componentModel.impl.ErrorModesImpl
+     * @see hu.bme.mit.componentModel.impl.ComponentModelPackageImpl#getErrorModes()
+     * @generated
+     */
+    EClass ERROR_MODES = eINSTANCE.getErrorModes();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ERROR_MODES__NAME = eINSTANCE.getErrorModes_Name();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.componentModel.impl.ComponentModelDecImpl <em>Dec</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.componentModel.impl.ComponentModelDecImpl
+     * @see hu.bme.mit.componentModel.impl.ComponentModelPackageImpl#getComponentModelDec()
+     * @generated
+     */
+    EClass COMPONENT_MODEL_DEC = eINSTANCE.getComponentModelDec();
 
     /**
      * The meta object literal for the '{@link hu.bme.mit.componentModel.impl.SystemConnDecImpl <em>System Conn Dec</em>}' class.
@@ -1398,30 +1985,22 @@ public interface ComponentModelPackage extends EPackage
     EClass COMPONENT_TYPE = eINSTANCE.getComponentType();
 
     /**
-     * The meta object literal for the '<em><b>Comp Features</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Component Features</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference COMPONENT_TYPE__COMP_FEATURES = eINSTANCE.getComponentType_CompFeatures();
+    EReference COMPONENT_TYPE__COMPONENT_FEATURES = eINSTANCE.getComponentType_ComponentFeatures();
 
     /**
-     * The meta object literal for the '{@link hu.bme.mit.componentModel.impl.ComponentFeatureImpl <em>Component Feature</em>}' class.
+     * The meta object literal for the '{@link hu.bme.mit.componentModel.impl.AbstractComponentFeaturesImpl <em>Abstract Component Features</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see hu.bme.mit.componentModel.impl.ComponentFeatureImpl
-     * @see hu.bme.mit.componentModel.impl.ComponentModelPackageImpl#getComponentFeature()
+     * @see hu.bme.mit.componentModel.impl.AbstractComponentFeaturesImpl
+     * @see hu.bme.mit.componentModel.impl.ComponentModelPackageImpl#getAbstractComponentFeatures()
      * @generated
      */
-    EClass COMPONENT_FEATURE = eINSTANCE.getComponentFeature();
-
-    /**
-     * The meta object literal for the '<em><b>Ports</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference COMPONENT_FEATURE__PORTS = eINSTANCE.getComponentFeature_Ports();
+    EClass ABSTRACT_COMPONENT_FEATURES = eINSTANCE.getAbstractComponentFeatures();
 
     /**
      * The meta object literal for the '{@link hu.bme.mit.componentModel.impl.PortImpl <em>Port</em>}' class.
@@ -1432,14 +2011,6 @@ public interface ComponentModelPackage extends EPackage
      * @generated
      */
     EClass PORT = eINSTANCE.getPort();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute PORT__NAME = eINSTANCE.getPort_Name();
 
     /**
      * The meta object literal for the '<em><b>Super Type</b></em>' reference feature.
@@ -1460,6 +2031,14 @@ public interface ComponentModelPackage extends EPackage
     EClass IN_PORT = eINSTANCE.getInPort();
 
     /**
+     * The meta object literal for the '<em><b>Name In Port</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute IN_PORT__NAME_IN_PORT = eINSTANCE.getInPort_NameInPort();
+
+    /**
      * The meta object literal for the '{@link hu.bme.mit.componentModel.impl.OutPortImpl <em>Out Port</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1470,32 +2049,138 @@ public interface ComponentModelPackage extends EPackage
     EClass OUT_PORT = eINSTANCE.getOutPort();
 
     /**
-     * The meta object literal for the '{@link hu.bme.mit.componentModel.impl.PortTypeImpl <em>Port Type</em>}' class.
+     * The meta object literal for the '<em><b>Name Out Port</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see hu.bme.mit.componentModel.impl.PortTypeImpl
-     * @see hu.bme.mit.componentModel.impl.ComponentModelPackageImpl#getPortType()
      * @generated
      */
-    EClass PORT_TYPE = eINSTANCE.getPortType();
+    EAttribute OUT_PORT__NAME_OUT_PORT = eINSTANCE.getOutPort_NameOutPort();
 
     /**
-     * The meta object literal for the '<em><b>EModes</b></em>' containment reference feature.
+     * The meta object literal for the '{@link hu.bme.mit.componentModel.impl.EModelDecImpl <em>EModel Dec</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see hu.bme.mit.componentModel.impl.EModelDecImpl
+     * @see hu.bme.mit.componentModel.impl.ComponentModelPackageImpl#getEModelDec()
      * @generated
      */
-    EReference PORT_TYPE__EMODES = eINSTANCE.getPortType_EModes();
+    EClass EMODEL_DEC = eINSTANCE.getEModelDec();
 
     /**
-     * The meta object literal for the '{@link hu.bme.mit.componentModel.impl.errorModesImpl <em>error Modes</em>}' class.
+     * The meta object literal for the '<em><b>Name EModel Dec</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see hu.bme.mit.componentModel.impl.errorModesImpl
-     * @see hu.bme.mit.componentModel.impl.ComponentModelPackageImpl#geterrorModes()
      * @generated
      */
-    EClass ERROR_MODES = eINSTANCE.geterrorModes();
+    EAttribute EMODEL_DEC__NAME_EMODEL_DEC = eINSTANCE.getEModelDec_NameEModelDec();
+
+    /**
+     * The meta object literal for the '<em><b>Emodel Elements</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EMODEL_DEC__EMODEL_ELEMENTS = eINSTANCE.getEModelDec_EmodelElements();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.componentModel.impl.EModelElementImpl <em>EModel Element</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.componentModel.impl.EModelElementImpl
+     * @see hu.bme.mit.componentModel.impl.ComponentModelPackageImpl#getEModelElement()
+     * @generated
+     */
+    EClass EMODEL_ELEMENT = eINSTANCE.getEModelElement();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.componentModel.impl.StateDecImpl <em>State Dec</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.componentModel.impl.StateDecImpl
+     * @see hu.bme.mit.componentModel.impl.ComponentModelPackageImpl#getStateDec()
+     * @generated
+     */
+    EClass STATE_DEC = eINSTANCE.getStateDec();
+
+    /**
+     * The meta object literal for the '<em><b>Name State Dec</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute STATE_DEC__NAME_STATE_DEC = eINSTANCE.getStateDec_NameStateDec();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.componentModel.impl.TransitionDecImpl <em>Transition Dec</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.componentModel.impl.TransitionDecImpl
+     * @see hu.bme.mit.componentModel.impl.ComponentModelPackageImpl#getTransitionDec()
+     * @generated
+     */
+    EClass TRANSITION_DEC = eINSTANCE.getTransitionDec();
+
+    /**
+     * The meta object literal for the '<em><b>Name Event Dec</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TRANSITION_DEC__NAME_EVENT_DEC = eINSTANCE.getTransitionDec_NameEventDec();
+
+    /**
+     * The meta object literal for the '<em><b>Features</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TRANSITION_DEC__FEATURES = eINSTANCE.getTransitionDec_Features();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.componentModel.impl.TransitionFeatureDecImpl <em>Transition Feature Dec</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.componentModel.impl.TransitionFeatureDecImpl
+     * @see hu.bme.mit.componentModel.impl.ComponentModelPackageImpl#getTransitionFeatureDec()
+     * @generated
+     */
+    EClass TRANSITION_FEATURE_DEC = eINSTANCE.getTransitionFeatureDec();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.componentModel.impl.TransitionStateImpl <em>Transition State</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.componentModel.impl.TransitionStateImpl
+     * @see hu.bme.mit.componentModel.impl.ComponentModelPackageImpl#getTransitionState()
+     * @generated
+     */
+    EClass TRANSITION_STATE = eINSTANCE.getTransitionState();
+
+    /**
+     * The meta object literal for the '<em><b>Source State</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TRANSITION_STATE__SOURCE_STATE = eINSTANCE.getTransitionState_SourceState();
+
+    /**
+     * The meta object literal for the '<em><b>Target State</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TRANSITION_STATE__TARGET_STATE = eINSTANCE.getTransitionState_TargetState();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.componentModel.impl.TriggerDecImpl <em>Trigger Dec</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.componentModel.impl.TriggerDecImpl
+     * @see hu.bme.mit.componentModel.impl.ComponentModelPackageImpl#getTriggerDec()
+     * @generated
+     */
+    EClass TRIGGER_DEC = eINSTANCE.getTriggerDec();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -1503,7 +2188,67 @@ public interface ComponentModelPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ERROR_MODES__NAME = eINSTANCE.geterrorModes_Name();
+    EAttribute TRIGGER_DEC__NAME = eINSTANCE.getTriggerDec_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Port Instance</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TRIGGER_DEC__PORT_INSTANCE = eINSTANCE.getTriggerDec_PortInstance();
+
+    /**
+     * The meta object literal for the '<em><b>Error Mode</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TRIGGER_DEC__ERROR_MODE = eINSTANCE.getTriggerDec_ErrorMode();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.componentModel.impl.ActionDecImpl <em>Action Dec</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.componentModel.impl.ActionDecImpl
+     * @see hu.bme.mit.componentModel.impl.ComponentModelPackageImpl#getActionDec()
+     * @generated
+     */
+    EClass ACTION_DEC = eINSTANCE.getActionDec();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ACTION_DEC__NAME = eINSTANCE.getActionDec_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Port Instance</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ACTION_DEC__PORT_INSTANCE = eINSTANCE.getActionDec_PortInstance();
+
+    /**
+     * The meta object literal for the '<em><b>Error Mode</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ACTION_DEC__ERROR_MODE = eINSTANCE.getActionDec_ErrorMode();
+
+    /**
+     * The meta object literal for the '{@link hu.bme.mit.componentModel.impl.OccurrenceDecImpl <em>Occurrence Dec</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.componentModel.impl.OccurrenceDecImpl
+     * @see hu.bme.mit.componentModel.impl.ComponentModelPackageImpl#getOccurrenceDec()
+     * @generated
+     */
+    EClass OCCURRENCE_DEC = eINSTANCE.getOccurrenceDec();
 
   }
 

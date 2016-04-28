@@ -13,7 +13,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,34 +22,13 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link hu.bme.mit.componentModel.impl.PortImpl#getName <em>Name</em>}</li>
  *   <li>{@link hu.bme.mit.componentModel.impl.PortImpl#getSuperType <em>Super Type</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class PortImpl extends MinimalEObjectImpl.Container implements Port
+public class PortImpl extends AbstractComponentFeaturesImpl implements Port
 {
-  /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
-
   /**
    * The cached value of the '{@link #getSuperType() <em>Super Type</em>}' reference.
    * <!-- begin-user-doc -->
@@ -80,29 +58,6 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port
   protected EClass eStaticClass()
   {
     return ComponentModelPackage.Literals.PORT;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getName()
-  {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ComponentModelPackage.PORT__NAME, oldName, name));
   }
 
   /**
@@ -158,8 +113,6 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port
   {
     switch (featureID)
     {
-      case ComponentModelPackage.PORT__NAME:
-        return getName();
       case ComponentModelPackage.PORT__SUPER_TYPE:
         if (resolve) return getSuperType();
         return basicGetSuperType();
@@ -177,9 +130,6 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port
   {
     switch (featureID)
     {
-      case ComponentModelPackage.PORT__NAME:
-        setName((String)newValue);
-        return;
       case ComponentModelPackage.PORT__SUPER_TYPE:
         setSuperType((PortType)newValue);
         return;
@@ -197,9 +147,6 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port
   {
     switch (featureID)
     {
-      case ComponentModelPackage.PORT__NAME:
-        setName(NAME_EDEFAULT);
-        return;
       case ComponentModelPackage.PORT__SUPER_TYPE:
         setSuperType((PortType)null);
         return;
@@ -217,29 +164,10 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port
   {
     switch (featureID)
     {
-      case ComponentModelPackage.PORT__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case ComponentModelPackage.PORT__SUPER_TYPE:
         return superType != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(')');
-    return result.toString();
   }
 
 } //PortImpl

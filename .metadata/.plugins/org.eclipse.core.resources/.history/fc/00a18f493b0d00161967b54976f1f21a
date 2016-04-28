@@ -1,0 +1,114 @@
+grammar hu.bme.mit.ComponentModel with org.eclipse.xtext.common.Terminals
+
+//import "http://www.bme.hu/mit/ErrorModel" as emod
+//import "platform:/resource/org.example/src/example.ecore"
+generate componentModel "http://www.bme.hu/mit/ComponentModel"
+
+ComponentModel:
+	(elements+=AbstractElement)*;
+
+AbstractElement:
+	ComponentModelDec | PortType;
+
+PortType:
+	'port type' name=QualifiedName '{'
+	(eModes=ErrorModes)*
+	'}';
+
+ErrorModes:
+	'error mode' name=QualifiedName;
+	//Component Model *****************************
+ComponentModelDec:
+	SystemDec | SystemConnDec;
+
+SystemConnDec:
+	'system connection' name=QualifiedName 'from' sourceSystem=[SystemDec] '.' sourcePort=[SystemPortDec]
+	'to' targetSystem=[SystemDec] '.' targetPort=[SystemPortDec];
+
+QualifiedName:
+	ID ('.' ID)*;
+
+SystemDec:
+	'system declaration' name=QualifiedName '{'
+	(sysFeatures+=AbstractFeatures)*
+	'}';
+
+AbstractFeatures:
+	ComponentType | ComponentImpl | CompConnDec | SystemPortDec;
+
+SystemPortDec:
+	SystemPortIn | SystemPortOut;
+
+SystemPortIn:
+	'system port in' name=QualifiedName 'to' inComp=[ComponentImpl] '.' inPort=[InPort];
+
+SystemPortOut:
+	'system port out' name=QualifiedName 'from' outComp=[ComponentImpl] '.' outPort=[OutPort];
+
+CompConnDec:
+	'component connection' name=ID 'from' sourceComp=[ComponentImpl] '.' sourcePort=[OutPort]
+	'to' targetComp=[ComponentImpl] '.' targetPort=[InPort];
+
+ComponentImpl:
+	'component implementation' name=QualifiedName ':' superType=[ComponentType];
+
+ComponentType:
+	'component type' name=QualifiedName '{'
+	(componentFeatures+=AbstractComponentFeatures)*
+	'}';
+
+AbstractComponentFeatures:
+	Port | EModelDec;
+
+Port:
+	InPort | OutPort //| ErrorModelConn
+;
+
+InPort:
+	'port instance in' nameInPort=QualifiedName ':' superType=[PortType];
+
+OutPort:
+	'port instance out' nameOutPort=QualifiedName ':' superType=[PortType];
+	//ErrorModelConn:
+//	'error model' 'connection' nameEModelConn=QualifiedName '{'
+//	sourcePort=[Port] '=' targetPort=[Port]
+//	'}';
+
+
+//Error Model *********************************
+EModelDec:
+	'error model' nameEModelDec=QualifiedName '{'
+	(emodelElements+=EModelElement)*
+	'}';
+
+EModelElement:
+	StateDec | TransitionDec //| Port
+;
+
+StateDec:
+	'error state' nameStateDec=QualifiedName;
+
+TransitionDec:
+	'transition' nameEventDec=QualifiedName '{'
+	(Features+=TransitionFeatureDec)*
+	'}';
+
+TransitionFeatureDec:
+	//TransitionState | TriggerDec | ActionDec | OccurenceDec;
+	TransitionState | TriggerDec | ActionDec | "occurrence" {OccurrenceDec} DOUBLE;
+
+TransitionState:
+	'states' sourceState=[StateDec] '->' targetState=[StateDec];
+
+TriggerDec:
+	'trigger' name=QualifiedName ':' portInstance=[Port] '.' errorMode=[ErrorModes];
+
+ActionDec:
+	'action' name=QualifiedName ':' portInstance=[Port] '.' errorMode=[ErrorModes];
+
+DOUBLE:
+	INT '.' INT;
+
+
+	
+

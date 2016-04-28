@@ -9,6 +9,12 @@ package hu.bme.mit.componentModel;
  * A representation of the model object '<em><b>In Port</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link hu.bme.mit.componentModel.InPort#getNameInPort <em>Name In Port</em>}</li>
+ * </ul>
  *
  * @see hu.bme.mit.componentModel.ComponentModelPackage#getInPort()
  * @model
@@ -16,4 +22,30 @@ package hu.bme.mit.componentModel;
  */
 public interface InPort extends Port
 {
+  /**
+   * Returns the value of the '<em><b>Name In Port</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Name In Port</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Name In Port</em>' attribute.
+   * @see #setNameInPort(String)
+   * @see hu.bme.mit.componentModel.ComponentModelPackage#getInPort_NameInPort()
+   * @model
+   * @generated
+   */
+  String getNameInPort();
+
+  /**
+   * Sets the value of the '{@link hu.bme.mit.componentModel.InPort#getNameInPort <em>Name In Port</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Name In Port</em>' attribute.
+   * @see #getNameInPort()
+   * @generated
+   */
+  void setNameInPort(String value);
+
 } // InPort

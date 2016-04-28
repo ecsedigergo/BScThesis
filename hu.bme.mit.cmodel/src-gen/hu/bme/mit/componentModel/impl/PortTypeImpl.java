@@ -4,8 +4,8 @@
 package hu.bme.mit.componentModel.impl;
 
 import hu.bme.mit.componentModel.ComponentModelPackage;
+import hu.bme.mit.componentModel.ErrorModes;
 import hu.bme.mit.componentModel.PortType;
-import hu.bme.mit.componentModel.errorModes;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -38,7 +38,7 @@ public class PortTypeImpl extends AbstractElementImpl implements PortType
    * @generated
    * @ordered
    */
-  protected errorModes eModes;
+  protected ErrorModes eModes;
 
   /**
    * <!-- begin-user-doc -->
@@ -66,7 +66,7 @@ public class PortTypeImpl extends AbstractElementImpl implements PortType
    * <!-- end-user-doc -->
    * @generated
    */
-  public errorModes getEModes()
+  public ErrorModes getEModes()
   {
     return eModes;
   }
@@ -76,9 +76,9 @@ public class PortTypeImpl extends AbstractElementImpl implements PortType
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetEModes(errorModes newEModes, NotificationChain msgs)
+  public NotificationChain basicSetEModes(ErrorModes newEModes, NotificationChain msgs)
   {
-    errorModes oldEModes = eModes;
+    ErrorModes oldEModes = eModes;
     eModes = newEModes;
     if (eNotificationRequired())
     {
@@ -93,7 +93,7 @@ public class PortTypeImpl extends AbstractElementImpl implements PortType
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setEModes(errorModes newEModes)
+  public void setEModes(ErrorModes newEModes)
   {
     if (newEModes != eModes)
     {
@@ -152,7 +152,7 @@ public class PortTypeImpl extends AbstractElementImpl implements PortType
     switch (featureID)
     {
       case ComponentModelPackage.PORT_TYPE__EMODES:
-        setEModes((errorModes)newValue);
+        setEModes((ErrorModes)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -169,7 +169,7 @@ public class PortTypeImpl extends AbstractElementImpl implements PortType
     switch (featureID)
     {
       case ComponentModelPackage.PORT_TYPE__EMODES:
-        setEModes((errorModes)null);
+        setEModes((ErrorModes)null);
         return;
     }
     super.eUnset(featureID);

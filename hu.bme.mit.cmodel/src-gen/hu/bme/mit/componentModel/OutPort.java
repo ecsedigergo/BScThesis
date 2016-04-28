@@ -9,6 +9,12 @@ package hu.bme.mit.componentModel;
  * A representation of the model object '<em><b>Out Port</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link hu.bme.mit.componentModel.OutPort#getNameOutPort <em>Name Out Port</em>}</li>
+ * </ul>
  *
  * @see hu.bme.mit.componentModel.ComponentModelPackage#getOutPort()
  * @model
@@ -16,4 +22,30 @@ package hu.bme.mit.componentModel;
  */
 public interface OutPort extends Port
 {
+  /**
+   * Returns the value of the '<em><b>Name Out Port</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Name Out Port</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Name Out Port</em>' attribute.
+   * @see #setNameOutPort(String)
+   * @see hu.bme.mit.componentModel.ComponentModelPackage#getOutPort_NameOutPort()
+   * @model
+   * @generated
+   */
+  String getNameOutPort();
+
+  /**
+   * Sets the value of the '{@link hu.bme.mit.componentModel.OutPort#getNameOutPort <em>Name Out Port</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Name Out Port</em>' attribute.
+   * @see #getNameOutPort()
+   * @generated
+   */
+  void setNameOutPort(String value);
+
 } // OutPort

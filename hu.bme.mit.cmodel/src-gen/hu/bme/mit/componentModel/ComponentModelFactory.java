@@ -42,6 +42,33 @@ public interface ComponentModelFactory extends EFactory
   AbstractElement createAbstractElement();
 
   /**
+   * Returns a new object of class '<em>Port Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Port Type</em>'.
+   * @generated
+   */
+  PortType createPortType();
+
+  /**
+   * Returns a new object of class '<em>Error Modes</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Error Modes</em>'.
+   * @generated
+   */
+  ErrorModes createErrorModes();
+
+  /**
+   * Returns a new object of class '<em>Dec</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Dec</em>'.
+   * @generated
+   */
+  ComponentModelDec createComponentModelDec();
+
+  /**
    * Returns a new object of class '<em>System Conn Dec</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -123,13 +150,13 @@ public interface ComponentModelFactory extends EFactory
   ComponentType createComponentType();
 
   /**
-   * Returns a new object of class '<em>Component Feature</em>'.
+   * Returns a new object of class '<em>Abstract Component Features</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Component Feature</em>'.
+   * @return a new object of class '<em>Abstract Component Features</em>'.
    * @generated
    */
-  ComponentFeature createComponentFeature();
+  AbstractComponentFeatures createAbstractComponentFeatures();
 
   /**
    * Returns a new object of class '<em>Port</em>'.
@@ -159,22 +186,85 @@ public interface ComponentModelFactory extends EFactory
   OutPort createOutPort();
 
   /**
-   * Returns a new object of class '<em>Port Type</em>'.
+   * Returns a new object of class '<em>EModel Dec</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Port Type</em>'.
+   * @return a new object of class '<em>EModel Dec</em>'.
    * @generated
    */
-  PortType createPortType();
+  EModelDec createEModelDec();
 
   /**
-   * Returns a new object of class '<em>error Modes</em>'.
+   * Returns a new object of class '<em>EModel Element</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>error Modes</em>'.
+   * @return a new object of class '<em>EModel Element</em>'.
    * @generated
    */
-  errorModes createerrorModes();
+  EModelElement createEModelElement();
+
+  /**
+   * Returns a new object of class '<em>State Dec</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>State Dec</em>'.
+   * @generated
+   */
+  StateDec createStateDec();
+
+  /**
+   * Returns a new object of class '<em>Transition Dec</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Transition Dec</em>'.
+   * @generated
+   */
+  TransitionDec createTransitionDec();
+
+  /**
+   * Returns a new object of class '<em>Transition Feature Dec</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Transition Feature Dec</em>'.
+   * @generated
+   */
+  TransitionFeatureDec createTransitionFeatureDec();
+
+  /**
+   * Returns a new object of class '<em>Transition State</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Transition State</em>'.
+   * @generated
+   */
+  TransitionState createTransitionState();
+
+  /**
+   * Returns a new object of class '<em>Trigger Dec</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Trigger Dec</em>'.
+   * @generated
+   */
+  TriggerDec createTriggerDec();
+
+  /**
+   * Returns a new object of class '<em>Action Dec</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Action Dec</em>'.
+   * @generated
+   */
+  ActionDec createActionDec();
+
+  /**
+   * Returns a new object of class '<em>Occurrence Dec</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Occurrence Dec</em>'.
+   * @generated
+   */
+  OccurrenceDec createOccurrenceDec();
 
   /**
    * Returns the package supported by this factory.

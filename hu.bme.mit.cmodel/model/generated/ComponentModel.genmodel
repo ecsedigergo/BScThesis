@@ -12,6 +12,13 @@
     <genClasses ecoreClass="ComponentModel.ecore#//AbstractElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ComponentModel.ecore#//AbstractElement/name"/>
     </genClasses>
+    <genClasses ecoreClass="ComponentModel.ecore#//PortType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ComponentModel.ecore#//PortType/eModes"/>
+    </genClasses>
+    <genClasses ecoreClass="ComponentModel.ecore#//ErrorModes">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ComponentModel.ecore#//ErrorModes/name"/>
+    </genClasses>
+    <genClasses ecoreClass="ComponentModel.ecore#//ComponentModelDec"/>
     <genClasses ecoreClass="ComponentModel.ecore#//SystemConnDec">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ComponentModel.ecore#//SystemConnDec/sourceSystem"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ComponentModel.ecore#//SystemConnDec/sourcePort"/>
@@ -43,22 +50,45 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ComponentModel.ecore#//ComponentImpl/superType"/>
     </genClasses>
     <genClasses ecoreClass="ComponentModel.ecore#//ComponentType">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ComponentModel.ecore#//ComponentType/compFeatures"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ComponentModel.ecore#//ComponentType/componentFeatures"/>
     </genClasses>
-    <genClasses ecoreClass="ComponentModel.ecore#//ComponentFeature">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ComponentModel.ecore#//ComponentFeature/ports"/>
-    </genClasses>
+    <genClasses ecoreClass="ComponentModel.ecore#//AbstractComponentFeatures"/>
     <genClasses ecoreClass="ComponentModel.ecore#//Port">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ComponentModel.ecore#//Port/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ComponentModel.ecore#//Port/superType"/>
     </genClasses>
-    <genClasses ecoreClass="ComponentModel.ecore#//InPort"/>
-    <genClasses ecoreClass="ComponentModel.ecore#//OutPort"/>
-    <genClasses ecoreClass="ComponentModel.ecore#//PortType">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ComponentModel.ecore#//PortType/eModes"/>
+    <genClasses ecoreClass="ComponentModel.ecore#//InPort">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ComponentModel.ecore#//InPort/nameInPort"/>
     </genClasses>
-    <genClasses ecoreClass="ComponentModel.ecore#//errorModes">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ComponentModel.ecore#//errorModes/name"/>
+    <genClasses ecoreClass="ComponentModel.ecore#//OutPort">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ComponentModel.ecore#//OutPort/nameOutPort"/>
     </genClasses>
+    <genClasses ecoreClass="ComponentModel.ecore#//EModelDec">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ComponentModel.ecore#//EModelDec/nameEModelDec"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ComponentModel.ecore#//EModelDec/emodelElements"/>
+    </genClasses>
+    <genClasses ecoreClass="ComponentModel.ecore#//EModelElement"/>
+    <genClasses ecoreClass="ComponentModel.ecore#//StateDec">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ComponentModel.ecore#//StateDec/nameStateDec"/>
+    </genClasses>
+    <genClasses ecoreClass="ComponentModel.ecore#//TransitionDec">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ComponentModel.ecore#//TransitionDec/nameEventDec"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ComponentModel.ecore#//TransitionDec/Features"/>
+    </genClasses>
+    <genClasses ecoreClass="ComponentModel.ecore#//TransitionFeatureDec"/>
+    <genClasses ecoreClass="ComponentModel.ecore#//TransitionState">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ComponentModel.ecore#//TransitionState/sourceState"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ComponentModel.ecore#//TransitionState/targetState"/>
+    </genClasses>
+    <genClasses ecoreClass="ComponentModel.ecore#//TriggerDec">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ComponentModel.ecore#//TriggerDec/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ComponentModel.ecore#//TriggerDec/portInstance"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ComponentModel.ecore#//TriggerDec/errorMode"/>
+    </genClasses>
+    <genClasses ecoreClass="ComponentModel.ecore#//ActionDec">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ComponentModel.ecore#//ActionDec/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ComponentModel.ecore#//ActionDec/portInstance"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ComponentModel.ecore#//ActionDec/errorMode"/>
+    </genClasses>
+    <genClasses ecoreClass="ComponentModel.ecore#//OccurrenceDec"/>
   </genPackages>
 </genmodel:GenModel>

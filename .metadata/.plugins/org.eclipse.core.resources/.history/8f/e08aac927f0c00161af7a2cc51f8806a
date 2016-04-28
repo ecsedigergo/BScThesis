@@ -1,0 +1,67 @@
+grammar hu.bme.mit.DepModel with org.eclipse.xtext.common.Terminals
+
+generate depModel "http://www.bme.hu/mit/DepModel"
+
+DepModel:
+	(depmodels+=abstractModelDec)*
+;
+
+abstractModelDec:
+	ComponentModel | ErrorModel | PortType
+;
+
+PortType:
+	'port type' name=ID '{'
+	(eModes=errorModes)*
+	'}'
+;
+errorModes:
+	'error mode' name=ID;
+
+ErrorModel:
+	'error model' name=ID '{'
+	(emodelElements+=EModelElement)*
+	'}';
+
+EModelElement:
+	StateDec | EventDec // | OuterPropagation
+;
+/*OuterPropagation:
+	InPropDec | OutPropDec;
+
+InPropDec:
+	'propagation in' name=ID 'trigger' affectedState=[EventDec];
+
+OutPropDec:
+	'propagation out' name=ID 'action' fromState=[EventDec];*/
+
+StateDec:
+	'error state' name=ID;
+
+EventDec:
+	'transition' name=ID '{'
+	(Features+=TransitionFeatureDec)*
+	'}';
+
+TransitionFeatureDec:
+	TransitionState | TriggerDec | ActionDec | OccurenceDec;
+
+TriggerDec:
+	'trigger' name=ID ;
+
+ActionDec:
+	'action' name=ID;
+
+OccurenceDec:
+	'occurrence' DOUBLE;
+
+DOUBLE:
+	INT '.' INT;
+
+TransitionState:
+	'states' ':' sourceState=[StateDec] '->' targetState=[StateDec];
+
+ComponentModel:
+	
+;
+	

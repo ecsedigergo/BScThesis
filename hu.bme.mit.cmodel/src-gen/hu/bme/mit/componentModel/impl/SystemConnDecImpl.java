@@ -31,7 +31,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class SystemConnDecImpl extends AbstractElementImpl implements SystemConnDec
+public class SystemConnDecImpl extends ComponentModelDecImpl implements SystemConnDec
 {
   /**
    * The cached value of the '{@link #getSourceSystem() <em>Source System</em>}' reference.

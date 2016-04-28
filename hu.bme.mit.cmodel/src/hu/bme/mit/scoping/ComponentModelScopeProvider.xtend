@@ -29,8 +29,7 @@ class ComponentModelScopeProvider extends AbstractComponentModelScopeProvider {
 	override getScope(EObject context, EReference reference) {
 		if (context instanceof CompConnDec) {
 			val conn = context as CompConnDec
-
-			if (reference == ComponentModelPackage.Literals.COMP_CONN_DEC__SOURCE_PORT) {
+			if (reference == ComponentModelPackage.Literals.COMP_CONN_DEC__SOURCE_COMP) {
 				val compI = EcoreUtil2.getContainerOfType(conn.sourceComp, ComponentImpl)
 				if(compI == null) return IScope.NULLSCOPE
 
@@ -42,7 +41,7 @@ class ComponentModelScopeProvider extends AbstractComponentModelScopeProvider {
 					return Scopes.scopeFor(ports)
 				}
 			}
-			// super.getScope(context, reference)
+
 			if (reference == ComponentModelPackage.Literals.COMP_CONN_DEC__TARGET_PORT) {
 				val compI = EcoreUtil2.getContainerOfType(conn.targetComp, ComponentImpl)
 				if(compI == null) return IScope.NULLSCOPE
@@ -108,7 +107,7 @@ class ComponentModelScopeProvider extends AbstractComponentModelScopeProvider {
 				val ports = EcoreUtil2.getAllContentsOfType(systemD, SystemPortDec)
 				if (ports == null) {
 					return IScope.NULLSCOPE
-				}else{
+				} else {
 					return Scopes.scopeFor(ports)
 				}
 			}
@@ -122,13 +121,12 @@ class ComponentModelScopeProvider extends AbstractComponentModelScopeProvider {
 				val ports = EcoreUtil2.getAllContentsOfType(systemD, SystemPortDec)
 				if (ports == null) {
 					return IScope.NULLSCOPE
-				}else{
+				} else {
 					return Scopes.scopeFor(ports)
 				}
 			}
 		}
-		super.getScope(context, reference)
 
 	}
-	
+
 }

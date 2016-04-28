@@ -86,6 +86,21 @@ public class ComponentModelAdapterFactory extends AdapterFactoryImpl
         return createAbstractElementAdapter();
       }
       @Override
+      public Adapter casePortType(PortType object)
+      {
+        return createPortTypeAdapter();
+      }
+      @Override
+      public Adapter caseErrorModes(ErrorModes object)
+      {
+        return createErrorModesAdapter();
+      }
+      @Override
+      public Adapter caseComponentModelDec(ComponentModelDec object)
+      {
+        return createComponentModelDecAdapter();
+      }
+      @Override
       public Adapter caseSystemConnDec(SystemConnDec object)
       {
         return createSystemConnDecAdapter();
@@ -131,9 +146,9 @@ public class ComponentModelAdapterFactory extends AdapterFactoryImpl
         return createComponentTypeAdapter();
       }
       @Override
-      public Adapter caseComponentFeature(ComponentFeature object)
+      public Adapter caseAbstractComponentFeatures(AbstractComponentFeatures object)
       {
-        return createComponentFeatureAdapter();
+        return createAbstractComponentFeaturesAdapter();
       }
       @Override
       public Adapter casePort(Port object)
@@ -151,14 +166,49 @@ public class ComponentModelAdapterFactory extends AdapterFactoryImpl
         return createOutPortAdapter();
       }
       @Override
-      public Adapter casePortType(PortType object)
+      public Adapter caseEModelDec(EModelDec object)
       {
-        return createPortTypeAdapter();
+        return createEModelDecAdapter();
       }
       @Override
-      public Adapter caseerrorModes(errorModes object)
+      public Adapter caseEModelElement(EModelElement object)
       {
-        return createerrorModesAdapter();
+        return createEModelElementAdapter();
+      }
+      @Override
+      public Adapter caseStateDec(StateDec object)
+      {
+        return createStateDecAdapter();
+      }
+      @Override
+      public Adapter caseTransitionDec(TransitionDec object)
+      {
+        return createTransitionDecAdapter();
+      }
+      @Override
+      public Adapter caseTransitionFeatureDec(TransitionFeatureDec object)
+      {
+        return createTransitionFeatureDecAdapter();
+      }
+      @Override
+      public Adapter caseTransitionState(TransitionState object)
+      {
+        return createTransitionStateAdapter();
+      }
+      @Override
+      public Adapter caseTriggerDec(TriggerDec object)
+      {
+        return createTriggerDecAdapter();
+      }
+      @Override
+      public Adapter caseActionDec(ActionDec object)
+      {
+        return createActionDecAdapter();
+      }
+      @Override
+      public Adapter caseOccurrenceDec(OccurrenceDec object)
+      {
+        return createOccurrenceDecAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -208,6 +258,51 @@ public class ComponentModelAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createAbstractElementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.componentModel.PortType <em>Port Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.componentModel.PortType
+   * @generated
+   */
+  public Adapter createPortTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.componentModel.ErrorModes <em>Error Modes</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.componentModel.ErrorModes
+   * @generated
+   */
+  public Adapter createErrorModesAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.componentModel.ComponentModelDec <em>Dec</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.componentModel.ComponentModelDec
+   * @generated
+   */
+  public Adapter createComponentModelDecAdapter()
   {
     return null;
   }
@@ -348,16 +443,16 @@ public class ComponentModelAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.componentModel.ComponentFeature <em>Component Feature</em>}'.
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.componentModel.AbstractComponentFeatures <em>Abstract Component Features</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see hu.bme.mit.componentModel.ComponentFeature
+   * @see hu.bme.mit.componentModel.AbstractComponentFeatures
    * @generated
    */
-  public Adapter createComponentFeatureAdapter()
+  public Adapter createAbstractComponentFeaturesAdapter()
   {
     return null;
   }
@@ -408,31 +503,136 @@ public class ComponentModelAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.componentModel.PortType <em>Port Type</em>}'.
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.componentModel.EModelDec <em>EModel Dec</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see hu.bme.mit.componentModel.PortType
+   * @see hu.bme.mit.componentModel.EModelDec
    * @generated
    */
-  public Adapter createPortTypeAdapter()
+  public Adapter createEModelDecAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.componentModel.errorModes <em>error Modes</em>}'.
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.componentModel.EModelElement <em>EModel Element</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see hu.bme.mit.componentModel.errorModes
+   * @see hu.bme.mit.componentModel.EModelElement
    * @generated
    */
-  public Adapter createerrorModesAdapter()
+  public Adapter createEModelElementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.componentModel.StateDec <em>State Dec</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.componentModel.StateDec
+   * @generated
+   */
+  public Adapter createStateDecAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.componentModel.TransitionDec <em>Transition Dec</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.componentModel.TransitionDec
+   * @generated
+   */
+  public Adapter createTransitionDecAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.componentModel.TransitionFeatureDec <em>Transition Feature Dec</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.componentModel.TransitionFeatureDec
+   * @generated
+   */
+  public Adapter createTransitionFeatureDecAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.componentModel.TransitionState <em>Transition State</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.componentModel.TransitionState
+   * @generated
+   */
+  public Adapter createTransitionStateAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.componentModel.TriggerDec <em>Trigger Dec</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.componentModel.TriggerDec
+   * @generated
+   */
+  public Adapter createTriggerDecAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.componentModel.ActionDec <em>Action Dec</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.componentModel.ActionDec
+   * @generated
+   */
+  public Adapter createActionDecAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.componentModel.OccurrenceDec <em>Occurrence Dec</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.componentModel.OccurrenceDec
+   * @generated
+   */
+  public Adapter createOccurrenceDecAdapter()
   {
     return null;
   }

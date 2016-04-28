@@ -1,0 +1,109 @@
+grammar hu.bme.mit.DepModel with org.eclipse.xtext.common.Terminals
+
+generate depModel "http://www.bme.hu/mit/DepModel"
+
+DepModel:
+	(depmodels+=abstractModelDec)*;
+
+abstractModelDec:
+	ComponentModel | ErrorModel | PortType;
+
+PortType:
+	'port type' name=ID '{'
+	(eModes=errorModes)*
+	'}';
+
+errorModes:
+	'error mode' name=ID;
+	//Error model ************-
+ErrorModel:
+	'error model' name=ID '{'
+	(emodelElements+=EModelElement)*
+	'}';
+
+EModelElement:
+	StateDec | EventDec // | OuterPropagation
+;
+/*OuterPropagation:
+	InPropDec | OutPropDec;
+
+InPropDec:
+	'propagation in' name=ID 'trigger' affectedState=[EventDec];
+
+OutPropDec:
+	'propagation out' name=ID 'action' fromState=[EventDec];*/
+StateDec:
+	'error state' name=ID;
+
+EventDec:
+	'transition' name=ID '{'
+	(Features+=TransitionFeatureDec)*
+	'}';
+
+TransitionFeatureDec:
+	TransitionState | TriggerDec | ActionDec | OccurenceDec;
+
+TransitionState:
+	'states' ':' sourceState=[StateDec] '->' targetState=[StateDec];
+
+TriggerDec:
+	'trigger' name=ID portType=[Port] errorMode=[errorModes];
+
+ActionDec:
+	'action' name=ID portType=[Port] errorMode=[errorModes];
+
+OccurenceDec:
+	'occurrence' DOUBLE;
+
+DOUBLE:
+	INT '.' INT;
+
+//Component model ***************
+ ComponentModel:
+	(elements+=ComponentModelDec)+;
+
+ComponentModelDec:
+	SystemDec | SystemConnDec
+;
+SystemConnDec:
+	'system connection' name=ID sourceSystem=[SystemDec] '.' sourcePort=[SystemPortDec] '->'
+	 targetSystem=[SystemDec] '.' targetPort=[SystemPortDec];
+
+SystemDec:
+	'system declaration' name=ID '{'
+	(sysFeatures+=AbstractFeatures)*
+	'}';
+
+AbstractFeatures:
+	ComponentType | ComponentImpl | CompConnDec | SystemPortDec;
+
+SystemPortDec:
+	SystemPortIn | SystemPortOut;
+
+SystemPortIn:
+	'system port in' name=ID 'to' inComp=[ComponentImpl] '.' inPort=[InPort];
+
+SystemPortOut:
+	'system port out' name=ID 'from' outComp=[ComponentImpl] '.' outPort=[OutPort];
+
+CompConnDec:
+	'component connection' name=ID 'from' sourceComp=[ComponentImpl] '.' sourcePort=[OutPort]
+	'to' targetComp=[ComponentImpl] '.' targetPort=[InPort];
+
+ComponentImpl:
+	'component implementation' name=ID ':' superType=[ComponentType];
+
+ComponentType:
+	'component type' name=ID '{'
+	(compFeatures+=Port)*
+	'}';
+
+Port:
+	InPort | OutPort;
+
+InPort:
+	'port instance in' name=ID ':' superType=[PortType];
+
+OutPort:
+	'port instance out' name=ID ':' superType=[PortType];
+	

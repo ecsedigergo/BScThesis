@@ -3,7 +3,7 @@
  */
 package hu.bme.mit.componentModel.impl;
 
-import hu.bme.mit.componentModel.ComponentFeature;
+import hu.bme.mit.componentModel.AbstractComponentFeatures;
 import hu.bme.mit.componentModel.ComponentModelPackage;
 import hu.bme.mit.componentModel.ComponentType;
 
@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link hu.bme.mit.componentModel.impl.ComponentTypeImpl#getCompFeatures <em>Comp Features</em>}</li>
+ *   <li>{@link hu.bme.mit.componentModel.impl.ComponentTypeImpl#getComponentFeatures <em>Component Features</em>}</li>
  * </ul>
  *
  * @generated
@@ -35,14 +35,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class ComponentTypeImpl extends AbstractFeaturesImpl implements ComponentType
 {
   /**
-   * The cached value of the '{@link #getCompFeatures() <em>Comp Features</em>}' containment reference list.
+   * The cached value of the '{@link #getComponentFeatures() <em>Component Features</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCompFeatures()
+   * @see #getComponentFeatures()
    * @generated
    * @ordered
    */
-  protected EList<ComponentFeature> compFeatures;
+  protected EList<AbstractComponentFeatures> componentFeatures;
 
   /**
    * <!-- begin-user-doc -->
@@ -70,13 +70,13 @@ public class ComponentTypeImpl extends AbstractFeaturesImpl implements Component
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ComponentFeature> getCompFeatures()
+  public EList<AbstractComponentFeatures> getComponentFeatures()
   {
-    if (compFeatures == null)
+    if (componentFeatures == null)
     {
-      compFeatures = new EObjectContainmentEList<ComponentFeature>(ComponentFeature.class, this, ComponentModelPackage.COMPONENT_TYPE__COMP_FEATURES);
+      componentFeatures = new EObjectContainmentEList<AbstractComponentFeatures>(AbstractComponentFeatures.class, this, ComponentModelPackage.COMPONENT_TYPE__COMPONENT_FEATURES);
     }
-    return compFeatures;
+    return componentFeatures;
   }
 
   /**
@@ -89,8 +89,8 @@ public class ComponentTypeImpl extends AbstractFeaturesImpl implements Component
   {
     switch (featureID)
     {
-      case ComponentModelPackage.COMPONENT_TYPE__COMP_FEATURES:
-        return ((InternalEList<?>)getCompFeatures()).basicRemove(otherEnd, msgs);
+      case ComponentModelPackage.COMPONENT_TYPE__COMPONENT_FEATURES:
+        return ((InternalEList<?>)getComponentFeatures()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -105,8 +105,8 @@ public class ComponentTypeImpl extends AbstractFeaturesImpl implements Component
   {
     switch (featureID)
     {
-      case ComponentModelPackage.COMPONENT_TYPE__COMP_FEATURES:
-        return getCompFeatures();
+      case ComponentModelPackage.COMPONENT_TYPE__COMPONENT_FEATURES:
+        return getComponentFeatures();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -122,9 +122,9 @@ public class ComponentTypeImpl extends AbstractFeaturesImpl implements Component
   {
     switch (featureID)
     {
-      case ComponentModelPackage.COMPONENT_TYPE__COMP_FEATURES:
-        getCompFeatures().clear();
-        getCompFeatures().addAll((Collection<? extends ComponentFeature>)newValue);
+      case ComponentModelPackage.COMPONENT_TYPE__COMPONENT_FEATURES:
+        getComponentFeatures().clear();
+        getComponentFeatures().addAll((Collection<? extends AbstractComponentFeatures>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -140,8 +140,8 @@ public class ComponentTypeImpl extends AbstractFeaturesImpl implements Component
   {
     switch (featureID)
     {
-      case ComponentModelPackage.COMPONENT_TYPE__COMP_FEATURES:
-        getCompFeatures().clear();
+      case ComponentModelPackage.COMPONENT_TYPE__COMPONENT_FEATURES:
+        getComponentFeatures().clear();
         return;
     }
     super.eUnset(featureID);
@@ -157,8 +157,8 @@ public class ComponentTypeImpl extends AbstractFeaturesImpl implements Component
   {
     switch (featureID)
     {
-      case ComponentModelPackage.COMPONENT_TYPE__COMP_FEATURES:
-        return compFeatures != null && !compFeatures.isEmpty();
+      case ComponentModelPackage.COMPONENT_TYPE__COMPONENT_FEATURES:
+        return componentFeatures != null && !componentFeatures.isEmpty();
     }
     return super.eIsSet(featureID);
   }

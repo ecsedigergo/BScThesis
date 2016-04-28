@@ -14,7 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link hu.bme.mit.componentModel.ComponentType#getCompFeatures <em>Comp Features</em>}</li>
+ *   <li>{@link hu.bme.mit.componentModel.ComponentType#getComponentFeatures <em>Component Features</em>}</li>
  * </ul>
  *
  * @see hu.bme.mit.componentModel.ComponentModelPackage#getComponentType()
@@ -24,19 +24,19 @@ import org.eclipse.emf.common.util.EList;
 public interface ComponentType extends AbstractFeatures
 {
   /**
-   * Returns the value of the '<em><b>Comp Features</b></em>' containment reference list.
-   * The list contents are of type {@link hu.bme.mit.componentModel.ComponentFeature}.
+   * Returns the value of the '<em><b>Component Features</b></em>' containment reference list.
+   * The list contents are of type {@link hu.bme.mit.componentModel.AbstractComponentFeatures}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Comp Features</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Component Features</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Comp Features</em>' containment reference list.
-   * @see hu.bme.mit.componentModel.ComponentModelPackage#getComponentType_CompFeatures()
+   * @return the value of the '<em>Component Features</em>' containment reference list.
+   * @see hu.bme.mit.componentModel.ComponentModelPackage#getComponentType_ComponentFeatures()
    * @model containment="true"
    * @generated
    */
-  EList<ComponentFeature> getCompFeatures();
+  EList<AbstractComponentFeatures> getComponentFeatures();
 
 } // ComponentType

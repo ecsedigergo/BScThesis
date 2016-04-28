@@ -26,9 +26,20 @@ public class ComponentModelSyntacticSequencer extends AbstractSyntacticSequencer
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (ruleCall.getRule() == grammarAccess.getDOUBLERule())
+			return getDOUBLEToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
+	/**
+	 * DOUBLE:
+	 * 	INT '.' INT;
+	 */
+	protected String getDOUBLEToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return ".";
+	}
 	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {

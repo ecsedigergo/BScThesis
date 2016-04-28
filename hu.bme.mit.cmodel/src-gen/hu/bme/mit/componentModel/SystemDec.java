@@ -21,7 +21,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface SystemDec extends AbstractElement
+public interface SystemDec extends ComponentModelDec
 {
   /**
    * Returns the value of the '<em><b>Sys Features</b></em>' containment reference list.

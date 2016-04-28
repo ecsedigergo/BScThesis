@@ -31,12 +31,12 @@ public interface PortType extends AbstractElement
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>EModes</em>' containment reference.
-   * @see #setEModes(errorModes)
+   * @see #setEModes(ErrorModes)
    * @see hu.bme.mit.componentModel.ComponentModelPackage#getPortType_EModes()
    * @model containment="true"
    * @generated
    */
-  errorModes getEModes();
+  ErrorModes getEModes();
 
   /**
    * Sets the value of the '{@link hu.bme.mit.componentModel.PortType#getEModes <em>EModes</em>}' containment reference.
@@ -46,6 +46,6 @@ public interface PortType extends AbstractElement
    * @see #getEModes()
    * @generated
    */
-  void setEModes(errorModes value);
+  void setEModes(ErrorModes value);
 
 } // PortType

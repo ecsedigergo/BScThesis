@@ -67,6 +67,9 @@ public class ComponentModelFactoryImpl extends EFactoryImpl implements Component
     {
       case ComponentModelPackage.COMPONENT_MODEL: return createComponentModel();
       case ComponentModelPackage.ABSTRACT_ELEMENT: return createAbstractElement();
+      case ComponentModelPackage.PORT_TYPE: return createPortType();
+      case ComponentModelPackage.ERROR_MODES: return createErrorModes();
+      case ComponentModelPackage.COMPONENT_MODEL_DEC: return createComponentModelDec();
       case ComponentModelPackage.SYSTEM_CONN_DEC: return createSystemConnDec();
       case ComponentModelPackage.SYSTEM_DEC: return createSystemDec();
       case ComponentModelPackage.ABSTRACT_FEATURES: return createAbstractFeatures();
@@ -76,12 +79,19 @@ public class ComponentModelFactoryImpl extends EFactoryImpl implements Component
       case ComponentModelPackage.COMP_CONN_DEC: return createCompConnDec();
       case ComponentModelPackage.COMPONENT_IMPL: return createComponentImpl();
       case ComponentModelPackage.COMPONENT_TYPE: return createComponentType();
-      case ComponentModelPackage.COMPONENT_FEATURE: return createComponentFeature();
+      case ComponentModelPackage.ABSTRACT_COMPONENT_FEATURES: return createAbstractComponentFeatures();
       case ComponentModelPackage.PORT: return createPort();
       case ComponentModelPackage.IN_PORT: return createInPort();
       case ComponentModelPackage.OUT_PORT: return createOutPort();
-      case ComponentModelPackage.PORT_TYPE: return createPortType();
-      case ComponentModelPackage.ERROR_MODES: return createerrorModes();
+      case ComponentModelPackage.EMODEL_DEC: return createEModelDec();
+      case ComponentModelPackage.EMODEL_ELEMENT: return createEModelElement();
+      case ComponentModelPackage.STATE_DEC: return createStateDec();
+      case ComponentModelPackage.TRANSITION_DEC: return createTransitionDec();
+      case ComponentModelPackage.TRANSITION_FEATURE_DEC: return createTransitionFeatureDec();
+      case ComponentModelPackage.TRANSITION_STATE: return createTransitionState();
+      case ComponentModelPackage.TRIGGER_DEC: return createTriggerDec();
+      case ComponentModelPackage.ACTION_DEC: return createActionDec();
+      case ComponentModelPackage.OCCURRENCE_DEC: return createOccurrenceDec();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -107,6 +117,39 @@ public class ComponentModelFactoryImpl extends EFactoryImpl implements Component
   {
     AbstractElementImpl abstractElement = new AbstractElementImpl();
     return abstractElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public PortType createPortType()
+  {
+    PortTypeImpl portType = new PortTypeImpl();
+    return portType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ErrorModes createErrorModes()
+  {
+    ErrorModesImpl errorModes = new ErrorModesImpl();
+    return errorModes;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ComponentModelDec createComponentModelDec()
+  {
+    ComponentModelDecImpl componentModelDec = new ComponentModelDecImpl();
+    return componentModelDec;
   }
 
   /**
@@ -213,10 +256,10 @@ public class ComponentModelFactoryImpl extends EFactoryImpl implements Component
    * <!-- end-user-doc -->
    * @generated
    */
-  public ComponentFeature createComponentFeature()
+  public AbstractComponentFeatures createAbstractComponentFeatures()
   {
-    ComponentFeatureImpl componentFeature = new ComponentFeatureImpl();
-    return componentFeature;
+    AbstractComponentFeaturesImpl abstractComponentFeatures = new AbstractComponentFeaturesImpl();
+    return abstractComponentFeatures;
   }
 
   /**
@@ -257,10 +300,10 @@ public class ComponentModelFactoryImpl extends EFactoryImpl implements Component
    * <!-- end-user-doc -->
    * @generated
    */
-  public PortType createPortType()
+  public EModelDec createEModelDec()
   {
-    PortTypeImpl portType = new PortTypeImpl();
-    return portType;
+    EModelDecImpl eModelDec = new EModelDecImpl();
+    return eModelDec;
   }
 
   /**
@@ -268,10 +311,87 @@ public class ComponentModelFactoryImpl extends EFactoryImpl implements Component
    * <!-- end-user-doc -->
    * @generated
    */
-  public errorModes createerrorModes()
+  public EModelElement createEModelElement()
   {
-    errorModesImpl errorModes = new errorModesImpl();
-    return errorModes;
+    EModelElementImpl eModelElement = new EModelElementImpl();
+    return eModelElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public StateDec createStateDec()
+  {
+    StateDecImpl stateDec = new StateDecImpl();
+    return stateDec;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TransitionDec createTransitionDec()
+  {
+    TransitionDecImpl transitionDec = new TransitionDecImpl();
+    return transitionDec;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TransitionFeatureDec createTransitionFeatureDec()
+  {
+    TransitionFeatureDecImpl transitionFeatureDec = new TransitionFeatureDecImpl();
+    return transitionFeatureDec;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TransitionState createTransitionState()
+  {
+    TransitionStateImpl transitionState = new TransitionStateImpl();
+    return transitionState;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TriggerDec createTriggerDec()
+  {
+    TriggerDecImpl triggerDec = new TriggerDecImpl();
+    return triggerDec;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ActionDec createActionDec()
+  {
+    ActionDecImpl actionDec = new ActionDecImpl();
+    return actionDec;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public OccurrenceDec createOccurrenceDec()
+  {
+    OccurrenceDecImpl occurrenceDec = new OccurrenceDecImpl();
+    return occurrenceDec;
   }
 
   /**

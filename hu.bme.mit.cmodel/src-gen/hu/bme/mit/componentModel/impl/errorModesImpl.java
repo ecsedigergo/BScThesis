@@ -4,7 +4,7 @@
 package hu.bme.mit.componentModel.impl;
 
 import hu.bme.mit.componentModel.ComponentModelPackage;
-import hu.bme.mit.componentModel.errorModes;
+import hu.bme.mit.componentModel.ErrorModes;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -15,18 +15,18 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>error Modes</b></em>'.
+ * An implementation of the model object '<em><b>Error Modes</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link hu.bme.mit.componentModel.impl.errorModesImpl#getName <em>Name</em>}</li>
+ *   <li>{@link hu.bme.mit.componentModel.impl.ErrorModesImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class errorModesImpl extends MinimalEObjectImpl.Container implements errorModes
+public class ErrorModesImpl extends MinimalEObjectImpl.Container implements ErrorModes
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -53,7 +53,7 @@ public class errorModesImpl extends MinimalEObjectImpl.Container implements erro
    * <!-- end-user-doc -->
    * @generated
    */
-  protected errorModesImpl()
+  protected ErrorModesImpl()
   {
     super();
   }
@@ -175,4 +175,4 @@ public class errorModesImpl extends MinimalEObjectImpl.Container implements erro
     return result.toString();
   }
 
-} //errorModesImpl
+} //ErrorModesImpl

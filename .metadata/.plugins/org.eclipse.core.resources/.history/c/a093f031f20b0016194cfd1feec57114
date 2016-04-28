@@ -1,0 +1,63 @@
+grammar hu.bme.mit.ErrorModel with org.eclipse.xtext.common.Terminals
+
+generate errorModel "http://www.bme.hu/mit/ErrorModel"
+
+import "http://www.bme.hu/mit/ComponentModel" as cmodel
+
+ErrorModel:
+	(AbstractElement+=Error)*;
+
+Error:
+	EModelDec //| EPropagationDec
+;
+
+/*EPropagationDec:
+	'error propagation' name=QualifiedName 'from' sourceModel=[EModelDec] '.' sourceProp=[OutPropDec]
+	'to' targetModel=[EModelDec] '.' targetProp=[InPropDec]
+;*/
+EModelDec:
+	'error model' name=QualifiedName '{'
+	(emodelElements+=EModelElement)*
+	'}';
+
+EModelElement:
+	StateDec | EventDec | OuterPropagation;
+
+OuterPropagation:
+	InPropDec | OutPropDec;
+
+InPropDec:
+	'propagation in' name=QualifiedName 'trigger' affectedState=[EventDec];
+
+OutPropDec:
+	'propagation out' name=QualifiedName 'action' fromState=[EventDec];
+
+StateDec:
+	'error state' name=QualifiedName;
+
+EventDec:
+	'transition' name=QualifiedName '{'
+	(Features+=TransitionFeatureDec)*
+	'}';
+
+TransitionFeatureDec:
+	TransitionState | TriggerDec | ActionDec | OccurenceDec;
+
+TriggerDec:
+	'trigger' name=QualifiedName ;
+
+ActionDec:
+	'action' name=QualifiedName;
+
+OccurenceDec:
+	'occurrence' DOUBLE;
+
+DOUBLE:
+	INT '.' INT;
+
+TransitionState:
+	'states' ':' sourceState=[StateDec] '->' targetState=[StateDec];
+
+QualifiedName:
+	ID ('.' ID)*;
+	
